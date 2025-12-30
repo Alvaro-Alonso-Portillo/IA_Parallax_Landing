@@ -1,0 +1,41 @@
+import React from 'react';
+
+export const TechStack: React.FC = () => {
+    return (
+        <section className="py-8 bg-white border-b-2 border-black">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                    <span className="font-display uppercase text-xl text-black whitespace-nowrap">
+                        POTENCIADO POR:
+                    </span>
+                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 grayscale opacity-80">
+                        {/* Python */}
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                            alt="Python"
+                            className="h-10 hover:grayscale-0 transition-all duration-300"
+                        />
+                        {/* OpenAI */}
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"
+                            alt="OpenAI"
+                            className="h-8 hover:grayscale-0 transition-all duration-300"
+                        />
+                        {/* Google Cloud */}
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg"
+                            alt="Google Cloud"
+                            className="h-8 hover:grayscale-0 transition-all duration-300"
+                        />
+                        {/* Zapier */}
+                        <img
+                            src="https://cdn.worldvectorlogo.com/logos/zapier-1.svg"
+                            alt="Zapier"
+                            className="h-8 hover:grayscale-0 transition-all duration-300"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
