@@ -21,7 +21,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Inter"', 'sans-serif'],
+            sans: ['"Inter Tight"', 'sans-serif'],
             display: ['"Bowlby One"', 'cursive'],
             accent: ['"Knewave"', 'cursive'],
             comic: ['"Comic Neue"', 'cursive'], // Fallback if needed
@@ -67,7 +67,7 @@
   </script>
   <style>
     body {
-      font-family: "Inter", sans-serif;
+      font-family: "Inter Tight", sans-serif;
       -webkit-font-smoothing: antialiased;
       background-color: #ffffff;
       color: #000000;
@@ -105,6 +105,41 @@
     .border-sketch {
       border: 2px solid #000;
       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Bowlby One", cursive;
+    }
+
+    .span_font_knewave span {
+      font-family: "Knewave", cursive;
+    }
+
+    /* Alternatively, if they want a class to apply to span directly */
+    .span_font_knewave {
+      font-family: "Knewave", cursive;
+    }
+
+    .prime-button {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+      border-radius: 8px;
+      /* Slight radius */
+      text-transform: uppercase;
+      padding: 10px 20px;
+      /* Adding some default padding */
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .prime-button:hover {
+      background-color: #f0f0f0;
+      /* Subtle hover */
+      transform: translateY(-2px);
+      box-shadow: 2px 2px 0px 0px #000000;
     }
   </style>
   <script type="module" src="/index.tsx"></script>
