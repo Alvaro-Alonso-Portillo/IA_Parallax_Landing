@@ -17,23 +17,23 @@
   --secondary-foreground: #e5e5e5;
   --muted: #404040;
   --muted-foreground: #a3a3a3;
-  /* Technical Accent: International Orange (#FF4F00) */
-  --accent: #FF4F00;
+  /* Technical Accent: Electric Cyan (#00D4FF) */
+  --accent: #00D4FF;
   --accent-foreground: #080808;
   --destructive: #ef4444;
   --destructive-foreground: #ef4444;
   --border: #262626;
   --input: #1a1a1a;
-  --ring: #FF4F00;
+  --ring: #00D4FF;
   --radius: 0rem;
   --sidebar: #0a0a0a;
   --sidebar-foreground: #ffffff;
-  --sidebar-primary: #FF4F00;
+  --sidebar-primary: #00D4FF;
   --sidebar-primary-foreground: #080808;
   --sidebar-accent: #151515;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #262626;
-  --sidebar-ring: #FF4F00;
+  --sidebar-ring: #00D4FF;
 }
 
 @theme inline {
@@ -156,6 +156,6 @@
 
 /* Custom selection color */
 ::selection {
-  background: #FF4F00;
-  color: #ffffff;
+  background: #00D4FF;
+  color: #000000;
 }

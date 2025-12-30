@@ -24,8 +24,8 @@ export function SpotlightGrid() {
             <div
                 className="absolute inset-0 opacity-5"
                 style={{
-                    backgroundImage: `linear-gradient(to right, #FF4F00 1px, transparent 1px),
-            linear-gradient(to bottom, #FF4F00 1px, transparent 1px)`,
+                    backgroundImage: `linear-gradient(to right, #00D4FF 1px, transparent 1px),
+            linear-gradient(to bottom, #00D4FF 1px, transparent 1px)`,
                     backgroundSize: "60px 60px",
                     maskImage: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, black, transparent)`,
                     WebkitMaskImage: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, black, transparent)`,

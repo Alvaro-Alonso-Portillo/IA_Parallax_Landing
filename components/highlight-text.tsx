@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useEffect, type ReactNode } from "react"
+import { cn } from "@/lib/utils"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -21,9 +22,9 @@ export function HighlightText({ children, className = "" }: HighlightTextProps) 
     const ctx = gsap.context(() => {
       gsap.fromTo(
         textRef.current,
-        { color: "#FFFFFF" },
+        { opacity: 0.8 },
         {
-          color: "var(--accent)",
+          opacity: 1,
           duration: 1.2,
           ease: "power2.out",
           scrollTrigger: {
@@ -39,7 +40,13 @@ export function HighlightText({ children, className = "" }: HighlightTextProps) 
   }, [])
 
   return (
-    <span ref={textRef} className={`relative inline-block ${className} text-white`}>
+    <span
+      ref={textRef}
+      className={cn(
+        "relative inline-block bg-gradient-to-r from-[#00D4FF] to-[#A020F0] bg-clip-text text-transparent transition-all duration-300",
+        className
+      )}
+    >
       {children}
     </span>
   )

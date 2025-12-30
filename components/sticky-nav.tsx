@@ -27,26 +27,27 @@ export function StickyNav() {
         >
             {/* Logo */}
             <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                <span className="font-[var(--font-bebas)] text-xl tracking-tight text-white/90">
-                    IA_PARALLAX
-                </span>
+                <img
+                    src="/logo-ia-parallax-1.png"
+                    alt="IA_PARALLAX"
+                    className="h-[45px] w-auto object-contain"
+                />
             </div>
 
             {/* CTA Button */}
             <button
                 className={cn(
-                    "group relative px-5 py-1.5 overflow-hidden",
-                    "border border-cyan-500/50 rounded-sm",
-                    "transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]"
+                    "group relative px-5 py-2 overflow-hidden",
+                    "border border-accent/40 rounded-sm",
+                    "transition-all duration-300 hover:border-accent hover:shadow-[0_0_15px_var(--accent,rgba(0,212,255,0.3))]"
                 )}
             >
-                <span className="relative z-10 font-mono text-[10px] font-bold text-cyan-400 uppercase tracking-widest group-hover:text-white transition-colors duration-300">
+                <span className="relative z-10 font-mono text-[10px] font-bold text-accent uppercase tracking-widest group-hover:text-black transition-colors duration-300">
                     Consultar
                 </span>
 
                 {/* Hover fill effect */}
-                <div className="absolute inset-0 bg-cyan-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                <div className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
             </button>
         </nav>
     )

@@ -187,7 +187,7 @@ function WorkCard({
       className={cn(
         "group relative border border-[#444444] p-10 md:p-14 flex flex-col justify-between transition-all duration-300 cursor-pointer overflow-hidden min-h-[400px]",
         experiment.span,
-        isActive ? "border-accent bg-[#111111]" : "border-[#444444] bg-transparent",
+        isActive ? "border-[#A020F0] bg-[#111111]" : "border-[#444444] bg-transparent",
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
