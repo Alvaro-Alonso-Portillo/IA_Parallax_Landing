@@ -68,35 +68,37 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
 
       </div>
 
-      {/* Main Hero Scene - ADJUSTED FOR MOBILE ADAPTATION */}
+      {/* Main Hero Scene - CORRECTED TO SHOW DIFFERENT PARTS ON MOBILE */}
       <div className="mt-8 md:mt-4 relative w-full z-20 overflow-hidden bg-[#f0f0f0] border-y-2 md:border-y-0 border-black">
-        {/* Mobile: Double View (Stacked) or Contain */}
-        <div className="md:hidden flex flex-col border-b-2 border-black">
-          {/* Top part of scene (Chaos) */}
-          <div className="relative aspect-video overflow-hidden border-b-4 border-black">
+
+        {/* Mobile: Split View focusing on different parts of the SAME video */}
+        <div className="md:hidden flex flex-col">
+          {/* Top Panel: Focusing on the LEFT side (CHAOS/LAB) */}
+          <div className="relative aspect-[16/10] overflow-hidden border-b-4 border-black">
             <video
               autoPlay loop muted playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-left"
               poster="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cae6243a1c4e9ed492fe67_Group%201413376292.avif"
             >
               <source src="https://dl.dropbox.com/s/3bye82qxpc4mh5jlygi5a/Main_screen.mp4?rlkey=556fjirf5j85ax4biworxnc3b&st=bru1tcy6&dl=0" type="video/mp4" />
             </video>
-            <div className="absolute top-4 left-4 bg-brand-blue text-white px-3 py-1 font-display text-sm border-2 border-black shadow-sketch rotate-[-2deg]">EL CAOS</div>
+            <div className="absolute top-4 left-4 bg-brand-blue text-white px-3 py-1 font-display text-sm border-2 border-black shadow-sketch rotate-[-2deg] z-10">EL LAB (CAOS)</div>
           </div>
-          {/* Bottom part of scene (Growth) - Refocused if needed, here we use object-contain for clarity */}
-          <div className="relative aspect-video overflow-hidden">
+
+          {/* Bottom Panel: Focusing on the RIGHT side (GROWTH/SUCCESS) */}
+          <div className="relative aspect-[16/10] overflow-hidden">
             <video
               autoPlay loop muted playsInline
-              className="absolute inset-0 w-full h-full object-cover translate-y-[-20%]"
+              className="absolute inset-0 w-full h-full object-cover object-right"
               poster="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cae6243a1c4e9ed492fe67_Group%201413376292.avif"
             >
               <source src="https://dl.dropbox.com/s/3bye82qxpc4mh5jlygi5a/Main_screen.mp4?rlkey=556fjirf5j85ax4biworxnc3b&st=bru1tcy6&dl=0" type="video/mp4" />
             </video>
-            <div className="absolute bottom-4 right-4 bg-brand-orange text-white px-3 py-1 font-display text-sm border-2 border-black shadow-sketch rotate-[2deg]">TU CRECIMIENTO</div>
+            <div className="absolute bottom-4 right-4 bg-brand-orange text-white px-3 py-1 font-display text-sm border-2 border-black shadow-sketch rotate-[2deg] z-10">EL ÉXITO (TU CRECIMIENTO)</div>
           </div>
         </div>
 
-        {/* Desktop: Original Wide View */}
+        {/* Desktop: Original Wide View remains unchanged */}
         <div className="hidden md:block w-full h-full">
           <video
             autoPlay
@@ -105,12 +107,13 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
             playsInline
             className="w-full h-auto min-h-[400px] object-contain"
             poster="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cae6243a1c4e9ed492fe67_Group%201413376292.avif"
-            aria-label="Ilustración de equipo saturado gestionando el caos manual en una agencia"
+            aria-label="Ilustración panorámica de automatización de agencia"
           >
             <source src="https://dl.dropbox.com/s/3bye82qxpc4mh5jlygi5a/Main_screen.mp4?rlkey=556fjirf5j85ax4biworxnc3b&st=bru1tcy6&dl=0" type="video/mp4" />
           </video>
         </div>
       </div>
+
 
 
       {/* Clouds / Background Decor */}
