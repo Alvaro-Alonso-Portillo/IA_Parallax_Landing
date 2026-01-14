@@ -50,6 +50,7 @@
             'float-delayed': 'float 6s ease-in-out 3s infinite',
             'spin-slow': 'spin 12s linear infinite',
             'wiggle': 'wiggle 1s ease-in-out infinite',
+            'push-up': 'push-up 2s ease-in-out infinite',
           },
           keyframes: {
             float: {
@@ -59,6 +60,10 @@
             wiggle: {
               '0%, 100%': { transform: 'rotate(-3deg)' },
               '50%': { transform: 'rotate(3deg)' },
+            },
+            'push-up': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(15px) scaleY(0.95)' },
             }
           }
         }
@@ -140,6 +145,26 @@
       /* Subtle hover */
       transform: translateY(-2px);
       box-shadow: 2px 2px 0px 0px #000000;
+    }
+
+    @keyframes scan {
+      0% {
+        top: 0;
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        top: 100%;
+        opacity: 0;
+      }
     }
   </style>
   <script type="module" src="/index.tsx"></script>

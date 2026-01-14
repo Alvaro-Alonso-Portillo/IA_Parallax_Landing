@@ -27,11 +27,11 @@ export const TechStack: React.FC = () => {
                             alt="Google Cloud"
                             className="h-8 hover:grayscale-0 transition-all duration-300"
                         />
-                        {/* Zapier */}
+                        {/* n8n */}
                         <img
-                            src="https://cdn.worldvectorlogo.com/logos/zapier-1.svg"
-                            alt="Zapier"
-                            className="h-8 hover:grayscale-0 transition-all duration-300"
+                            src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768302104/df34b36d-279c-496c-91c2-959dd9c9f13d-removebg-preview_q1nmsc.png"
+                            alt="n8n"
+                            className="h-28 md:h-32 hover:grayscale-0 transition-all duration-300"
                         />
                     </div>
                 </div>

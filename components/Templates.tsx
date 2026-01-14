@@ -33,61 +33,61 @@ export const Templates: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
     const templates = [
         {
-            title: "IA Agent Bundle",
+            title: "Pack Agentes IA",
             price: "$299",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cad69f3992b0e11978a58c_Group%201413376293.svg",
-            features: ["3 Agentes Personalizados", "Integración con Telegram", "Dashboard de métricas"]
+            features: ["3 Agentes Personalizados", "Integración con Telegram", "Panel de métricas"]
         },
         {
-            title: "CRM Automation",
+            title: "Automatización CRM",
             price: "$149",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d409f1a1b8c8d480153f0c_Group%201413376299.png",
-            features: ["Lead Scoring IA", "Email Sequences", "Sincronización Hubspot"]
+            features: ["Lead Scoring IA", "Secuencias de Email", "Sincronización Hubspot"]
         },
         {
-            title: "Content Factory",
+            title: "Fábrica de Contenidos",
             price: "$199",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png",
             features: ["Multi-redes Social", "Generación de Imágenes", "Planificación 30 días"]
         },
         {
-            title: "Onboarding Bot",
+            title: "Bot de Onboarding",
             price: "$120",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1e576a54ab84d9991fc4e_%D0%B2%D1%96%D0%BA%D0%BD%D0%BE.png",
             features: ["Bienvenida Automática", "Recogida de Datos", "Firma de Contratos"]
         },
         {
-            title: "Meeting Assistant",
+            title: "Asistente de Reuniones",
             price: "$89",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1b90511ce48cd4d3b_snork.avif",
             features: ["Resumen de Zoom/Meet", "Extracción de Tareas", "Envío de Acta"]
         },
         {
-            title: "E-commerce Support",
+            title: "Soporte E-commerce",
             price: "$249",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f0540b33d5d141c396_notdog.avif",
             features: ["Rastreo de Pedidos", "FAQs Inteligentes", "Gestión de Devoluciones"]
         },
         {
-            title: "SEO Writer IA",
+            title: "Redactor SEO IA",
             price: "$179",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1540b33d5d141c464_keycat.avif",
             features: ["Búsqueda de Keywords", "Redacción Automática", "Optimización On-page"]
         },
         {
-            title: "Auto-Billing System",
+            title: "Sistema Auto-Factura",
             price: "$135",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d409f1a1b8c8d480153f0c_Group%201413376299.png",
             features: ["Facturación Automática", "Recordatorio de Impagos", "Integración Stripe"]
         },
         {
-            title: "Customer Success IA",
+            title: "IA Customer Success",
             price: "$210",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cad69f3992b0e11978a58c_Group%201413376293.svg",
             features: ["Predicción de Churn", "Alertas de Inactividad", "Reportes Mensuales"]
         },
         {
-            title: "HR Automator",
+            title: "Automatizador RRHH",
             price: "$159",
             image: "https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png",
             features: ["Filtro de CVs", "Agendado de Entrevistas", "Feedback Automático"]
@@ -97,33 +97,33 @@ export const Templates: React.FC<{ onBack: () => void }> = ({ onBack }) => {
     return (
         <div className="min-h-screen bg-brand-light">
             {/* Back Button */}
-            <div className="fixed top-24 left-8 z-40">
+            <div className="fixed top-20 md:top-24 left-4 md:left-8 z-40">
                 <button
                     onClick={onBack}
-                    className="bg-white border-2 border-black p-4 rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 transition-all flex items-center gap-2 group"
+                    className="bg-white border-2 border-black p-3 md:p-4 rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 transition-all flex items-center gap-2 group"
                 >
                     <span className="group-hover:-translate-x-1 transition-transform">←</span>
-                    <span className="font-display uppercase text-sm">Volver al Home</span>
+                    <span className="font-display uppercase text-xs md:text-sm hidden xs:inline">Volver</span>
                 </button>
             </div>
 
-            <header className="py-32 bg-brand-yellow border-b-4 border-black relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-10 select-none pointer-events-none text-brand-dark/10 text-[15vw] font-display leading-none">
-                    ASSETS
+            <header className="py-20 md:py-32 bg-brand-yellow border-b-4 border-black relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 md:p-10 select-none pointer-events-none text-brand-dark/10 text-[20vw] md:text-[15vw] font-display leading-none">
+                    TPLS
                 </div>
-                <div className="max-w-6xl mx-auto px-8 relative z-10">
-                    <h1 className="text-7xl md:text-9xl font-display uppercase leading-none drop-shadow-sketch mb-4">
+                <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+                    <h1 className="text-5xl md:text-9xl font-display uppercase leading-none drop-shadow-sketch mb-6">
                         Plantillas <br />
                         Listas para USAR.
                     </h1>
-                    <p className="font-sans text-2xl font-black max-w-2xl bg-white border-2 border-black p-4 inline-block -rotate-1">
+                    <p className="font-sans text-lg md:text-2xl font-black max-w-2xl bg-white border-2 border-black p-3 md:p-4 inline-block -rotate-1 shadow-sm">
                         Pon tu negocio en piloto automático en cuestión de minutos.
                     </p>
                 </div>
             </header>
 
-            <section className="py-24 max-w-7xl mx-auto px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                     {templates.map((t, idx) => (
                         <TemplateCard key={idx} {...t} />
                     ))}
@@ -131,15 +131,15 @@ export const Templates: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </section>
 
             {/* Special Offer Section */}
-            <section className="py-24 bg-brand-gray border-y-4 border-black relative overflow-hidden">
-                <div className="max-w-4xl mx-auto px-8 text-center relative z-10">
-                    <div className="bg-white border-4 border-black p-12 shadow-sketch-xl rotate-1">
-                        <h2 className="text-5xl font-display uppercase mb-6">EL PACK COMPLETO</h2>
-                        <p className="font-sans text-xl font-bold mb-8">
+            <section className="py-20 md:py-24 bg-brand-gray border-y-4 border-black relative overflow-hidden">
+                <div className="max-w-4xl mx-auto px-6 md:px-8 text-center relative z-10">
+                    <div className="bg-white border-[3px] md:border-4 border-black p-8 md:p-12 shadow-sketch-xl rotate-1">
+                        <h2 className="text-3xl md:text-5xl font-display uppercase mb-6">EL PACK COMPLETO</h2>
+                        <p className="font-sans text-lg md:text-xl font-bold mb-8">
                             Obtén acceso a todas nuestras plantillas actuales y futuras de por vida por un pago único.
                         </p>
-                        <div className="text-6xl font-display text-brand-orange mb-8">$999</div>
-                        <button className="bg-brand-blue text-white px-12 py-6 border-4 border-black shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 transition-all font-display text-2xl uppercase">
+                        <div className="text-5xl md:text-6xl font-display text-brand-orange mb-8">$999</div>
+                        <button className="w-full sm:w-auto bg-brand-blue text-white px-8 md:px-12 py-4 md:py-6 border-4 border-black shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 transition-all font-display text-lg md:text-2xl uppercase">
                             RESERVAR ACCESO DE POR VIDA
                         </button>
                     </div>

@@ -1,85 +1,170 @@
 import React from 'react';
 
+const OrbitItem: React.FC<{
+    icon: string;
+    delay: string;
+    duration: string;
+    radiusX: number;
+    radiusY: number;
+    bg?: string
+}> = ({ icon, delay, duration, radiusX, radiusY, bg = "bg-white" }) => {
+    return (
+        <div
+            className={`absolute flex items-center justify-center z-30 pointer-events-none`}
+            style={{
+                '--rx': `${radiusX}px`,
+                '--ry': `${radiusY}px`,
+                '--dur': duration,
+                '--del': delay,
+                animation: `orbitX var(--dur) linear infinite`,
+                animationDelay: 'var(--del)',
+            } as any}
+        >
+            <div
+                className={`w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-black flex items-center justify-center shadow-sketch-sm transition-transform pointer-events-auto ${bg}`}
+                style={{
+                    animation: `orbitY var(--dur) linear infinite`,
+                    animationDelay: 'var(--del)',
+                }}
+            >
+                <img
+                    src={icon}
+                    alt=""
+                    className="w-8 h-8 md:w-10 md:h-10 object-contain p-1"
+                />
+            </div>
+        </div>
+    );
+};
+
 export const RayBusters: React.FC = () => {
     return (
-        <section className="py-24 bg-brand-gray relative overflow-hidden">
-            <div className="w-full mx-auto px-0 text-center">
+        <section className="py-24 bg-brand-gray relative overflow-hidden min-h-[1000px]">
+            {/* Advanced Elliptical Orbit Styles */}
+            <style>{`
+                @keyframes orbitX {
+                    0% { transform: translateX(calc(var(--rx) * -1)); }
+                    25% { transform: translateX(0); }
+                    50% { transform: translateX(var(--rx)); }
+                    75% { transform: translateX(0); }
+                    100% { transform: translateX(calc(var(--rx) * -1)); }
+                }
+                @keyframes orbitY {
+                    0% { transform: translateY(0); z-index: 40; }
+                    25% { transform: translateY(calc(var(--ry) * -1)); }
+                    50% { transform: translateY(0); z-index: 5; }
+                    75% { transform: translateY(var(--ry)); }
+                    100% { transform: translateY(0); z-index: 40; }
+                }
+            `}</style>
 
-                <h2 className="max-w-[1440px] mx-auto text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm mb-6 relative inline-block px-4">
-                    NUESTROS CAZADORES DE BUGS
-                    {/* Decorator */}
-                    <span className="absolute -top-8 -right-12 text-6xl animate-bounce">🧘</span>
-                </h2>
+            <div className="absolute top-20 left-10 pointer-events-none opacity-20 hidden md:block">
+                <svg width="200" height="150" viewBox="0 0 200 150">
+                    <path d="M10,140 L40,140 M10,130 L50,130 M10,120 L30,120 M160,10 L190,10 M150,20 L190,20" stroke="black" strokeWidth="4" />
+                    <rect x="60" y="80" width="30" height="15" fill="none" stroke="black" strokeWidth="2" />
+                    <rect x="100" y="100" width="40" height="20" fill="none" stroke="black" strokeWidth="2" />
+                </svg>
+            </div>
 
-                <div className="max-w-2xl mx-auto mb-16 px-4">
-                    <p className="font-sans text-xl font-medium text-black">
-                        No arreglamos fallos técnicos.
-                        <br />
-                        Eliminamos procesos mal planteados, tareas innecesarias y herramientas que no se hablan entre sí.
+            <div className="w-full mx-auto text-center px-4">
+                <div className="mb-8 relative">
+                    <h2 className="text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm mb-4">
+                        NUESTROS CAZADORES DE BUGS
+                    </h2>
+                    <p className="max-w-2xl mx-auto font-sans text-xl font-medium text-gray-700 leading-tight">
+                        Creamos <span className="italic font-bold">automatizaciones</span>, <span className="italic font-bold">sistemas de IA</span> y <span className="italic font-bold">flujos de trabajo inteligentes</span> para que no solo funcionen, sino que vuelen. Implementación de ciclo completo — desde el concepto hasta la escala.
                     </p>
+                    <div className="absolute -top-12 right-1/4 text-6xl animate-bounce hidden md:block">🧘</div>
                 </div>
 
-                <div className="relative w-full h-[700px] md:h-[900px] flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-[500px] md:h-[650px] flex items-center justify-center -mt-8">
 
-                    {/* Central Character/Illustration */}
-                    <div className="relative z-0 w-full h-full flex items-center justify-center pointer-events-none">
+                    {/* The Guru / Character */}
+                    <div className="relative z-20 w-full max-w-4xl px-8">
                         <img
-                            src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1e576a54ab84d9991fc4e_%D0%B2%D1%96%D0%BA%D0%BD%D0%BE.png"
-                            alt="Central Scene"
-                            className="w-full max-w-4xl h-full object-contain drop-shadow-sketch-xl opacity-90"
+                            src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768305871/Gemini_Generated_Image_2adbc92adbc92adb-removebg-preview_myagw9.png"
+                            alt="IA Guru"
+                            className="w-full h-auto drop-shadow-sketch-xl animate-float scale-110 md:scale-125"
                         />
-                        {/* Shadow/Rug effect */}
-                        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-[60%] h-12 bg-black/5 blur-xl rounded-[50%] -z-10"></div>
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-black/5 blur-2xl rounded-full -z-10"></div>
                     </div>
 
-                    {/* Orbiting Steps as Sticky Notes/Cards */}
+                    {/* Orbiting Tech Icons */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        {/* Outer Orbit - React & ChatGPT */}
+                        <OrbitItem
+                            icon="https://cdn.worldvectorlogo.com/logos/react-2.svg"
+                            delay="0s"
+                            duration="20s"
+                            radiusX={480}
+                            radiusY={130}
+                        />
+                        <OrbitItem
+                            icon="https://cdn.worldvectorlogo.com/logos/openai-2.svg"
+                            delay="-10s"
+                            duration="20s"
+                            radiusX={480}
+                            radiusY={130}
+                        />
 
-                    {/* Step 1: Arriba Izquierda */}
-                    <div className="absolute top-[12%] left-[4%] md:left-[8%] animate-float-delayed z-20 max-w-[280px] md:max-w-[340px]">
-                        <div className="bg-blue-100 border-[3px] border-black p-6 md:p-8 shadow-sketch-lg rotate-[-3deg] transition-transform hover:rotate-0 hover:scale-110 cursor-default relative">
-                            <div className="absolute -top-5 -left-5 w-12 h-12 md:w-16 md:h-16 bg-blue-400 rounded-full border-[3px] border-black flex items-center justify-center font-display text-2xl md:text-3xl shadow-sm z-30">1</div>
-                            <h4 className="font-display text-2xl md:text-4xl mb-3 uppercase tracking-tighter leading-none">Diagnóstico 🔍</h4>
-                            <p className="font-sans text-base md:text-xl font-bold text-gray-800 leading-snug">Analizamos tus procesos actuales y encontramos los cuellos de botella.</p>
-                        </div>
+                        {/* Middle Orbit - JS & n8n (Custom) */}
+                        <OrbitItem
+                            icon="https://cdn.worldvectorlogo.com/logos/javascript-1.svg"
+                            delay="-5s"
+                            duration="15s"
+                            radiusX={340}
+                            radiusY={90}
+                        />
+                        <OrbitItem
+                            icon="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768305565/images-removebg-preview_aargkm.png"
+                            delay="-12.5s"
+                            duration="15s"
+                            radiusX={340}
+                            radiusY={90}
+                        />
+
+                        {/* Inner Orbit - Python & TS */}
+                        <OrbitItem
+                            icon="https://cdn.worldvectorlogo.com/logos/python-5.svg"
+                            delay="-3s"
+                            duration="12s"
+                            radiusX={220}
+                            radiusY={60}
+                        />
+                        <OrbitItem
+                            icon="https://cdn.worldvectorlogo.com/logos/typescript.svg"
+                            delay="-9s"
+                            duration="12s"
+                            radiusX={220}
+                            radiusY={60}
+                        />
+
+                        {/* Core Orbit - Gemini */}
+                        <OrbitItem
+                            icon="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768306040/gemini-color_mjzjzv.png"
+                            delay="-6s"
+                            duration="8s"
+                            radiusX={120}
+                            radiusY={30}
+                            bg="bg-gradient-to-br from-blue-50 to-purple-50"
+                        />
                     </div>
-
-                    {/* Step 2: Arriba Derecha */}
-                    <div className="absolute top-[18%] right-[4%] md:right-[8%] animate-float z-20 max-w-[280px] md:max-w-[340px]">
-                        <div className="bg-yellow-100 border-[3px] border-black p-6 md:p-8 shadow-sketch-lg rotate-[4deg] transition-transform hover:rotate-0 hover:scale-110 cursor-default relative">
-                            <div className="absolute -top-5 -right-5 w-12 h-12 md:w-16 md:h-16 bg-yellow-400 rounded-full border-[3px] border-black flex items-center justify-center font-display text-2xl md:text-3xl shadow-sm z-30">2</div>
-                            <h4 className="font-display text-2xl md:text-4xl mb-3 uppercase tracking-tighter leading-none">Estrategia 🧠</h4>
-                            <p className="font-sans text-base md:text-xl font-bold text-gray-800 leading-snug">Diseñamos un sistema personalizado que conecte tus herramientas.</p>
-                        </div>
-                    </div>
-
-                    {/* Step 3: Abajo Izquierda */}
-                    <div className="absolute bottom-[22%] left-[4%] md:left-[6%] animate-float z-20 max-w-[280px] md:max-w-[340px]">
-                        <div className="bg-green-100 border-[3px] border-black p-6 md:p-8 shadow-sketch-lg rotate-[3deg] transition-transform hover:rotate-0 hover:scale-110 cursor-default relative">
-                            <div className="absolute -top-5 -left-5 w-12 h-12 md:w-16 md:h-16 bg-green-400 rounded-full border-[3px] border-black flex items-center justify-center font-display text-2xl md:text-3xl shadow-sm z-30">3</div>
-                            <h4 className="font-display text-2xl md:text-4xl mb-3 uppercase tracking-tighter leading-none">Despliegue 🚀</h4>
-                            <p className="font-sans text-base md:text-xl font-bold text-gray-800 leading-snug">Implementamos la IA y las automatizaciones en tu día a día.</p>
-                        </div>
-                    </div>
-
-                    {/* Step 4: Abajo Derecha */}
-                    <div className="absolute bottom-[18%] right-[4%] md:right-[12%] animate-float-delayed z-20 max-w-[280px] md:max-w-[340px]">
-                        <div className="bg-purple-100 border-[3px] border-black p-6 md:p-8 shadow-sketch-lg rotate-[-4deg] transition-transform hover:rotate-0 hover:scale-110 cursor-default relative">
-                            <div className="absolute -top-5 -right-5 w-12 h-12 md:w-16 md:h-16 bg-purple-400 rounded-full border-[3px] border-black flex items-center justify-center font-display text-2xl md:text-3xl shadow-sm z-30">4</div>
-                            <h4 className="font-display text-2xl md:text-4xl mb-3 uppercase tracking-tighter leading-none">Zen & Escala 🧘</h4>
-                            <p className="font-sans text-base md:text-xl font-bold text-gray-800 leading-snug">Tú supervisas los resultados mientras el sistema trabaja solo.</p>
-                        </div>
-                    </div>
-
-                    {/* Connecting Dotted Lines (Simplified SVG) - Fuller Paths */}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none -z-10 text-black/10" stroke="currentColor" strokeWidth="3" strokeDasharray="10,12" fill="none">
-                        <path d="M20%,20% Q50%,15% 80%,25%" />
-                        <path d="M80%,25% Q85%,50% 80%,75%" />
-                        <path d="M80%,75% Q50%,85% 20%,70%" />
-                        <path d="M20%,70% Q15%,45% 20%,20%" />
-                    </svg>
-
                 </div>
 
+                {/* Mobile Fallback */}
+                <div className="grid grid-cols-1 md:hidden gap-6 mt-12 pb-12">
+                    {[
+                        { step: 1, title: "Diagnóstico", desc: "Encontramos los cuellos de botella.", color: "bg-blue-100" },
+                        { step: 2, title: "Estrategia", desc: "Diseñamos el sistema ideal.", color: "bg-yellow-100" },
+                        { step: 3, title: "Despliegue", desc: "IA lista en tu día a día.", color: "bg-green-100" }
+                    ].map(s => (
+                        <div key={s.step} className={`${s.color} border-2 border-black p-6 shadow-sketch text-left relative`}>
+                            <div className="absolute -top-3 -left-3 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center font-display">{s.step}</div>
+                            <h4 className="font-display text-xl uppercase mb-1">{s.title}</h4>
+                            <p className="font-sans font-bold text-gray-700 text-sm">{s.desc}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );

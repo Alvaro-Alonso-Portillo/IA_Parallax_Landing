@@ -1,32 +1,67 @@
 import React from 'react';
 
-const ShowcaseCard: React.FC<{ title: string; subtitle: string; image: string; color: string; rotate: string }> = ({ title, subtitle, image, color, rotate }) => (
-  <div className={`relative bg-white border-4 border-black rounded-sketch p-4 shadow-sketch-xl mb-12 transform ${rotate} hover:rotate-0 transition-transform duration-300`}>
-    {/* Window Frame Header */}
-    <div className="h-12 border-b-4 border-black mb-4 flex items-center px-4 gap-2 bg-gray-100 rounded-t-[2rem]">
-      <div className="w-4 h-4 rounded-full border-2 border-black bg-red-400"></div>
-      <div className="w-4 h-4 rounded-full border-2 border-black bg-yellow-400"></div>
-      <div className="w-4 h-4 rounded-full border-2 border-black bg-green-400"></div>
-    </div>
+const ShowcaseCard: React.FC<{ title: string; subtitle: string; image: string; color: string; rotate: string }> = ({ title, subtitle, image, color, rotate }) => {
+  const [isExpanded, setIsExpanded] = React.useState(false);
 
-    {/* Image Content */}
-    <div className="relative aspect-square border-4 border-black rounded-xl overflow-hidden mb-4 bg-gray-50">
-      <img src={image} alt={title} className="w-full h-full object-cover" />
+  return (
+    <div className={`relative bg-white border-4 border-black rounded-sketch p-4 shadow-sketch-xl mb-12 transform ${rotate} hover:rotate-0 transition-all duration-500 flex flex-col group/card`}>
 
-      {/* Shine effect */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/20 to-transparent pointer-events-none"></div>
-    </div>
+      {/* Window Frame Header */}
+      <div className="h-12 border-b-4 border-black mb-4 flex items-center px-4 gap-2 bg-gray-100 rounded-t-[2rem]">
+        <div className="w-4 h-4 rounded-full border-2 border-black bg-red-400"></div>
+        <div className="w-4 h-4 rounded-full border-2 border-black bg-yellow-400"></div>
+        <div className="w-4 h-4 rounded-full border-2 border-black bg-green-400"></div>
+      </div>
 
-    {/* Footer Text */}
-    <div className="text-left">
-      <h3 className="text-3xl font-display uppercase">{title}</h3>
-      <p className="font-sans font-bold text-gray-500">{subtitle}</p>
-      <button className={`mt-4 w-full py-3 border-2 border-black rounded-full font-bold uppercase hover:bg-black hover:text-white transition-colors ${color}`}>
-        VER MÁS
-      </button>
+      <div className="relative overflow-hidden p-2">
+        {/* Main Image Container */}
+        <div className={`relative aspect-square border-4 border-black rounded-xl overflow-hidden mb-4 bg-gray-50 transition-transform duration-500 ${isExpanded ? '-translate-y-4 scale-95' : 'scale-100'}`}>
+          <img src={image} alt={title} className={`w-full h-full object-cover transition-all duration-500 ${isExpanded ? 'grayscale opacity-30 shadow-inner' : 'grayscale-0'}`} />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/10 to-transparent pointer-events-none"></div>
+
+          {/* Internal Stamp Effect */}
+          <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-red-500 text-red-500 font-display text-4xl p-4 rotate-[-15deg] uppercase transition-all duration-300 pointer-events-none ${isExpanded ? 'opacity-80 scale-100' : 'opacity-0 scale-150'}`}>
+            Auditado
+          </div>
+        </div>
+
+        {/* The "Post-it" Details Layer */}
+        <div className={`absolute inset-x-4 top-[10%] bottom-[35%] bg-brand-yellow border-4 border-black p-6 shadow-sketch-lg transition-all duration-500 rotate-2 flex flex-col justify-center ${isExpanded ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+          <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-4xl">📌</div>
+          <h4 className="font-display text-xl mb-4 border-b-2 border-black/20 pb-2 uppercase italic">Blueprint Detallado</h4>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-2 font-sans font-bold text-sm leading-tight text-gray-900">
+              <span className="text-brand-orange mt-1">▶</span> {title.includes('WhatsApp') ? 'Filtro inteligente de audio y texto' : 'Orquestación n8n en tiempo real'}
+            </li>
+            <li className="flex items-start gap-2 font-sans font-bold text-sm leading-tight text-gray-900">
+              <span className="text-brand-orange mt-1">▶</span> Conexión directa con tu CRM actual
+            </li>
+            <li className="flex items-start gap-2 font-sans font-bold text-sm leading-tight text-gray-900">
+              <span className="text-brand-orange mt-1">▶</span> Lógica interna GPT-4o personalizada
+            </li>
+          </ul>
+        </div>
+
+        {/* Original Text */}
+        <div className={`transition-all duration-500 ${isExpanded ? 'opacity-20 blur-[1px]' : 'opacity-100'}`}>
+          <h3 className="text-3xl font-display uppercase leading-tight mb-2">{title}</h3>
+          <p className="font-sans font-bold text-gray-500 leading-tight">{subtitle}</p>
+        </div>
+
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className={`mt-6 w-full py-4 border-b-4 border-x-2 border-black rounded-lg font-display text-xl uppercase transition-all relative overflow-hidden group/btn
+            ${isExpanded ? 'bg-black text-white' : color + ' hover:-translate-y-1 shadow-sketch hover:shadow-sketch-lg active:translate-y-1 active:shadow-none'}`}
+        >
+          <span className="relative z-10">{isExpanded ? 'CERRAR' : 'VER MÁS'}</span>
+          {!isExpanded && (
+            <div className="absolute inset-0 bg-white/40 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300"></div>
+          )}
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export const Pricing: React.FC = () => {
   return (

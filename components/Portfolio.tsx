@@ -60,25 +60,25 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
       <div className="absolute bottom-10 right-10 text-9xl text-gray-100 select-none pointer-events-none font-accent opacity-50">!</div>
 
       <div className="max-w-[1440px] mx-auto px-4 md:px-8">
-        <div className="mb-24 text-center relative group">
-          <h2 className="text-5xl md:text-8xl font-display uppercase leading-[0.9] relative z-10 text-brand-dark drop-shadow-sketch-sm">
+        <div className="mb-16 md:mb-24 text-center relative group">
+          <h2 className="text-4xl md:text-8xl font-display uppercase leading-[1.1] md:leading-[0.9] relative z-10 text-brand-dark drop-shadow-sketch-sm">
             CREAMOS SISTEMAS. <br />
-            <span className="bg-brand-yellow px-2 border-2 border-black transform -rotate-1 inline-block text-black">SISTEMAS INTELIGENTES.</span>
+            <span className="bg-brand-yellow px-2 border-2 border-black transform -rotate-1 inline-block text-black mt-2">SISTEMAS INTELIGENTES.</span>
           </h2>
-          <p className="mt-6 font-sans text-xl font-medium text-gray-600 relative z-10">
+          <p className="mt-6 font-sans text-lg md:text-xl font-medium text-gray-600 relative z-10">
             Automatización real, resultados reales. Confía en los datos.
           </p>
           {/* Sketchy underline or arrow */}
-          <svg className="absolute top-full left-1/2 -translate-x-1/2 w-48 h-12 text-black mt-8" viewBox="0 0 100 20" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg className="absolute top-full left-1/2 -translate-x-1/2 w-32 md:w-48 h-12 text-black mt-4 md:mt-8" viewBox="0 0 100 20" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M0,10 Q50,20 100,10" />
             <path d="M90,5 L100,10 L90,15" />
           </svg>
         </div>
 
         {/* Gallery Wall Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto px-8 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto px-4 md:px-8 relative">
 
-          {/* Connecting Lines (Decorative SVG behind) */}
+          {/* Connecting Lines (Decorative SVG behind) - Hidden on smaller screens */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block -z-10 text-black opacity-20" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5">
             <path d="M200,100 C300,100 400,200 500,100" fill="none" />
             <path d="M500,100 C600,0 700,100 800,200" fill="none" />
@@ -86,8 +86,8 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
 
           <PortfolioItem
             id="snork-meme"
-            title="Snork Meme"
-            description="Automatizamos tareas repetitivas que hoy haces a mano sin darte cuenta."
+            title="Agente Social IA"
+            description="Gestión autónoma de comunidades y redes sociales asistida por agentes inteligentes."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1b90511ce48cd4d3b_snork.avif"
             stickerColor="bg-brand-blue"
             rotation="rotate-2"
@@ -97,8 +97,8 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
           />
           <PortfolioItem
             id="notdog"
-            title="NotDog"
-            description="Procesos desordenados pasan a funcionar de forma clara y automática."
+            title="Sales Flow Smart"
+            description="Embudo de ventas automatizado con calificación de leads vía WhatsApp en tiempo real."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f0540b33d5d141c396_notdog.avif"
             stickerColor="bg-brand-orange"
             rotation="-rotate-1"
@@ -108,8 +108,8 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
           />
           <PortfolioItem
             id="keycat"
-            title="Keycat"
-            description="Respuestas, mensajes y acciones que se ejecutan solas cuando toca."
+            title="Deep Sync Master"
+            description="Lógica de negocio invisible que conecta herramientas dispares de forma equilibrada."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1540b33d5d141c464_keycat.avif"
             stickerColor="bg-brand-yellow"
             rotation="rotate-3"
@@ -119,8 +119,8 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
           />
           <PortfolioItem
             id="qubicus"
-            title="Qubicus"
-            description="Optimización de flujos de trabajo internos para agencias creativas."
+            title="Operation Core IA"
+            description="Sistema operativo inteligente para la gestión de recursos y archivos de agencias."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1e576a54ab84d9991fc4e_%D0%B2%D1%96%D0%BA%D0%BD%D0%BE.png"
             stickerColor="bg-red-300"
             rotation="-rotate-2"
