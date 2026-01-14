@@ -1,13 +1,10 @@
-'use client';
-
 import React from 'react';
-import Link from 'next/link';
 
 export default function NotFound() {
     return (
         <main className="min-h-screen bg-[#FDFCF0] flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden relative">
             {/* Glitch Animation Styles */}
-            <style jsx>{`
+            <style>{`
         @keyframes glitch {
           0% { transform: translate(0); }
           20% { transform: translate(-2px, 2px); }
@@ -46,16 +43,16 @@ export default function NotFound() {
                     </h2>
                 </div>
 
-                {/* Illustration Container */}
+                {/* Illustration Container - Final Robot Image from Cloudinary */}
                 <div className="mb-10 w-full max-w-sm aspect-square bg-white border-4 border-black neo-shadow relative overflow-hidden flex items-center justify-center p-4 -rotate-1">
                     <img
-                        src="/confused_robot_404.png"
-                        alt="Robot confundido"
+                        src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768389802/Gemini_Generated_Image_tczs7ctczs7ctczs_scfcru.png"
+                        alt="Robot confundido IA"
                         className="w-full h-full object-contain"
                     />
                     {/* Action markers */}
                     <div className="absolute top-2 left-2 font-mono text-[10px] opacity-30">ERROR_LOG_V8.2</div>
-                    <div className="absolute bottom-2 right-2 font-mono text-[10px] opacity-30">CONFUSED_BOT_#99</div>
+                    <div className="absolute bottom-2 right-2 font-mono text-[10px] opacity-30">CONFUSED_BOT_FINAL_#99</div>
                 </div>
 
                 {/* Subtext */}
@@ -65,12 +62,13 @@ export default function NotFound() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col md:flex-row gap-6 w-full px-4">
-                    <Link
+                    <a
                         href="/"
+                        onClick={(e) => { e.preventDefault(); window.location.hash = ''; }}
                         className="flex-1 bg-black text-white border-4 border-black py-5 px-8 font-black text-xl uppercase tracking-tighter neo-shadow neo-shadow-hover transition-all text-center"
                     >
                         VOLVER A LA SEGURIDAD (INICIO)
-                    </Link>
+                    </a>
 
                     <button
                         className="flex-1 bg-white text-black border-4 border-black py-5 px-8 font-black text-xl uppercase tracking-tighter neo-shadow neo-shadow-hover transition-all text-center"
