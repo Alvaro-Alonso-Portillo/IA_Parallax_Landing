@@ -68,15 +68,42 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
 
       </div>
 
-      {/* Main Hero Scene - FULL WIDTH and FRAMELESS */}
-      <div className="mt-8 md:mt-4 relative w-full z-20 overflow-hidden">
-        <div className="w-full h-full">
+      {/* Main Hero Scene - ADJUSTED FOR MOBILE ADAPTATION */}
+      <div className="mt-8 md:mt-4 relative w-full z-20 overflow-hidden bg-[#f0f0f0] border-y-2 md:border-y-0 border-black">
+        {/* Mobile: Double View (Stacked) or Contain */}
+        <div className="md:hidden flex flex-col border-b-2 border-black">
+          {/* Top part of scene (Chaos) */}
+          <div className="relative aspect-video overflow-hidden border-b-4 border-black">
+            <video
+              autoPlay loop muted playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              poster="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cae6243a1c4e9ed492fe67_Group%201413376292.avif"
+            >
+              <source src="https://dl.dropbox.com/s/3bye82qxpc4mh5jlygi5a/Main_screen.mp4?rlkey=556fjirf5j85ax4biworxnc3b&st=bru1tcy6&dl=0" type="video/mp4" />
+            </video>
+            <div className="absolute top-4 left-4 bg-brand-blue text-white px-3 py-1 font-display text-sm border-2 border-black shadow-sketch rotate-[-2deg]">EL CAOS</div>
+          </div>
+          {/* Bottom part of scene (Growth) - Refocused if needed, here we use object-contain for clarity */}
+          <div className="relative aspect-video overflow-hidden">
+            <video
+              autoPlay loop muted playsInline
+              className="absolute inset-0 w-full h-full object-cover translate-y-[-20%]"
+              poster="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cae6243a1c4e9ed492fe67_Group%201413376292.avif"
+            >
+              <source src="https://dl.dropbox.com/s/3bye82qxpc4mh5jlygi5a/Main_screen.mp4?rlkey=556fjirf5j85ax4biworxnc3b&st=bru1tcy6&dl=0" type="video/mp4" />
+            </video>
+            <div className="absolute bottom-4 right-4 bg-brand-orange text-white px-3 py-1 font-display text-sm border-2 border-black shadow-sketch rotate-[2deg]">TU CRECIMIENTO</div>
+          </div>
+        </div>
+
+        {/* Desktop: Original Wide View */}
+        <div className="hidden md:block w-full h-full">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-auto min-h-[400px] object-cover md:object-contain scale-110 md:scale-100"
+            className="w-full h-auto min-h-[400px] object-contain"
             poster="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cae6243a1c4e9ed492fe67_Group%201413376292.avif"
             aria-label="Ilustración de equipo saturado gestionando el caos manual en una agencia"
           >
@@ -84,6 +111,7 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
           </video>
         </div>
       </div>
+
 
       {/* Clouds / Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">

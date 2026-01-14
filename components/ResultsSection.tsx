@@ -66,31 +66,32 @@ export const ResultsSection: React.FC = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle,black_2px,transparent_0)] [background-size:40px_40px]"></div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
-                <div className="mb-20 text-center">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 overflow-hidden">
+                <div className="mb-10 md:mb-20 text-center">
                     <div className="inline-block relative">
-                        <h2 className="text-6xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm">
-                            Resultados <span className="text-brand-yellow px-2 bg-black inline-block transform -rotate-1">Reales</span>
+                        <h2 className="text-4xl sm:text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm leading-[1.1] md:leading-normal">
+                            Resultados <br className="md:hidden" />
+                            <span className="text-brand-yellow px-2 bg-black inline-block transform -rotate-1 text-white mt-2 md:mt-0">Reales</span>
                         </h2>
-                        <svg className="absolute -bottom-6 left-0 w-full" height="15" viewBox="0 0 400 15" fill="none">
+                        <svg className="absolute -bottom-4 md:-bottom-6 left-0 w-full" height="15" viewBox="0 0 400 15" fill="none">
                             <path d="M5 10C50 2 150 12 200 8C250 4 350 14 395 6" stroke="#ffd900" strokeWidth="8" strokeLinecap="round" />
                         </svg>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 py-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-20 sm:gap-16 md:gap-12 py-8">
                     <ResultCard
                         label="Agencia de Marketing"
                         value="15h"
                         description="Ahorro semanal en cualificación de leads mediante IA."
-                        rotation="-rotate-3"
+                        rotation="-rotate-2 md:-rotate-3"
                         tapeColor="bg-brand-yellow"
                     />
                     <ResultCard
                         label="E-commerce"
                         value="24/7"
                         description="Soporte al cliente sin contratar personal extra."
-                        rotation="rotate-2"
+                        rotation="rotate-1 md:rotate-2"
                         tapeColor="bg-black"
                     />
                     <ResultCard
@@ -102,18 +103,19 @@ export const ResultsSection: React.FC = () => {
                     />
                 </div>
 
-                <div className="mt-24 text-center">
-                    <div className="inline-block relative group">
-                        <div className="absolute inset-0 bg-brand-yellow transform rotate-2 translate-x-1 translate-y-1 group-hover:rotate-0 transition-transform"></div>
+                <div className="mt-16 md:mt-24 text-center">
+                    <div className="inline-block relative group px-4 w-full md:w-auto">
+                        <div className="absolute inset-0 bg-brand-yellow transform rotate-2 translate-x-1 translate-y-1 group-hover:rotate-0 transition-transform hidden md:block"></div>
                         <button
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="relative bg-black text-white font-display text-2xl md:text-3xl px-12 py-6 border-2 border-black group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform uppercase"
+                            className="w-full md:w-auto relative bg-black text-white font-display text-xl md:text-3xl px-8 md:px-12 py-5 md:py-6 border-2 border-black group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform uppercase shadow-sketch md:shadow-none"
                         >
-                            QUIERO RESULTADOS ASÍ 🔥
+                            ¿QUIERES RESULTADOS? 🔥
                         </button>
                     </div>
                 </div>
             </div>
+
         </section>
     );
 };
