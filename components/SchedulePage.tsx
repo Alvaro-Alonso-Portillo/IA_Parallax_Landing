@@ -7,7 +7,7 @@ export const SchedulePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         window.scrollTo(0, 0);
     }, []);
 
-    const calendlyUrl = 'https://calendly.com/iaparallax/30min';
+    const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/iaparallax/30min';
 
     return (
         <div className="min-h-screen bg-black relative">

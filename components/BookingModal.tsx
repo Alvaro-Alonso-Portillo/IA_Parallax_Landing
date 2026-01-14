@@ -10,7 +10,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
     if (!isOpen) return null;
 
     // Hardcoding for maximum stability
-    const calendlyUrl = 'https://calendly.com/iaparallax/30min';
+    const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/iaparallax/30min';
 
     return (
         <div className="fixed inset-0 z-[10001] flex items-center justify-center p-2 md:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300">
