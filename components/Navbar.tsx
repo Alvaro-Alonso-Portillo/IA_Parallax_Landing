@@ -66,23 +66,62 @@ export const Navbar: React.FC = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden flex flex-col gap-1.5 p-2 z-50 rounded-md border border-black bg-white"
+          className="lg:hidden flex flex-col gap-1.5 p-3 z-50 rounded-md border-2 border-black bg-white shadow-sketch active:shadow-none active:translate-x-0.5 active:translate-y-0.5 transition-all"
         >
-          <span className={`block w-6 h-0.5 bg-black transition-transform ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-black transition-opacity ${isOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-black transition-transform ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-black transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white border-b-2 border-black p-6 flex flex-col gap-6 lg:hidden shadow-sketch z-40">
-          <a href="#about-us" className="text-2xl font-display uppercase hover:text-brand-blue">Nosotros</a>
-          <a href="#portfolio" className="text-2xl font-display uppercase hover:text-brand-blue">Portafolio</a>
-          <a href="#development" className="text-2xl font-display uppercase hover:text-brand-blue">Desarrollo</a>
-          <a href="#contact" className="text-2xl font-display uppercase hover:text-brand-blue">Contacto</a>
+      {/* Mobile Menu Overlay */}
+      <div className={`fixed inset-0 bg-white z-40 lg:hidden transition-all duration-500 ease-in-out ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
+        <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
+          <a
+            href="#about-us"
+            onClick={() => setIsOpen(false)}
+            className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
+          >
+            Nosotros
+          </a>
+          <a
+            href="#portfolio"
+            onClick={() => setIsOpen(false)}
+            className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
+          >
+            Portafolio
+          </a>
+          <a
+            href="#/development"
+            onClick={() => setIsOpen(false)}
+            className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
+          >
+            Desarrollo
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
+          >
+            Contacto
+          </a>
+          <a
+            href="#/templates"
+            onClick={() => setIsOpen(false)}
+            className="text-4xl font-display uppercase hover:text-brand-yellow transform hover:scale-110 transition-transform bg-black text-white px-6 py-2 border-2 border-black"
+          >
+            Plantillas
+          </a>
+
+          {/* Mobile Socials */}
+          <div className="flex items-center gap-6 mt-8">
+            <GlossySocialIcon type="linkedin" href="https://www.linkedin.com/in/alvaro-alonso-8319b52ba/" />
+            <GlossySocialIcon type="x" href="https://x.com/iaparallax" />
+            <GlossySocialIcon type="instagram" href="https://www.instagram.com/iaparallax/" />
+          </div>
         </div>
-      )}
+      </div>
     </nav>
+
   );
 };
