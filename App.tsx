@@ -8,12 +8,15 @@ import { Pricing } from './components/Pricing';
 import { RayBusters } from './components/RayBusters';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { FloatingContact } from './components/FloatingContact';
+import { LeadMagnetChat } from './components/LeadMagnetChat';
 import { ProjectDetail } from './components/ProjectDetail';
 import { Templates } from './components/Templates';
 import { Capabilities } from './components/Capabilities';
+import { SchedulePage } from './components/SchedulePage';
 import { Development } from './components/Development';
 import { LegalPages } from './components/LegalPages';
+import { ResultsSection } from './components/ResultsSection';
+import { BookingModal } from './components/BookingModal';
 import { projectsData } from './projectsData';
 
 function App() {
@@ -21,7 +24,9 @@ function App() {
   const [showingTemplates, setShowingTemplates] = useState(false);
   const [showingCapabilities, setShowingCapabilities] = useState(false);
   const [showingDevelopment, setShowingDevelopment] = useState(false);
+  const [showingSchedule, setShowingSchedule] = useState(false);
   const [activeLegal, setActiveLegal] = useState<'aviso' | 'privacidad' | 'cookies' | null>(null);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   // Handle back navigation
   const handleBack = () => {
@@ -29,6 +34,7 @@ function App() {
     setShowingTemplates(false);
     setShowingCapabilities(false);
     setShowingDevelopment(false);
+    setShowingSchedule(false);
     setActiveLegal(null);
     window.location.hash = '';
   };
@@ -52,6 +58,14 @@ function App() {
         setActiveProjectId(null);
       } else if (hash === '#/development') {
         setShowingDevelopment(true);
+        setShowingCapabilities(false);
+        setShowingTemplates(false);
+        setShowingSchedule(false);
+        setActiveLegal(null);
+        setActiveProjectId(null);
+      } else if (hash === '#/agendar') {
+        setShowingSchedule(true);
+        setShowingDevelopment(false);
         setShowingCapabilities(false);
         setShowingTemplates(false);
         setActiveLegal(null);
@@ -110,23 +124,27 @@ function App() {
         <Capabilities onBack={handleBack} />
       ) : showingDevelopment ? (
         <Development onBack={handleBack} />
+      ) : showingSchedule ? (
+        <SchedulePage onBack={handleBack} />
       ) : activeLegal ? (
         <LegalPages type={activeLegal} onBack={handleBack} />
       ) : activeProject ? (
         <ProjectDetail project={activeProject} onBack={handleBack} />
       ) : (
         <main className="relative">
-          <Hero />
+          <Hero onBookingClick={() => setIsBookingOpen(true)} />
           <TechStack />
           <About />
           <Portfolio onProjectClick={(id) => window.location.hash = `#/project/${id}`} />
-          <Pricing />
+          <ResultsSection />
+          <Pricing onBookingClick={() => setIsBookingOpen(true)} />
           <RayBusters />
         </main>
       )}
 
       <Footer />
-      <FloatingContact />
+      <LeadMagnetChat />
+      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </div>
   );
 }

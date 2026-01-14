@@ -288,9 +288,30 @@ export const LegalPages: React.FC<LegalPagesProps> = ({ type, onBack }) => {
                         </div>
                     ))}
 
-                    <div className="mt-8 p-6 bg-brand-gray/30 border-2 border-dashed border-black/20 rounded-lg text-center font-sans font-bold italic text-gray-500">
+                    <div className="mt-8 p-6 bg-brand-gray/30 border-2 border-dashed border-black/20 rounded-lg text-center font-sans font-bold italic text-gray-500 relative">
                         Última actualización: Enero 2026. <br />
                         Porque el cumplimiento también puede tener estilo.
+
+                        {/* Rubber Stamp Sello */}
+                        <div className="absolute -bottom-10 -right-6 md:-right-10 pointer-events-none transform -rotate-12 z-30 select-none">
+                            <div className="relative group">
+                                <div className="border-8 border-red-600/80 px-4 py-2 rounded-xl flex flex-col items-center justify-center mix-blend-multiply">
+                                    <span className="text-red-600/90 font-display text-2xl md:text-3xl uppercase tracking-tighter leading-none">
+                                        ABURRIDO
+                                    </span>
+                                    <span className="text-red-700/80 font-display text-xl md:text-2xl uppercase tracking-widest leading-none mt-1">
+                                        PERO LEGAL
+                                    </span>
+
+                                    {/* Grungy Texture Overlay */}
+                                    <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] mix-blend-screen overflow-hidden rounded-xl"></div>
+
+                                    {/* Inner extra border for that stamp look */}
+                                    <div className="absolute inset-1 border-2 border-red-600/40 rounded-lg"></div>
+                                </div>
+                                <div className="mt-1 text-[10px] text-red-800/40 font-black text-center uppercase tracking-[0.2em]">Verified by IA_Parallax</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

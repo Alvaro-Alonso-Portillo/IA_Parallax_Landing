@@ -7,14 +7,14 @@ export const About: React.FC = () => {
 
 
         <div className="mb-24 text-center relative">
-          <div className="text-5xl md:text-7xl font-display uppercase text-brand-dark drop-shadow-sketch-sm flex flex-col gap-4 items-center">
-            <div>
+          <h2 className="text-5xl md:text-7xl font-display uppercase text-brand-dark drop-shadow-sketch-sm flex flex-col gap-4 items-center">
+            <span className="block">
               ¿Quiénes <span className="text-brand-yellow px-3 py-2 bg-black inline-block transform -rotate-1 mx-2">somos?</span>
-            </div>
-            <div>Esa es una buena</div>
-            <div>pregunta...</div>
-          </div>
-          <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cea55f56d0672e6cea6217_Group%201413376246.svg" className="absolute -top-10 right-[10%] w-24 animate-wiggle" alt="Eyes" />
+            </span>
+            <span className="block">Esa es una buena</span>
+            <span className="block">pregunta...</span>
+          </h2>
+          <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cea55f56d0672e6cea6217_Group%201413376246.svg" className="absolute -top-10 right-[10%] w-24 animate-wiggle" alt="Ojos observando procesos manuales en agencia" />
         </div>
 
         {/* Conversation Thread Layout */}
@@ -36,7 +36,7 @@ export const About: React.FC = () => {
             <div className="w-full md:w-1/2 relative order-2 md:order-2">
               <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto animate-float">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-32 bg-black hidden md:block"></div>
-                <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d8589fe8dc80cbd5e9e377_Group%201413376294%20(1).svg" className="w-full h-full object-contain relative z-10 md:top-12" alt="Character" />
+                <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d8589fe8dc80cbd5e9e377_Group%201413376294%20(1).svg" className="w-full h-full object-contain relative z-10 md:top-12" alt="Experto en IA diseñando soluciones para agencias" />
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ export const About: React.FC = () => {
             </div>
             <div className="w-full md:w-1/2 flex justify-center order-2 md:order-2">
               <div className="w-32 h-32 md:w-40 md:h-40 border-2 border-black rounded-full overflow-hidden shadow-sketch bg-brand-blue/20">
-                <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cea55cc5bf50c239de3837_Group%208.avif" className="w-full h-full object-cover" alt="Character" />
+                <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cea55cc5bf50c239de3837_Group%208.avif" className="w-full h-full object-cover" alt="Ilustración de personaje analizando flujos de trabajo con IA" />
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ export const About: React.FC = () => {
             <div className="w-full md:w-1/2 flex justify-center order-2 md:order-2">
               <div className="w-40 h-56 md:w-48 md:h-64 border-2 border-black bg-white p-2 shadow-sketch transform rotate-2">
                 <div className="w-full h-full border border-black bg-gray-100 flex items-center justify-center overflow-hidden">
-                  <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cea55cd116d2752357d464_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80.avif" className="w-full h-full object-cover" alt="Portrait" />
+                  <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cea55cd116d2752357d464_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80.avif" className="w-full h-full object-cover" alt="Retrato de experto en automatización IA" />
                 </div>
                 <div className="text-center mt-2 font-display text-xs md:text-sm">EL JEFE</div>
               </div>

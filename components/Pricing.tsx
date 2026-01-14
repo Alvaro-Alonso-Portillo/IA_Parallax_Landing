@@ -30,13 +30,13 @@ const ShowcaseCard: React.FC<{ title: string; subtitle: string; image: string; c
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-4xl">📌</div>
           <h4 className="font-display text-xl mb-4 border-b-2 border-black/20 pb-2 uppercase italic">Blueprint Detallado</h4>
           <ul className="space-y-3">
-            <li className="flex items-start gap-2 font-sans font-bold text-sm leading-tight text-gray-900">
+            <li className="flex items-start gap-2 font-sans font-bold text-base leading-tight text-gray-900">
               <span className="text-brand-orange mt-1">▶</span> {title.includes('WhatsApp') ? 'Filtro inteligente de audio y texto' : 'Orquestación n8n en tiempo real'}
             </li>
-            <li className="flex items-start gap-2 font-sans font-bold text-sm leading-tight text-gray-900">
+            <li className="flex items-start gap-2 font-sans font-bold text-base leading-tight text-gray-900">
               <span className="text-brand-orange mt-1">▶</span> Conexión directa con tu CRM actual
             </li>
-            <li className="flex items-start gap-2 font-sans font-bold text-sm leading-tight text-gray-900">
+            <li className="flex items-start gap-2 font-sans font-bold text-base leading-tight text-gray-900">
               <span className="text-brand-orange mt-1">▶</span> Lógica interna GPT-4o personalizada
             </li>
           </ul>
@@ -63,7 +63,7 @@ const ShowcaseCard: React.FC<{ title: string; subtitle: string; image: string; c
   );
 };
 
-export const Pricing: React.FC = () => {
+export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) => {
   return (
     <section id="services" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8">
@@ -129,6 +129,21 @@ export const Pricing: React.FC = () => {
             rotate="rotate-2"
           />
 
+        </div>
+
+        {/* Final CTA for Booking */}
+        <div className="mt-20 text-center relative z-20">
+          <div className="inline-block relative group">
+            <div className="absolute inset-0 bg-brand-yellow rounded-full transform translate-x-3 translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
+            <a
+              href="#/agendar"
+              className="relative inline-flex bg-white text-black px-12 py-6 text-2xl font-display uppercase border-4 border-black hover:-translate-y-1 transition-all rounded-full shadow-sketch items-center gap-4"
+            >
+              <span>📅</span>
+              AGENDAR AUDITORÍA IA GRATUITA
+            </a>
+          </div>
+          <p className="mt-6 font-comic text-xl text-gray-500 italic">Solo 4 huecos disponibles esta semana.</p>
         </div>
 
       </div>

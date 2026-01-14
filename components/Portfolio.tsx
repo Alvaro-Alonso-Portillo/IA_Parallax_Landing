@@ -132,7 +132,7 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
 
         {/* Extra text or decorators */}
         <div className="mt-20 text-center">
-          <p className="font-comic text-xl">Y muchas tonterías más...</p>
+          <p className="font-comic text-xl">Y muchas otras locuras que te ahorran dinero...</p>
         </div>
       </div>
     </section>

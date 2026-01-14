@@ -83,7 +83,7 @@ export const RayBusters: React.FC = () => {
                     <div className="relative z-20 w-full max-w-4xl px-8">
                         <img
                             src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768305871/Gemini_Generated_Image_2adbc92adbc92adb-removebg-preview_myagw9.png"
-                            alt="IA Guru"
+                            alt="Ilustración de experto en automatización e IA estilo dibujo animado gestionando sistemas para agencias"
                             className="w-full h-auto drop-shadow-sketch-xl animate-float scale-110 md:scale-125"
                         />
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-black/5 blur-2xl rounded-full -z-10"></div>

@@ -1,51 +1,22 @@
 import React from 'react';
+import { CallbackForm } from './CallbackForm';
 
 export const Footer: React.FC = () => {
   return (
     <footer id="contact" className="component_footer bg-[#f9f9f9] border-t-2 border-black relative font-sans">
       <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row relative">
 
-        {/* Column - Contact Form (40% desktop, 100% mobile) - ORDER 1 ON MOBILE */}
+        {/* Column - Contact Info & Quick Call (40% desktop, 100% mobile) - ORDER 1 ON MOBILE */}
         <div className="w-full lg:w-[40%] bg-white border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 md:p-16 flex flex-col justify-center relative order-1">
           <div className="max-w-xl mx-auto w-full">
             <h3 className="text-4xl md:text-5xl font-display mb-8 text-black text-center lg:text-left">
-              Hey amigo! <br /> Trabaja con nosotros
+              Entrenamos a tu <br /> IA para ser fuerte
             </h3>
-            {/* Form content remains the same... */}
-            <form className="flex flex-col gap-6 form_block_footer">
-              <div className="flex flex-col gap-2">
-                <label className="font-bold text-sm uppercase">Elige tu poder!</label>
-                <select className="w-full p-3 bg-white border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-all appearance-none cursor-pointer">
-                  <option>Básico</option>
-                  <option>Estándar</option>
-                  <option>Premium</option>
-                </select>
-              </div>
 
-              <div className="flex flex-col gap-2">
-                <label className="font-bold text-sm uppercase">¡Oye! ¿Eres alcista o bajista?</label>
-                <input type="text" className="w-full p-3 bg-white border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-all" />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="font-bold text-sm uppercase">Correo electrónico</label>
-                <input type="email" className="w-full p-3 bg-white border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-all" />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="font-bold text-sm uppercase">Teléfono</label>
-                <input type="text" className="w-full p-3 bg-white border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-all" />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="font-bold text-sm uppercase">¿Algún comentario que debamos conocer?</label>
-                <textarea rows={3} className="w-full p-3 bg-white border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-all resize-none"></textarea>
-              </div>
-
-              <button className="w-full bg-black text-white border-2 border-black p-4 rounded-lg font-bold uppercase hover:bg-white hover:text-black transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none translate-x-0 hover:translate-x-[2px] hover:translate-y-[2px]">
-                Enviar
-              </button>
-            </form>
+            {/* High-conversion Callback Component - Now the primary lead generator */}
+            <div className="mb-4 transform -rotate-1 hover:rotate-0 transition-transform">
+              <CallbackForm />
+            </div>
           </div>
         </div>
 
@@ -70,7 +41,7 @@ export const Footer: React.FC = () => {
               {/* Group Image */}
               <img
                 src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768301909/Gemini_Generated_Image_t686fet686fet686-removebg-preview_ij8oco.png"
-                alt="Social Characters Group"
+                alt="Personajes de redes sociales y expertos en automatización IA sentados en un banco"
                 className="w-full h-auto drop-shadow-sketch-lg animate-float"
               />
 
@@ -118,7 +89,7 @@ export const Footer: React.FC = () => {
           >
             <img
               src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768302544/Gemini_Generated_Image_nkwro7nkwro7nkwr-removebg-preview_h3puow.png"
-              alt="X Push-ups"
+              alt="Personaje experto en IA haciendo flexiones representando rendimiento y escala"
               className="w-full h-auto drop-shadow-sketch animate-push-up"
             />
             <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-black text-white px-3 py-1 text-xs md:text-sm rounded scale-0 group-hover:scale-100 transition-transform font-bold opacity-0 group-hover:opacity-100">Twitter / X</div>
