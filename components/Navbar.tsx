@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLinkProps } from '../types';
 import { GlossySocialIcon } from './SketchIcons';
 
@@ -13,9 +13,21 @@ const NavLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, 
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-6 bg-transparent">
+    <nav className={`fixed top-0 left-0 right-0 z-50 px-4 transition-all duration-300 ${isScrolled
+      ? 'py-4 bg-white/50 backdrop-blur-md border-b-2 border-black'
+      : 'py-6 bg-transparent border-b-0 border-transparent'
+      }`}>
       <div className="max-w-[1440px] mx-auto flex justify-between items-center">
         <a href="#" className="w-24 md:w-32 hover:opacity-80 transition-opacity">
           <img
@@ -33,11 +45,7 @@ export const Navbar: React.FC = () => {
           <NavLink href="#contact">Contact US</NavLink>
 
           <div className="relative group">
-            <NavLink href="#view-template">Templates</NavLink>
-            {/* SOON Sticker */}
-            <div className="absolute -top-3 -right-6 bg-white border border-black px-1.5 py-0.5 text-[0.6rem] font-bold uppercase transform rotate-12 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-sm pointer-events-none">
-              Soon
-            </div>
+            <NavLink href="#/templates">Templates</NavLink>
           </div>
         </div>
 

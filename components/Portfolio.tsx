@@ -1,7 +1,12 @@
 import React from 'react';
 import { PortfolioItemProps } from '../types';
 
-const PortfolioItem: React.FC<PortfolioItemProps & { rotation?: string, stickerColor?: string }> = ({ title, description, image, colorClass, url, rotation = 'rotate-0', stickerColor = 'bg-brand-yellow' }) => (
+const PortfolioItem: React.FC<PortfolioItemProps & {
+  id: string;
+  onProjectClick: (id: string) => void;
+  rotation?: string;
+  stickerColor?: string;
+}> = ({ id, title, description, image, colorClass, onProjectClick, rotation = 'rotate-0', stickerColor = 'bg-brand-yellow' }) => (
   <div className={`relative group ${rotation} transition-transform hover:scale-105 duration-300`}>
     {/* Tape or Pin */}
     <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-gray-200 border border-black rounded-full z-20 shadow-sm opacity-80"></div>
@@ -18,16 +23,38 @@ const PortfolioItem: React.FC<PortfolioItemProps & { rotation?: string, stickerC
       </div>
     </div>
 
-    {/* Description Bubble (Optional on hover or mobile) */}
-    <div className="opacity-0 group-hover:opacity-100 absolute -bottom-16 left-0 right-0 bg-black text-white text-base p-3 text-center rounded-lg transition-opacity duration-300 pointer-events-none z-30 shadow-xl">
-      {description}
+    {/* Enhanced Hover Card */}
+    <div className="absolute -bottom-10 left-4 right-4 z-40 pointer-events-none transition-all duration-300 
+                    opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
+      <div className="bg-white border-[3px] border-black p-4 shadow-sketch-lg relative rotate-1">
+        {/* Speech triangle tail */}
+        <div className="absolute -top-[12px] left-8 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-black"></div>
+        <div className="absolute -top-[9px] left-8 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-white z-10"></div>
+
+        <p className="font-sans font-bold text-black text-[0.95rem] leading-tight mb-2">
+          {description}
+        </p>
+
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            onProjectClick(id);
+          }}
+          className="flex items-center gap-1 group/link cursor-pointer w-full text-left bg-transparent border-none p-0"
+        >
+          <span className="text-xs font-display uppercase text-brand-blue border-b-2 border-brand-blue group-hover/link:text-brand-orange group-hover/link:border-brand-orange transition-colors">
+            Ver proyecto completo
+          </span>
+          <span className="text-xs group-hover/link:translate-x-1 transition-transform">→</span>
+        </button>
+      </div>
     </div>
   </div>
 );
 
-export const Portfolio: React.FC = () => {
+export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ onProjectClick }) => {
   return (
-    <section id="portfolio" className="py-24 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] bg-fixed relative overflow-hidden">
+    <section id="portfolio" className="py-24 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] bg-fixed relative overflow-hidden text-black">
       {/* Background Scribbles */}
       <div className="absolute top-10 left-10 text-9xl text-gray-100 select-none pointer-events-none font-accent opacity-50">?</div>
       <div className="absolute bottom-10 right-10 text-9xl text-gray-100 select-none pointer-events-none font-accent opacity-50">!</div>
@@ -58,36 +85,48 @@ export const Portfolio: React.FC = () => {
           </svg>
 
           <PortfolioItem
+            id="snork-meme"
             title="Snork Meme"
             description="Automatizamos tareas repetitivas que hoy haces a mano sin darte cuenta."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1b90511ce48cd4d3b_snork.avif"
             stickerColor="bg-brand-blue"
             rotation="rotate-2"
-            url="https://www.behance.net/gallery/199446143/Snork-meme-mem-crypto-token"
+            onProjectClick={onProjectClick}
+            colorClass="bg-blue-200"
+            url=""
           />
           <PortfolioItem
+            id="notdog"
             title="NotDog"
             description="Procesos desordenados pasan a funcionar de forma clara y automática."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f0540b33d5d141c396_notdog.avif"
             stickerColor="bg-brand-orange"
             rotation="-rotate-1"
-            url="https://www.behance.net/gallery/212212461/NOTDOG-crypto-meme-coin"
+            onProjectClick={onProjectClick}
+            colorClass="bg-orange-200"
+            url=""
           />
           <PortfolioItem
+            id="keycat"
             title="Keycat"
             description="Respuestas, mensajes y acciones que se ejecutan solas cuando toca."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1540b33d5d141c464_keycat.avif"
             stickerColor="bg-brand-yellow"
             rotation="rotate-3"
-            url="https://www.behance.net/gallery/209200081/Keycat-Fan-Token-Meme"
+            onProjectClick={onProjectClick}
+            colorClass="bg-brand-gray"
+            url=""
           />
           <PortfolioItem
+            id="qubicus"
             title="Qubicus"
-            description="Fan Token"
+            description="Optimización de flujos de trabajo internos para agencias creativas."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1e576a54ab84d9991fc4e_%D0%B2%D1%96%D0%BA%D0%BD%D0%BE.png"
             stickerColor="bg-red-300"
             rotation="-rotate-2"
-            url="https://www.behance.net/gallery/203975779/Qubicus-Fan-Token-Meme"
+            onProjectClick={onProjectClick}
+            colorClass="bg-red-200"
+            url=""
           />
         </div>
 

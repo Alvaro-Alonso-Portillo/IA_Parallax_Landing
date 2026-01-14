@@ -24,7 +24,7 @@ export const Contact: React.FC = () => {
 
               <form className="flex flex-col gap-6">
                 <div className="group">
-                  <label className="font-bold text-base uppercase mb-2 block group-focus-within:text-brand-blue transition-colors">Pick your power</label>
+                  <label className="font-bold text-base uppercase mb-2 block group-focus-within:text-brand-blue transition-colors">Elige tu poder</label>
                   <div className="relative">
                     <select className="w-full p-4 bg-gray-50 border-2 border-black rounded-sketch focus:outline-none focus:shadow-sketch transition-all appearance-none cursor-pointer">
                       <option>Basic Plan</option>
@@ -36,7 +36,7 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="group">
-                  <label className="font-bold text-base uppercase mb-2 block group-focus-within:text-brand-orange transition-colors">Your Name</label>
+                  <label className="font-bold text-base uppercase mb-2 block group-focus-within:text-brand-orange transition-colors">Tu Nombre</label>
                   <input type="text" placeholder="Enter your name" className="w-full p-4 bg-gray-50 border-2 border-black rounded-sketch focus:outline-none focus:shadow-sketch transition-all placeholder:text-gray-400" />
                 </div>
 
@@ -46,12 +46,12 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="group">
-                  <label className="font-bold text-base uppercase mb-2 block group-focus-within:text-brand-blue transition-colors">Enter your Telegram</label>
+                  <label className="font-bold text-base uppercase mb-2 block group-focus-within:text-brand-blue transition-colors">Tu WhatsApp</label>
                   <input type="text" placeholder="@Telegram" className="w-full p-4 bg-gray-50 border-2 border-black rounded-sketch focus:outline-none focus:shadow-sketch transition-all placeholder:text-gray-400" />
                 </div>
 
                 <div className="group">
-                  <label className="font-bold text-base uppercase mb-2 block group-focus-within:text-brand-orange transition-colors">Any comments we should know about</label>
+                  <label className="font-bold text-base uppercase mb-2 block group-focus-within:text-brand-orange transition-colors">¿Algún comentario que debamos conocer?</label>
                   <textarea placeholder="Enter" rows={3} className="w-full p-4 bg-gray-50 border-2 border-black rounded-sketch focus:outline-none focus:shadow-sketch transition-all placeholder:text-gray-400 resize-none"></textarea>
                 </div>
 
@@ -67,7 +67,7 @@ export const Contact: React.FC = () => {
             <div className="relative w-full max-w-lg aspect-square">
               {/* Speech Bubble "You can find us here" */}
               <div className="absolute top-0 right-0 md:-right-10 bg-white border-2 border-black p-4 rounded-sketch shadow-sketch z-20 transform rotate-6 animate-float-delayed max-w-[200px] text-center">
-                <p className="font-comic text-xl leading-none">You can find us here!</p>
+                <p className="font-comic text-xl leading-none">¡Nos puedes encontrar aquí!</p>
                 <div className="absolute bottom-0 -left-2 w-4 h-4 bg-white border-b-2 border-l-2 border-black transform rotate-45"></div>
               </div>
 
