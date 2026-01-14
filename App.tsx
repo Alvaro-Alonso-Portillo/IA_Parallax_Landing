@@ -17,6 +17,7 @@ import { Development } from './components/Development';
 import { LegalPages } from './components/LegalPages';
 import { ResultsSection } from './components/ResultsSection';
 import { BookingModal } from './components/BookingModal';
+import NotFound from './app/not-found';
 import { projectsData } from './projectsData';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
   const [showingSchedule, setShowingSchedule] = useState(false);
   const [activeLegal, setActiveLegal] = useState<'aviso' | 'privacidad' | 'cookies' | null>(null);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [showing404, setShowing404] = useState(false);
 
   // Handle back navigation
   const handleBack = () => {
@@ -36,6 +38,7 @@ function App() {
     setShowingDevelopment(false);
     setShowingSchedule(false);
     setActiveLegal(null);
+    setShowing404(false);
     window.location.hash = '';
   };
 
@@ -97,7 +100,15 @@ function App() {
           setShowingDevelopment(false);
           setActiveLegal(null);
         }
+      } else if (hash === '#/404' || window.location.pathname === '/404') {
+        setShowing404(true);
+        setActiveProjectId(null);
+        setShowingTemplates(false);
+        setShowingCapabilities(false);
+        setShowingDevelopment(false);
+        setActiveLegal(null);
       } else {
+        setShowing404(false);
         setActiveProjectId(null);
         setShowingTemplates(false);
         setShowingCapabilities(false);
@@ -113,6 +124,10 @@ function App() {
   }, []);
 
   const activeProject = projectsData.find(p => p.id === activeProjectId);
+
+  if (showing404) {
+    return <NotFound />;
+  }
 
   return (
     <div className="bg-[#ffffff] min-h-screen font-sans selection:bg-brand-blue selection:text-white">
