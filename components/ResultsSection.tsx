@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ResultCard: React.FC<{ label: string; value: string; description: string; rotation: string; tapeColor: string }> = ({ label, value, description, rotation, tapeColor }) => (
+const ResultCard: React.FC<{ label: string; value: string; explanation: string; context: string; impact: string; rotation: string; tapeColor: string }> = ({ label, value, explanation, context, impact, rotation, tapeColor }) => (
     <div className={`relative ${rotation} hover:rotate-0 transition-transform duration-500 group`}>
         {/* The Tape Effect */}
         <div className={`absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-10 ${tapeColor} border-2 border-black z-30 opacity-90 shadow-sm transform -rotate-2 group-hover:rotate-1 transition-transform`}>
@@ -10,7 +10,7 @@ const ResultCard: React.FC<{ label: string; value: string; description: string; 
 
         {/* The Card with Irregular Clip Path */}
         <div
-            className="bg-[#fdfbf7] p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] flex flex-col gap-2 min-h-[260px] relative z-20 border-4 border-black"
+            className="bg-[#fdfbf7] p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] flex flex-col gap-2 min-h-[340px] relative z-20 border-4 border-black"
             style={{
                 clipPath: 'polygon(2% 2%, 98% 1%, 99% 97%, 3% 99%, 1% 50%)',
                 backgroundImage: 'radial-gradient(#d1d1d1 1px, transparent 0)',
@@ -29,13 +29,25 @@ const ResultCard: React.FC<{ label: string; value: string; description: string; 
                     {label}
                 </div>
 
-                <div className="font-display text-5xl md:text-6xl text-brand-blue my-4 leading-none group-hover:scale-110 transition-transform drop-shadow-[2px_2px_0px_rgba(0,0,0,0.2)]">
-                    {value}
+                <div className="my-4">
+                    <div className="font-display text-5xl md:text-6xl text-brand-blue leading-none group-hover:scale-110 transition-transform drop-shadow-[2px_2px_0px_rgba(0,0,0,0.2)]">
+                        {value}
+                    </div>
+                    <p className="font-sans font-bold text-sm text-brand-blue/70 mt-2 leading-tight">
+                        {explanation}
+                    </p>
                 </div>
 
-                <p className="font-sans font-bold text-xl leading-tight text-gray-900 border-l-4 border-brand-orange/30 pl-4 py-1">
-                    {description}
-                </p>
+                <div className="font-sans space-y-3 border-l-4 border-brand-orange/30 pl-4 py-1 mt-6">
+                    <div>
+                        <span className="text-[10px] uppercase tracking-widest text-gray-400 block font-bold">Contexto</span>
+                        <p className="text-sm md:text-base font-medium text-gray-600 leading-tight">{context}</p>
+                    </div>
+                    <div>
+                        <span className="text-[10px] uppercase tracking-widest text-gray-400 block font-bold">Impacto</span>
+                        <p className="text-lg md:text-xl font-bold text-gray-900 leading-tight">{impact}</p>
+                    </div>
+                </div>
             </div>
 
             {/* Hand-drawn scribble at bottom */}
@@ -60,7 +72,7 @@ const ResultCard: React.FC<{ label: string; value: string; description: string; 
 
 export const ResultsSection: React.FC = () => {
     return (
-        <section className="py-32 bg-[#fffdfa] relative overflow-hidden border-y-8 border-black">
+        <section id="results" className="py-32 bg-[#fffdfa] relative overflow-hidden border-y-8 border-black">
             {/* Background patterns */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle,black_2px,transparent_0)] [background-size:40px_40px]"></div>
@@ -81,38 +93,52 @@ export const ResultsSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-20 sm:gap-16 md:gap-12 py-8">
                     <ResultCard
-                        label="Agencia de Marketing"
+                        label="Operaciones"
                         value="15h"
-                        description="Ahorro semanal en cualificación de leads mediante IA."
+                        explanation="Tiempo que el equipo recupera cada semana."
+                        context="Administración y tareas repetitivas"
+                        impact="Ahorro semanal real en procesos de gestión"
                         rotation="-rotate-2 md:-rotate-3"
                         tapeColor="bg-brand-yellow"
                     />
                     <ResultCard
-                        label="E-commerce"
+                        label="Atención"
                         value="24/7"
-                        description="Soporte al cliente sin contratar personal extra."
+                        explanation="Ningún lead vuelve a quedarse sin respuesta."
+                        context="Cualificación de leads y dudas"
+                        impact="Soporte instantáneo sin aumentar equipo"
                         rotation="rotate-1 md:rotate-2"
                         tapeColor="bg-black"
                     />
                     <ResultCard
-                        label="Inmobiliaria"
+                        label="Ventas"
                         value="+40%"
-                        description="De visitas agendadas automáticamente por nuestro agente."
+                        explanation="Más ventas sin contratar a nadie más."
+                        context="Embudo comercial y conversión"
+                        impact="Más reuniones agendadas automáticamente"
                         rotation="-rotate-1"
                         tapeColor="bg-brand-orange"
                     />
                 </div>
 
+                <p className="mt-8 text-center text-xs md:text-sm font-medium text-gray-400 italic">
+                    *Resultados orientativos; se validan en diagnóstico.
+                </p>
+
                 <div className="mt-16 md:mt-24 text-center">
+                    <p className="font-display text-xl md:text-2xl mb-8 uppercase text-brand-dark">¿Quieres saber dónde estás perdiendo tiempo hoy?</p>
                     <div className="inline-block relative group px-4 w-full md:w-auto">
-                        <div className="absolute inset-0 bg-brand-yellow transform rotate-2 translate-x-1 translate-y-1 group-hover:rotate-0 transition-transform hidden md:block"></div>
+                        <div className="absolute inset-0 bg-brand-blue transform rotate-2 translate-x-1 translate-y-1 group-hover:rotate-0 transition-transform hidden md:block"></div>
                         <button
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="w-full md:w-auto relative bg-black text-white font-display text-xl md:text-3xl px-8 md:px-12 py-5 md:py-6 border-2 border-black group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform uppercase shadow-sketch md:shadow-none"
+                            className="w-full md:w-auto relative bg-black text-white font-display text-lg md:text-2xl px-8 md:px-12 py-4 md:py-5 border-2 border-black group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform uppercase shadow-sketch md:shadow-none"
                         >
-                            ¿QUIERES RESULTADOS? 🔥
+                            Pasar diagnóstico
                         </button>
                     </div>
+                    <p className="mt-4 text-xs md:text-sm font-medium text-gray-500">
+                        15 minutos. Te decimos por dónde empezar.
+                    </p>
                 </div>
             </div>
 

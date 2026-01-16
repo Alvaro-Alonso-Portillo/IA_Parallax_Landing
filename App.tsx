@@ -17,6 +17,7 @@ import { Development } from './components/Development';
 import { LegalPages } from './components/LegalPages';
 import { ResultsSection } from './components/ResultsSection';
 import { BookingModal } from './components/BookingModal';
+import { FAQ } from './components/FAQ';
 import NotFound from './app/not-found';
 import { projectsData } from './projectsData';
 
@@ -154,8 +155,16 @@ function App() {
           <ResultsSection />
           <Pricing onBookingClick={() => setIsBookingOpen(true)} />
           <RayBusters />
+          <FAQ />
         </main>
       )}
+
+      <section className="py-24 bg-white text-center px-4 border-t-2 border-black">
+        <p className="font-display text-xl md:text-4xl uppercase text-brand-dark max-w-5xl mx-auto leading-tight drop-shadow-sketch-sm">
+          No hacemos demos. <br className="hidden md:block" />
+          <span className="text-brand-blue">Analizamos tu caso real</span> y te decimos si tiene sentido seguir.
+        </p>
+      </section>
 
       <Footer />
       <LeadMagnetChat />

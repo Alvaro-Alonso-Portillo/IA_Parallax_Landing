@@ -14,25 +14,19 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
 
           <div className="relative z-10 w-full">
             <h1 className="text-[9vw] sm:text-[10vw] md:text-[6rem] lg:text-[7.5rem] leading-[0.9] md:leading-[0.85] font-display uppercase text-brand-dark tracking-tighter drop-shadow-sketch-sm">
-              DEJA DE GESTIONAR
-            </h1>
-          </div>
-
-          <div className="relative z-10 w-full">
-            <h1 className="text-[12vw] sm:text-[14vw] md:text-[10rem] lg:text-[13rem] leading-[0.9] md:leading-[0.85] font-display uppercase text-brand-dark tracking-tighter drop-shadow-sketch-sm">
-              EL CAOS.
+              DEJA DE APAGAR FUEGOS.
             </h1>
           </div>
 
           <div className="relative z-10 w-full">
             <h1 className="text-[9vw] sm:text-[10vw] md:text-[6rem] lg:text-[7.5rem] leading-[0.9] md:leading-[0.85] font-display uppercase text-brand-blue tracking-tighter drop-shadow-sketch-sm">
-              EMPIEZA A GESTIONAR
+              AUTOMATIZA TU OPERATIVA.
             </h1>
           </div>
 
           <div className="relative z-10 w-full">
             <h1 className="text-[9vw] sm:text-[10vw] md:text-[6rem] lg:text-[7.5rem] leading-[0.9] font-display uppercase text-brand-orange tracking-tighter drop-shadow-sketch-sm relative inline-block">
-              EL CRECIMIENTO.
+              Y RECUPERA TIEMPO PARA CRECER.
               {/* Wavy Line Underline */}
               <div className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-4 md:h-8 overflow-hidden">
                 <svg viewBox="0 0 500 20" preserveAspectRatio="none" className="w-full h-full stroke-black stroke-[4] fill-none">
@@ -49,22 +43,29 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
 
         <div className="mt-10 md:mt-12 max-w-2xl mx-auto text-base md:text-xl font-medium text-black font-sans relative z-20 border-2 border-black p-5 md:p-6 rounded-sketch bg-white shadow-sketch transform -rotate-1 mx-4">
           <p>
-            En IA_Parallax transformamos agencias y negocios saturados en máquinas eficientes. Automatizamos procesos para que tu equipo recupere su tiempo y tu negocio escale.
+            Diseñamos sistemas de <strong>automatización con IA</strong> que eliminan tareas repetitivas, ordenan datos y convierten procesos en flujos que funcionan solos.
           </p>
         </div>
 
         <div className="mt-8 md:mt-12 flex flex-col sm:flex-row justify-center gap-4 md:gap-6 relative z-30 items-stretch sm:items-center px-4 md:px-0 max-w-3xl mx-auto">
           <a href="#/agendar" className="bg-black text-white px-6 md:px-8 py-4 text-base md:text-xl font-display uppercase tracking-wider hover:bg-brand-blue transition-all flex items-center justify-center gap-3 md:gap-4 group border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1">
             <span className="text-xl md:text-2xl">👊</span>
-            AUTOMATIZAR YA
+            Ver si encaja
           </a>
-          <a href="#/agendar" className="bg-brand-yellow text-black px-6 md:px-8 py-4 text-base md:text-xl font-display uppercase tracking-wider transition-all border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 text-center">
-            AGENDAR AUDITORÍA
-          </a>
-          <a href="#/capabilities" className="bg-white text-black px-6 md:px-8 py-4 text-base md:text-xl font-display uppercase tracking-wider hover:bg-gray-50 transition-all border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 text-center">
-            VER MÁS
+          <a href="#results" className="bg-brand-yellow text-black px-6 md:px-8 py-4 text-base md:text-xl font-display uppercase tracking-wider transition-all border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 text-center">
+            Ver casos reales
           </a>
         </div>
+        <p className="mt-4 text-sm md:text-base font-medium text-gray-600 relative z-30">
+          Diagnóstico rápido. Sin compromiso.
+        </p>
+        <p className="mt-4 text-[10px] md:text-xs text-gray-400 uppercase tracking-widest max-w-lg mx-auto relative z-30">
+          No trabajamos con negocios que buscan soluciones rápidas sin ordenar su operativa.
+        </p>
+        <p className="mt-2 text-[10px] md:text-xs text-gray-500 font-bold italic relative z-30">
+          "Si no tiene sentido automatizar ahora, te lo diremos."
+        </p>
+
 
       </div>
 

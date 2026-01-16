@@ -69,11 +69,31 @@ export const RayBusters: React.FC = () => {
             <div className="w-full mx-auto text-center px-4">
                 <div className="mb-8 relative">
                     <h2 className="text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm mb-4">
-                        NUESTROS CAZADORES DE BUGS
+                        GARANTÍA DE SISTEMA
                     </h2>
+                    <div className="inline-block bg-black text-white px-4 py-2 transform -rotate-1 mb-8 shadow-sketch">
+                        <p className="font-display text-xl md:text-2xl uppercase tracking-tighter">
+                            Si el sistema falla, el problema es nuestro, no tuyo.
+                        </p>
+                    </div>
                     <p className="max-w-2xl mx-auto font-sans text-xl font-medium text-gray-700 leading-tight">
-                        Creamos <span className="italic font-bold">automatizaciones</span>, <span className="italic font-bold">sistemas de IA</span> y <span className="italic font-bold">flujos de trabajo inteligentes</span> para que no solo funcionen, sino que vuelen. Implementación de ciclo completo — desde el concepto hasta la escala.
+                        Monitorizamos, corregimos y mejoramos tus automatizaciones para que no se caigan cuando más las necesitas.
                     </p>
+
+                    {/* Feature Bullets */}
+                    <div className="flex flex-wrap justify-center gap-3 md:gap-6 mt-8 max-w-4xl mx-auto relative z-30">
+                        {[
+                            "Alertas y revisión periódica",
+                            "Logs claros y trazabilidad",
+                            "Mejoras continuas por prioridad"
+                        ].map((text, i) => (
+                            <div key={i} className={`flex items-center gap-2 bg-white border-2 border-black px-4 py-2 shadow-sketch rounded-full transform ${i % 2 === 0 ? '-rotate-1' : 'rotate-1'} hover:rotate-0 transition-transform`}>
+                                <span className="text-brand-blue font-bold">✓</span>
+                                <span className="font-sans font-bold text-sm md:text-base whitespace-nowrap">{text}</span>
+                            </div>
+                        ))}
+                    </div>
+
                     <div className="absolute -top-12 right-1/4 text-6xl animate-bounce hidden md:block">🧘</div>
                 </div>
 

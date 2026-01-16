@@ -85,7 +85,7 @@ export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingCl
                 <p className="font-sans font-medium text-lg text-black leading-relaxed">
                   Tareas repetidas, mensajes, datos, seguimientos y errores humanos.
                   <br /><br />
-                  Todo eso se puede automatizar. Nosotros lo hacemos por ti.
+                  Todo eso se resuelve al <strong>automatizar negocio</strong>. Nosotros lo hacemos por ti.
                 </p>
               </div>
 
@@ -104,7 +104,7 @@ export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingCl
 
           {/* Grid Item 2 - First Card */}
           <ShowcaseCard
-            title="Automatización de procesos"
+            title="Flujos y Operativa"
             subtitle="Convertimos tareas manuales en flujos automáticos que trabajan sin descanso y sin errores."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1b90511ce48cd4d3b_snork.avif"
             color="bg-brand-blue/20"

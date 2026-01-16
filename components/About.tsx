@@ -28,7 +28,7 @@ export const About: React.FC = () => {
             <div className="w-full md:w-1/2 flex justify-center md:justify-end">
               <div className="bg-white border-2 border-black p-6 md:p-8 rounded-sketch shadow-sketch max-w-sm relative">
                 <p className="font-sans text-lg md:text-xl font-medium">
-                  Somos <span className="font-bold text-brand-blue">IA_Parallax</span>. Diseñamos automatizaciones con inteligencia artificial para negocios que quieren orden y control.
+                  Somos <span className="font-bold text-brand-blue">IA_Parallax</span>. Desarrollamos <strong>agentes IA para empresas</strong> que el equipo entiende, usa y mantiene.
                 </p>
                 <div className="absolute top-1/2 -right-4 w-6 h-6 bg-white border-t-2 border-r-2 border-black transform rotate-45 hidden md:block"></div>
               </div>
@@ -44,9 +44,11 @@ export const About: React.FC = () => {
           <div className="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-8 relative">
             <div className="w-full md:w-1/2 flex justify-center md:justify-start">
               <div className="bg-[#f0f0f0] border-2 border-black p-6 md:p-8 rounded-sketch shadow-sketch max-w-sm relative transform rotate-1">
-                <p className="font-sans text-lg md:text-xl font-medium">
-                  Analizamos cómo trabajas, detectamos lo que sobra y lo convertimos en sistemas que funcionan sin vigilancia constante.
-                </p>
+                <ul className="font-sans text-base md:text-lg font-medium space-y-2">
+                  <li className="flex gap-2"><span>-</span> "Primero proceso y datos, luego herramientas."</li>
+                  <li className="flex gap-2"><span>-</span> "IA cuando suma; reglas simples cuando basta."</li>
+                  <li className="flex gap-2"><span>-</span> "Sistemas estables, medibles y con responsable."</li>
+                </ul>
                 <div className="absolute top-1/2 -left-4 w-6 h-6 bg-[#f0f0f0] border-b-2 border-l-2 border-black transform rotate-45 hidden md:block"></div>
               </div>
             </div>
@@ -60,13 +62,17 @@ export const About: React.FC = () => {
           {/* Item 3: Bubble Left, Framed Character Right */}
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 relative">
             <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-              <div className="bg-white border-2 border-black p-6 md:p-8 rounded-sketch shadow-sketch max-w-sm relative transform -rotate-1">
-                <p className="font-sans text-lg md:text-xl font-medium">
-                  Automatizamos procesos reales. Menos caos operativo. Más claridad diaria.
+              <div className="bg-white border-2 border-black p-6 md:p-8 rounded-sketch shadow-sketch max-w-sm relative transform -rotate-1 text-center md:text-right">
+                <p className="font-sans text-base md:text-lg font-medium text-gray-700 mb-4 italic">
+                  No vendemos herramientas. Diseñamos sistemas que el equipo puede usar sin depender de nosotros.
+                </p>
+                <p className="font-sans text-xl md:text-2xl font-bold uppercase tracking-tight text-brand-dark leading-tight">
+                  Menos caos. <br /> Más control.
                 </p>
                 <div className="absolute top-1/2 -right-4 w-6 h-6 bg-white border-t-2 border-r-2 border-black transform rotate-45 hidden md:block"></div>
               </div>
             </div>
+
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="w-32 h-48 md:w-48 md:h-64 border-2 border-black bg-white p-2 shadow-sketch transform rotate-2">
                 <div className="w-full h-full border border-black bg-gray-100 flex items-center justify-center overflow-hidden">

@@ -45,18 +45,21 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8 bg-transparent">
-          <NavLink href="#about-us">Nosotros</NavLink>
-          <NavLink href="#portfolio">Portafolio</NavLink>
-          <NavLink href="#/development">Desarrollo</NavLink>
-          <NavLink href="#contact">Contacto</NavLink>
+          <NavLink href="#services">Servicios</NavLink>
+          <NavLink href="#results">Casos reales</NavLink>
+          <NavLink href="#about-us">Cómo trabajamos</NavLink>
+          <NavLink href="#faq">FAQ</NavLink>
 
-          <div className="relative group">
-            <NavLink href="#/templates">Plantillas</NavLink>
-          </div>
+          <a
+            href="#/agendar"
+            className="bg-black text-white px-6 py-2 font-display uppercase text-sm border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-0.5 transition-all"
+          >
+            Diagnóstico
+          </a>
         </div>
 
         {/* Social Icons - Updated with Glossy Component */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           <GlossySocialIcon type="linkedin" href="https://www.linkedin.com/in/alvaro-alonso-8319b52ba/" />
           <GlossySocialIcon type="x" href="https://x.com/iaparallax" />
           <GlossySocialIcon type="instagram" href="https://www.instagram.com/iaparallax/" />
@@ -78,39 +81,39 @@ export const Navbar: React.FC = () => {
       <div className={`fixed inset-0 bg-white z-40 lg:hidden transition-all duration-500 ease-in-out ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
         <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
           <a
+            href="#services"
+            onClick={() => setIsOpen(false)}
+            className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
+          >
+            Servicios
+          </a>
+          <a
+            href="#results"
+            onClick={() => setIsOpen(false)}
+            className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
+          >
+            Casos reales
+          </a>
+          <a
             href="#about-us"
             onClick={() => setIsOpen(false)}
             className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
           >
-            Nosotros
+            Cómo trabajamos
           </a>
           <a
-            href="#portfolio"
+            href="#faq"
             onClick={() => setIsOpen(false)}
             className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
           >
-            Portafolio
+            FAQ
           </a>
           <a
-            href="#/development"
+            href="#/agendar"
             onClick={() => setIsOpen(false)}
-            className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
+            className="text-4xl font-display uppercase hover:text-brand-yellow transform hover:scale-110 transition-transform bg-black text-white px-8 py-3 border-2 border-black shadow-sketch"
           >
-            Desarrollo
-          </a>
-          <a
-            href="#contact"
-            onClick={() => setIsOpen(false)}
-            className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
-          >
-            Contacto
-          </a>
-          <a
-            href="#/templates"
-            onClick={() => setIsOpen(false)}
-            className="text-4xl font-display uppercase hover:text-brand-yellow transform hover:scale-110 transition-transform bg-black text-white px-6 py-2 border-2 border-black"
-          >
-            Plantillas
+            Diagnóstico
           </a>
 
           {/* Mobile Socials */}
