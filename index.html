@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IA_Parallax | Automatización Inteligente para Agencias</title>
+  <title>Automatización con IA para empresas | IA_Parallax</title>
   <meta name="description"
-    content="Transformamos el caos en crecimiento mediante automatización y agentes de IA personalizados." />
+    content="Diseñamos sistemas de automatización con IA: operativa, WhatsApp y leads. Menos tareas manuales, menos errores y más tiempo para crecer." />
 
   <!-- Favicon / Brand Icons -->
   <link rel="icon" type="image/png"
@@ -17,9 +17,16 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Inter:wght@400;500;600;700&family=Inter+Tight:ital,wght@0,400;0,500;0,700;1,400&family=Knewave&display=swap">
   <link
     href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Inter:wght@400;500;600;700&family=Inter+Tight:ital,wght@0,400;0,500;0,700;1,400&family=Knewave&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Inter:wght@400;500;600;700&family=Inter+Tight:ital,wght@0,400;0,500;0,700;1,400&family=Knewave&display=swap"
+      rel="stylesheet">
+  </noscript>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -171,6 +178,22 @@
       100% {
         top: 100%;
         opacity: 0;
+      }
+    }
+
+    /* Accessibility: Reduced Motion Utility */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      ::before,
+      ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
       }
     }
   </style>

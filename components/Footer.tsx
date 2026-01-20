@@ -1,22 +1,21 @@
 import React from 'react';
-import { CallbackForm } from './CallbackForm';
+import { ContactForm } from './ContactForm';
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="component_footer bg-[#f9f9f9] border-t-2 border-black relative font-sans">
+    <footer id="diagnostico" className="component_footer bg-[#f9f9f9] border-t-2 border-black relative font-sans">
       <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row relative">
 
-        {/* Column - Contact Info & Quick Call (40% desktop, 100% mobile) - ORDER 1 ON MOBILE */}
+        {/* Column - Contact Info (40% desktop, 100% mobile) - ORDER 1 ON MOBILE */}
         <div className="w-full lg:w-[40%] bg-white border-b-2 lg:border-b-0 lg:border-r-2 border-black p-8 md:p-16 flex flex-col justify-center relative order-1">
           <div className="max-w-xl mx-auto w-full">
-            <h3 className="text-4xl md:text-5xl font-display mb-8 text-black text-center lg:text-left">
-              Entrenamos a tu <br /> IA para ser fuerte
-            </h3>
-
-            {/* High-conversion Callback Component - Now the primary lead generator */}
-            <div className="mb-4 transform -rotate-1 hover:rotate-0 transition-transform">
-              <CallbackForm />
+            <div className="mb-12">
+              <h2 className="text-4xl md:text-5xl font-display text-black leading-tight mb-4 text-center lg:text-left">
+                Entrenamos a tu <br /> IA para ser fuerte
+              </h2>
             </div>
+
+            <ContactForm />
           </div>
         </div>
 
@@ -41,10 +40,13 @@ export const Footer: React.FC = () => {
               <img
                 src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768301909/Gemini_Generated_Image_t686fet686fet686-removebg-preview_ij8oco.png"
                 alt="Personajes de redes sociales y expertos en automatización IA"
+                width="600"
+                height="500"
+                loading="lazy"
                 className="w-full h-auto drop-shadow-sketch-lg animate-float"
               />
 
-              {/* Clickable regions ... same as before but ensured container is max-w-[280px] on tiny phones */}
+              {/* Clickable regions */}
               <a href="https://www.linkedin.com/in/alvaro-alonso-8319b52ba/" target="_blank" rel="noopener noreferrer" className="absolute top-[10%] left-[5%] w-[30%] h-[50%] z-20 cursor-pointer group" title="LinkedIn"></a>
               <a href="https://github.com/Alvaro-Alonso-Portillo" target="_blank" rel="noopener noreferrer" className="absolute top-[5%] left-[35%] w-[30%] h-[50%] z-20 cursor-pointer group" title="GitHub"></a>
               <a href="https://www.instagram.com/iaparallax/" target="_blank" rel="noopener noreferrer" className="absolute top-[10%] right-[5%] w-[30%] h-[50%] z-20 cursor-pointer group" title="Instagram"></a>
@@ -61,6 +63,9 @@ export const Footer: React.FC = () => {
             <img
               src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768302544/Gemini_Generated_Image_nkwro7nkwro7nkwr-removebg-preview_h3puow.png"
               alt="Rendimiento y escala"
+              width="800"
+              height="400"
+              loading="lazy"
               className="w-full h-auto drop-shadow-sketch animate-push-up"
             />
           </a>
@@ -71,7 +76,7 @@ export const Footer: React.FC = () => {
       {/* Bottom Legal Bar */}
       <div className="border-t-[3px] border-black bg-white p-6 relative overflow-visible">
 
-        <div className="max-w-[1440px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 pl-16">
+        <div className="max-w-[1440px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 md:pl-16">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <span className="font-bold text-sm">© 2025 IA_PARALLAX.</span>
             <div className="flex gap-4 text-[10px] md:text-xs font-bold uppercase underline decoration-1 underline-offset-4 font-sans opacity-60 hover:opacity-100 transition-opacity">

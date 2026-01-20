@@ -1,9 +1,11 @@
 import React from 'react';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 export const TechStack: React.FC = () => {
+    const revealRef = useRevealOnScroll<HTMLDivElement>();
     return (
         <section className="py-8 bg-white border-b-2 border-black">
-            <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+            <div ref={revealRef} className="max-w-[1440px] mx-auto px-4 md:px-8">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
                     <span className="font-display uppercase text-xl text-black whitespace-nowrap">
                         POTENCIADO POR:

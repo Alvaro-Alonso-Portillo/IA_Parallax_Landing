@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRevealOnScroll } from './hooks/useRevealOnScroll';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TechStack } from './components/TechStack';
@@ -30,6 +31,8 @@ function App() {
   const [activeLegal, setActiveLegal] = useState<'aviso' | 'privacidad' | 'cookies' | null>(null);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [showing404, setShowing404] = useState(false);
+
+  const noDemosRef = useRevealOnScroll<HTMLParagraphElement>();
 
   // Handle back navigation
   const handleBack = () => {
@@ -160,7 +163,7 @@ function App() {
       )}
 
       <section className="py-24 bg-white text-center px-4 border-t-2 border-black">
-        <p className="font-display text-xl md:text-4xl uppercase text-brand-dark max-w-5xl mx-auto leading-tight drop-shadow-sketch-sm">
+        <p ref={noDemosRef} className="font-display text-xl md:text-4xl uppercase text-brand-dark max-w-5xl mx-auto leading-tight drop-shadow-sketch-sm">
           No hacemos demos. <br className="hidden md:block" />
           <span className="text-brand-blue">Analizamos tu caso real</span> y te decimos si tiene sentido seguir.
         </p>

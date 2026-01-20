@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,14 +27,17 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 };
 
 export const FAQ: React.FC = () => {
+    const headerRef = useRevealOnScroll<HTMLHeadingElement>();
+    const cardRef = useRevealOnScroll<HTMLDivElement>(0.1, 40);
+
     return (
         <section id="faq" className="py-24 bg-[#f9f9f9] border-y-2 border-black relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 relative z-10">
-                <h2 className="text-4xl md:text-6xl font-display uppercase text-brand-dark mb-12 text-center drop-shadow-sketch-sm">
+                <h2 ref={headerRef} className="text-4xl md:text-6xl font-display uppercase text-brand-dark mb-12 text-center drop-shadow-sketch-sm">
                     Preguntas <span className="text-brand-yellow px-2 bg-black inline-block transform -rotate-1 text-white mx-2">Frecuentes</span>
                 </h2>
 
-                <div className="bg-white border-4 border-black p-6 md:p-10 shadow-sketch-lg rounded-sketch">
+                <div ref={cardRef} className="bg-white border-4 border-black p-6 md:p-10 shadow-sketch-lg rounded-sketch">
                     <FAQItem
                         question="¿Esto sirve para cualquier negocio?"
                         answer="No. Funciona mejor en empresas que ya tienen procesos y quieren ordenarlos."

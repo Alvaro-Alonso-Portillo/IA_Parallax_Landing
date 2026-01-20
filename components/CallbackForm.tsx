@@ -30,7 +30,7 @@ export const CallbackForm: React.FC = () => {
     };
 
     return (
-        <div className="bg-red-600 border-4 border-black p-6 md:p-8 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] max-w-md w-full relative overflow-hidden group">
+        <div className="bg-red-600 border-2 border-black p-6 md:p-8 shadow-sketch-lg max-w-md w-full relative overflow-hidden group">
             {/* Background Texture Decorator */}
             <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
 
@@ -62,7 +62,7 @@ export const CallbackForm: React.FC = () => {
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
                                 placeholder="Tu número aquí..."
-                                className="w-full p-4 md:p-6 bg-white border-4 border-black font-sans font-black text-2xl md:text-3xl placeholder:opacity-20 focus:outline-none focus:ring-8 focus:ring-black/10 transform -rotate-1"
+                                className="w-full p-4 md:p-5 bg-white border-2 border-black font-sans font-black text-2xl md:text-3xl placeholder:opacity-20 focus:outline-none focus:ring-8 focus:ring-black/10 transform -rotate-1"
                                 style={{ clipPath: 'polygon(1% 5%, 99% 1%, 98% 95%, 2% 98%)' }}
                             />
                             {/* Hand-drawn underline decorator */}
@@ -74,7 +74,7 @@ export const CallbackForm: React.FC = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full bg-black text-white py-4 md:py-6 px-6 font-display text-xl md:text-2xl uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(255,255,255,0.2)] hover:bg-brand-yellow hover:text-black hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex items-center justify-center gap-4 disabled:opacity-50"
+                            className="w-full bg-black text-white py-5 px-6 font-display text-xl md:text-2xl uppercase border-2 border-black shadow-sketch-lg hover:bg-brand-yellow hover:text-black hover:-translate-y-1 transition-all flex items-center justify-center gap-4 disabled:opacity-50"
                         >
                             {loading ? (
                                 <div className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin"></div>

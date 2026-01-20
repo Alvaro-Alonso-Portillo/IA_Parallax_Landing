@@ -45,16 +45,16 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8 bg-transparent">
-          <NavLink href="#services">Servicios</NavLink>
-          <NavLink href="#results">Casos reales</NavLink>
-          <NavLink href="#about-us">Cómo trabajamos</NavLink>
-          <NavLink href="#faq">FAQ</NavLink>
+          <NavLink href="#sistemas">Sistemas</NavLink>
+          <NavLink href="#resultados">Resultados</NavLink>
+          <NavLink href="#proceso">Proceso</NavLink>
+          <NavLink href="#garantia">Garantía</NavLink>
 
           <a
-            href="#/agendar"
-            className="bg-black text-white px-6 py-2 font-display uppercase text-sm border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-0.5 transition-all"
+            href="#diagnostico"
+            className="bg-black text-white px-6 py-3 font-display uppercase text-sm border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 transition-all"
           >
-            Diagnóstico
+            Contacto
           </a>
         </div>
 
@@ -81,39 +81,39 @@ export const Navbar: React.FC = () => {
       <div className={`fixed inset-0 bg-white z-40 lg:hidden transition-all duration-500 ease-in-out ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
         <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
           <a
-            href="#services"
+            href="#sistemas"
             onClick={() => setIsOpen(false)}
             className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
           >
-            Servicios
+            Sistemas
           </a>
           <a
-            href="#results"
+            href="#resultados"
             onClick={() => setIsOpen(false)}
             className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
           >
-            Casos reales
+            Resultados
           </a>
           <a
-            href="#about-us"
+            href="#proceso"
             onClick={() => setIsOpen(false)}
             className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
           >
-            Cómo trabajamos
+            Proceso
           </a>
           <a
-            href="#faq"
+            href="#garantia"
             onClick={() => setIsOpen(false)}
             className="text-4xl font-display uppercase hover:text-brand-blue transform hover:scale-110 transition-transform"
           >
-            FAQ
+            Garantía
           </a>
           <a
-            href="#/agendar"
+            href="#diagnostico"
             onClick={() => setIsOpen(false)}
             className="text-4xl font-display uppercase hover:text-brand-yellow transform hover:scale-110 transition-transform bg-black text-white px-8 py-3 border-2 border-black shadow-sketch"
           >
-            Diagnóstico
+            Contacto
           </a>
 
           {/* Mobile Socials */}

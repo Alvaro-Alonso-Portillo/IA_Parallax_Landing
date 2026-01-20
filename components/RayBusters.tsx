@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 const OrbitItem: React.FC<{
     icon: string;
@@ -21,7 +22,7 @@ const OrbitItem: React.FC<{
             } as any}
         >
             <div
-                className={`w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-black flex items-center justify-center shadow-sketch-sm transition-transform pointer-events-auto ${bg}`}
+                className={`w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-black flex items-center justify-center shadow-sketch-lg transition-transform pointer-events-auto ${bg}`}
                 style={{
                     animation: `orbitY var(--dur) linear infinite`,
                     animationDelay: 'var(--del)',
@@ -30,6 +31,9 @@ const OrbitItem: React.FC<{
                 <img
                     src={icon}
                     alt=""
+                    width="40"
+                    height="40"
+                    loading="lazy"
                     className="w-8 h-8 md:w-10 md:h-10 object-contain p-1"
                 />
             </div>
@@ -38,8 +42,14 @@ const OrbitItem: React.FC<{
 };
 
 export const RayBusters: React.FC = () => {
+    const titleRef = useRevealOnScroll<HTMLHeadingElement>();
+    const subtitleRef = useRevealOnScroll<HTMLParagraphElement>(0.1, 40);
+    const badgeRef = useRevealOnScroll<HTMLDivElement>(0.1, 80);
+    const descRef = useRevealOnScroll<HTMLParagraphElement>(0.1, 120);
+    const bulletsRef = useRevealOnScroll<HTMLDivElement>(0.1, 160);
+
     return (
-        <section className="py-24 bg-brand-gray relative overflow-hidden min-h-[1000px]">
+        <section id="garantia" className="py-32 md:py-48 bg-brand-gray relative overflow-hidden min-h-[1000px]">
             {/* Advanced Elliptical Orbit Styles */}
             <style>{`
                 @keyframes orbitX {
@@ -68,26 +78,29 @@ export const RayBusters: React.FC = () => {
 
             <div className="w-full mx-auto text-center px-4">
                 <div className="mb-8 relative">
-                    <h2 className="text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm mb-4">
+                    <h2 ref={titleRef} className="text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm mb-4">
                         GARANTÍA DE SISTEMA
                     </h2>
-                    <div className="inline-block bg-black text-white px-4 py-2 transform -rotate-1 mb-8 shadow-sketch">
+                    <p ref={subtitleRef} className="text-3xl md:text-6xl font-display uppercase text-brand-orange mb-8 drop-shadow-sketch-sm">
+                        “Si no vemos claro el retorno, no seguimos.”
+                    </p>
+                    <div ref={badgeRef} className="inline-block bg-black text-white px-4 py-2 transform -rotate-1 mb-12 shadow-sketch-lg">
                         <p className="font-display text-xl md:text-2xl uppercase tracking-tighter">
                             Si el sistema falla, el problema es nuestro, no tuyo.
                         </p>
                     </div>
-                    <p className="max-w-2xl mx-auto font-sans text-xl font-medium text-gray-700 leading-tight">
+                    <p ref={descRef} className="max-w-2xl mx-auto font-sans text-xl font-medium text-gray-700 leading-tight">
                         Monitorizamos, corregimos y mejoramos tus automatizaciones para que no se caigan cuando más las necesitas.
                     </p>
 
                     {/* Feature Bullets */}
-                    <div className="flex flex-wrap justify-center gap-3 md:gap-6 mt-8 max-w-4xl mx-auto relative z-30">
+                    <div ref={bulletsRef} className="flex flex-wrap justify-center gap-3 md:gap-6 mt-12 max-w-4xl mx-auto relative z-30">
                         {[
                             "Alertas y revisión periódica",
                             "Logs claros y trazabilidad",
                             "Mejoras continuas por prioridad"
                         ].map((text, i) => (
-                            <div key={i} className={`flex items-center gap-2 bg-white border-2 border-black px-4 py-2 shadow-sketch rounded-full transform ${i % 2 === 0 ? '-rotate-1' : 'rotate-1'} hover:rotate-0 transition-transform`}>
+                            <div key={i} className={`flex items-center gap-2 bg-white border-2 border-black px-4 py-2 shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 transform ${i % 2 === 0 ? '-rotate-1' : 'rotate-1'} transition-all`}>
                                 <span className="text-brand-blue font-bold">✓</span>
                                 <span className="font-sans font-bold text-sm md:text-base whitespace-nowrap">{text}</span>
                             </div>
@@ -104,7 +117,10 @@ export const RayBusters: React.FC = () => {
                         <img
                             src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768305871/Gemini_Generated_Image_2adbc92adbc92adb-removebg-preview_myagw9.png"
                             alt="Ilustración de experto en automatización e IA estilo dibujo animado gestionando sistemas para agencias"
-                            className="w-full h-auto drop-shadow-sketch-xl animate-float scale-110 md:scale-125"
+                            width="1000"
+                            height="800"
+                            loading="lazy"
+                            className="w-full h-auto drop-shadow-sketch-xl animate-float scale-100 md:scale-110"
                         />
                         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-black/5 blur-2xl rounded-full -z-10"></div>
                     </div>
