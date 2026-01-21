@@ -65,6 +65,7 @@
             'spin-slow': 'spin 12s linear infinite',
             'wiggle': 'wiggle 1s ease-in-out infinite',
             'push-up': 'push-up 2s ease-in-out infinite',
+            'fade-in': 'fade-in 0.2s ease-out forwards',
           },
           keyframes: {
             float: {
@@ -78,6 +79,10 @@
             'push-up': {
               '0%, 100%': { transform: 'translateY(0)' },
               '50%': { transform: 'translateY(15px) scaleY(0.95)' },
+            },
+            'fade-in': {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
             }
           }
         }

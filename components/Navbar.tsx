@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
             />
           </div>
           {/* Decorative tag */}
-          <div className="absolute -top-2 -right-4 bg-brand-yellow border-2 border-black text-[10px] font-bold px-2 py-0.5 rounded-full transform rotate-12 group-hover:rotate-0 transition-transform">
+          <div className="absolute -top-2 -right-4 bg-brand-yellow border-2 border-black text-[10px] font-bold px-2 py-0.5 rounded-full transform rotate-12 group-hover:rotate-0 transition-transform hidden md:block">
             V2.0
           </div>
         </a>
