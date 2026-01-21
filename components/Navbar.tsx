@@ -30,11 +30,11 @@ export const Navbar: React.FC = () => {
       }`}>
       <div className="max-w-[1440px] mx-auto flex justify-between items-center">
         <a href="#" className="hover:opacity-100 transition-opacity group relative">
-          <div className="bg-white border-[3px] border-black px-4 py-2 shadow-sketch group-hover:shadow-sketch-lg transition-all transform -rotate-2 group-hover:rotate-0">
+          <div className="md:bg-white md:border-[3px] md:border-black px-0 md:px-4 py-0 md:py-2 md:shadow-sketch group-hover:shadow-sketch-lg transition-all transform md:-rotate-2 md:group-hover:rotate-0">
             <img
               src="https://res.cloudinary.com/drfr1lzlt/image/upload/v1768304224/logo-ia-parallax_2_p56oap.png"
               alt="IA_PARALLAX Logo"
-              className="h-12 md:h-20 w-auto object-contain"
+              className="h-8 md:h-20 w-auto object-contain"
             />
           </div>
           {/* Decorative tag */}
@@ -69,11 +69,11 @@ export const Navbar: React.FC = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden flex flex-col gap-1.5 p-3 z-50 rounded-md border-2 border-black bg-white shadow-sketch active:shadow-none active:translate-x-0.5 active:translate-y-0.5 transition-all"
+          className="lg:hidden flex flex-col gap-1 p-2 z-50 rounded-md border border-black bg-white shadow-sketch-sm active:shadow-none active:translate-x-0.5 active:translate-y-0.5 transition-all"
         >
-          <span className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-black transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span className={`block w-5 h-0.5 bg-black transition-transform duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`block w-5 h-0.5 bg-black transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-5 h-0.5 bg-black transition-transform duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
         </button>
       </div>
 

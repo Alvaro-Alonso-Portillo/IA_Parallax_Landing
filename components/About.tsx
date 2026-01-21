@@ -23,6 +23,18 @@ export const About: React.FC = () => {
           <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cea55f56d0672e6cea6217_Group%201413376246.svg" width="96" height="96" loading="lazy" className="absolute -top-10 right-[5%] md:right-[10%] w-16 md:w-24 animate-wiggle" alt="Ojos observando procesos manuales en agencia" />
         </div>
 
+        {/* Mobile Info Block (Moved from Hero) */}
+        <div className="md:hidden mb-12 px-4">
+          <div className="bg-white border-2 border-black p-6 rounded-sketch shadow-sketch">
+            <p className="font-sans text-lg font-bold text-black leading-tight">
+              Diseñamos sistemas de automatización con IA para empresas de servicios de 5 a 50 empleados.
+            </p>
+            <p className="mt-2 text-sm text-gray-700 font-sans">
+              Especialistas en optimizar la operativa interna para liberar el potencial de tu equipo.
+            </p>
+          </div>
+        </div>
+
         {/* Conversation Thread Layout */}
         <div className="relative max-w-4xl mx-auto flex flex-col gap-12 md:gap-24 px-4 md:px-0">
 
