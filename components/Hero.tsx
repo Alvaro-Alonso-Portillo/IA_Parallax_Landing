@@ -3,7 +3,7 @@ import { Cloud1, Cloud2, CloudWithAntenna, FistIcon, SoonSticker } from './Sketc
 import { useParallaxDecorative } from '../hooks/useParallaxDecorative';
 import { BeforeAfterToggle } from './BeforeAfterToggle';
 
-export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) => {
+export const Hero: React.FC = () => {
   const icon1Ref = useParallaxDecorative<HTMLImageElement>(0.02, -1);
   const icon2Ref = useParallaxDecorative<HTMLImageElement>(0.015, 1);
   const cloud1Ref = useParallaxDecorative<HTMLDivElement>(0.01, 1);
@@ -14,7 +14,7 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
   const line2Ref = useParallaxDecorative<HTMLDivElement>(0.018, -1);
 
   return (
-    <section className="relative pt-16 pb-12 md:pt-32 md:pb-20 px-4 overflow-hidden bg-brand-light">
+    <section className="relative pt-10 pb-12 md:pt-32 md:pb-20 px-4 overflow-hidden bg-brand-light">
       <div className="max-w-[1440px] mx-auto text-center relative z-30">
 
         {/* Floating Icons Top */}
@@ -32,24 +32,23 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
           className="absolute top-10 right-[15%] w-8 md:w-16 animate-spin-slow hidden md:block"
           alt=""
         />
-
         <div className="flex flex-col items-center gap-0 md:gap-2 relative px-2">
           {/* Mobile-only kicker to replace the large line */}
-          <p className="md:hidden font-display text-brand-dark text-xs uppercase tracking-widest mb-4 opacity-60">
-            Deja de apagar fuegos.
+          <p className="md:hidden font-display text-brand-dark text-[10px] uppercase tracking-[0.2em] mb-2 opacity-60">
+            Automatización para PYMES.
           </p>
 
-          <div className="w-full bg-white md:bg-transparent border-2 border-black md:border-0 rounded-sketch-sm md:rounded-none p-6 md:p-0 relative z-10 shadow-none">
+          <div className="w-full bg-white md:bg-transparent border-2 border-black md:border-0 rounded-sketch-sm md:rounded-none p-4 md:p-0 relative z-10 shadow-none">
             <h1 className="relative z-10 w-full font-display uppercase tracking-tighter drop-shadow-sketch-sm">
               <span className="hidden md:block text-[6rem] lg:text-[7.5rem] leading-[1.2] text-brand-dark">
-                DEJA DE APAGAR FUEGOS.
+                AGENCIA DE AUTOMATIZACIÓN
               </span>
-              <span className="block text-[5.5vw] md:text-[6rem] lg:text-[7.5rem] leading-[0.95] md:leading-[1.2] text-brand-blue">
-                AUTOMATIZA TU OPERATIVA.
+              <span className="block text-[8vw] md:text-[6rem] lg:text-[7.5rem] leading-[1] md:leading-[1.2] text-brand-blue">
+                DE PROCESOS CON IA
               </span>
-              <span className="block text-[5.5vw] md:text-[6rem] lg:text-[7.5rem] leading-[0.95] md:leading-[1.2] text-brand-dark relative inline-block">
-                <span className="md:hidden">RECUPERA TIEMPO.</span>
-                <span className="hidden md:inline">Y RECUPERA TIEMPO PARA CRECER.</span>
+              <span className="block text-[6vw] md:text-[6rem] lg:text-[7.5rem] leading-[1.1] md:leading-[1.2] text-brand-dark relative inline-block">
+                <span className="md:hidden">PARA EMPRESAS Y PYMES.</span>
+                <span className="hidden md:inline">PARA PEQUEÑAS Y MEDIANAS EMPRESAS.</span>
                 {/* Wavy Line Underline */}
                 <div className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-4 md:h-8 overflow-hidden hidden md:block">
                   <svg viewBox="0 0 500 20" preserveAspectRatio="none" className="w-full h-full stroke-brand-blue md:stroke-brand-orange stroke-[4] fill-none">
@@ -60,26 +59,29 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
                 <span className="absolute -top-6 -right-6 md:-top-8 md:-right-8 text-brand-blue md:text-brand-yellow animate-wiggle text-2xl md:text-6xl -z-10 hidden md:block">✦</span>
               </span>
             </h1>
+            <p className="mt-3 md:mt-2 text-[15px] md:text-2xl font-sans font-bold text-brand-dark/80 tracking-tight max-w-sm mx-auto leading-snug lg:max-w-4xl">
+              Eliminamos el trabajo manual en la captación de leads y la operativa diaria de las empresas.
+            </p>
           </div>
           {/* Pepe hidden on mobile in this position to avoid distraction */}
           <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png" width="160" height="160" className="absolute -left-10 sm:-left-16 md:-left-44 top-1/2 -translate-y-1/2 w-40 animate-float drop-shadow-sketch -scale-x-100 -z-30 pointer-events-none hidden md:block" alt="Meme Pepe gestionando sistemas de IA para agencias" />
         </div>
 
-        <div className="mt-8 md:mt-8 max-w-sm md:max-w-3xl mx-auto text-center relative z-20 md:border-2 md:border-black p-0 md:p-6 md:rounded-sketch bg-transparent md:bg-white md:shadow-sketch md:transform md:-rotate-1 mx-auto px-4">
+        <div className="mt-4 md:mt-8 max-w-sm md:max-w-3xl mx-auto text-center relative z-20 md:border-2 md:border-black p-0 md:p-6 md:rounded-sketch bg-transparent md:bg-white md:shadow-sketch md:transform md:-rotate-1 mx-auto px-4">
           <p className="md:hidden text-lg font-bold text-black font-sans leading-tight">
-            Menos tareas manuales. Más tiempo para crecer.
+            Eliminamos tus tareas manuales.
           </p>
           <p className="hidden md:block text-base md:text-xl font-bold text-black font-sans leading-snug md:leading-tight">
-            Diseñamos sistemas de automatización con IA para empresas de servicios de 5 a 50 empleados.
+            Eliminamos las tareas manuales y repetitivas que sobrecargan a tu equipo y bloquean la operativa de tu empresa.
           </p>
           <p className="mt-3 text-xs md:text-base text-gray-700 font-sans opacity-95 leading-relaxed hidden md:block">
-            Menos tareas manuales, menos errores, más tiempo para vender y operar.
+            Reduce un 70% el tiempo dedicado a gestión administrativa y operativa mediante flujos de trabajo automáticos.
           </p>
         </div>
 
-        <div className="mt-8 md:mt-14 flex flex-col sm:flex-row justify-center gap-4 md:gap-6 relative z-30 items-stretch sm:items-center px-4 md:px-0 max-w-3xl mx-auto">
-          <a href="#diagnostico" className="bg-black text-white px-8 md:px-12 py-5 text-base md:text-xl font-display uppercase tracking-wider hover:bg-brand-blue transition-all flex items-center justify-center gap-3 md:gap-4 group border-2 border-black rounded-full shadow-sketch-lg hover:shadow-sketch-xl hover:-translate-y-1">
-            Quiero recuperar tiempo
+        <div className="mt-5 md:mt-14 flex flex-col sm:flex-row justify-center gap-6 md:gap-6 relative z-30 items-stretch sm:items-center px-4 md:px-0 max-w-3xl mx-auto w-full">
+          <a href="#diagnostico" className="bg-black text-white px-6 py-6 md:px-12 md:py-5 text-[15px] md:text-xl font-display uppercase tracking-wider hover:bg-brand-blue transition-all flex items-center justify-center gap-3 md:gap-4 group border-2 border-black rounded-full shadow-sketch-lg hover:shadow-sketch-xl hover:-translate-y-1 w-full sm:w-auto">
+            Analizar mi caso ahora
           </a>
           <a href="#sistemas" className="hidden md:flex bg-transparent text-black px-8 md:px-12 py-4 md:py-5 text-sm md:text-xl font-display uppercase tracking-wider transition-all border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 text-center hover:bg-black/5 items-center justify-center">
             Ver cómo funciona
@@ -91,7 +93,7 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
           </a>
         </div>
         <p className="mt-4 text-sm md:text-base font-medium text-gray-600 relative z-30">
-          Diagnóstico rápido. Sin compromiso.
+          Revisamos tus procesos y te decimos si tiene sentido automatizarlos.
         </p>
         <p className="mt-4 text-[10px] md:text-xs text-gray-400 uppercase tracking-widest max-w-lg mx-auto relative z-30">
           No trabajamos con negocios que buscan soluciones rápidas sin ordenar su operativa.
@@ -134,6 +136,6 @@ export const Hero: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick
         <div ref={line1Ref} className="absolute top-1/4 left-0 w-32 h-1 bg-black/5 -rotate-12 transform origin-left"></div>
         <div ref={line2Ref} className="absolute bottom-1/3 right-0 w-48 h-1 bg-black/5 rotate-12 transform origin-right"></div>
       </div>
-    </section>
+    </section >
   );
 };

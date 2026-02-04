@@ -43,7 +43,7 @@ const TemplateCard: React.FC<TemplateCardProps> = ({ title, price, features, ima
 
         <button
             onClick={() => onPreOrder(title)}
-            className="w-full bg-black text-white p-4 border-2 border-black font-display uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none translate-x-0 hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            className="w-full bg-black text-white p-6 md:p-4 border-2 border-black font-display uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none translate-x-0 hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
         >
             PRE-COMPRAR
         </button>
@@ -165,7 +165,7 @@ export const Templates: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </header>
 
             <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-12">
                     {templates.map((t, idx) => (
                         <TemplateCard key={idx} {...t} onPreOrder={handlePreOrder} />
                     ))}
@@ -191,7 +191,7 @@ export const Templates: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
                         <button
                             onClick={() => handlePreOrder('EL PACK COMPLETO (Suscripción de por vida)')}
-                            className="w-full sm:w-auto bg-brand-orange text-white px-10 md:px-16 py-6 md:py-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all font-display text-xl md:text-3xl uppercase"
+                            className="w-full sm:w-auto bg-brand-orange text-white px-8 py-8 md:px-16 md:py-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all font-display text-lg md:text-3xl uppercase"
                         >
                             QUIERO EL TESORO COMPLETO 💎
                         </button>
@@ -203,7 +203,19 @@ export const Templates: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </section>
 
             <div className="py-20 text-center">
-                <p className="font-comic text-2xl">¿No encuentras lo que buscas? <br /> <span className="text-brand-blue underline cursor-pointer">Crea una para ti</span></p>
+                <p className="font-comic text-2xl">¿No encuentras lo que buscas? <br />
+                    <button
+                        onClick={() => {
+                            onBack();
+                            setTimeout(() => {
+                                document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' });
+                            }, 100);
+                        }}
+                        className="text-brand-blue underline cursor-pointer hover:text-black transition-colors"
+                    >
+                        Crea una para ti
+                    </button>
+                </p>
             </div>
         </div>
     );

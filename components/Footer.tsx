@@ -1,7 +1,7 @@
 import React from 'react';
-import { ContactForm } from './ContactForm';
+import { ContactForm, FormContext } from './ContactForm';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<{ formContext?: FormContext }> = ({ formContext = 'generic' }) => {
   return (
     <footer id="diagnostico" className="component_footer bg-[#f9f9f9] border-t-2 border-black relative font-sans">
       <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row relative">
@@ -11,11 +11,11 @@ export const Footer: React.FC = () => {
           <div className="max-w-xl mx-auto w-full">
             <div className="mb-12">
               <h2 className="text-4xl md:text-5xl font-display text-black leading-tight mb-4 text-center lg:text-left">
-                Entrenamos a tu <br /> IA para ser fuerte
+                Empieza hoy a <br /> automatizar tu operativa
               </h2>
             </div>
 
-            <ContactForm />
+            <ContactForm context={formContext} />
           </div>
         </div>
 
@@ -71,6 +71,69 @@ export const Footer: React.FC = () => {
           </a>
         </div>
 
+      </div>
+
+      {/* Link SEO section */}
+      <div className="bg-white border-t-[3px] border-black py-16 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+
+          {/* Columna Sectores */}
+          <div>
+            <h3 className="font-display text-xl uppercase mb-6 border-b-2 border-black/10 pb-2">Soluciones por Sector</h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="#/segmento/inmobiliaria" className="font-bold text-sm md:text-base hover:text-brand-blue transition-colors underline decoration-1 underline-offset-4">
+                  Automatización de leads y agenda para inmobiliarias
+                </a>
+              </li>
+              <li>
+                <a href="#/segmento/inmobiliaria-respuesta" className="font-bold text-sm md:text-base hover:text-brand-blue transition-colors underline decoration-1 underline-offset-4">
+                  Automatizar la respuesta a leads inmobiliarios
+                </a>
+              </li>
+              <li>
+                <span className="text-gray-400 font-bold text-sm md:text-base italic">Automatización para agencias de marketing (Próximamente)</span>
+              </li>
+              <li>
+                <span className="text-gray-400 font-bold text-sm md:text-base italic">Procesos para empresas logísticas (Próximamente)</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Columna Problemas */}
+          <div>
+            <h3 className="font-display text-xl uppercase mb-6 border-b-2 border-black/10 pb-2">Problemas Resueltos</h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="#/segmento/inmobiliaria-respuesta" className="font-bold text-sm md:text-base hover:text-brand-blue transition-colors underline decoration-1 underline-offset-4 decoration-brand-blue">
+                  Automatizar la respuesta a leads 24/7
+                </a>
+              </li>
+              <li>
+                <a href="#/problema/trabajo-manual" className="font-bold text-sm md:text-base hover:text-brand-blue transition-colors underline decoration-1 underline-offset-4 decoration-brand-blue">
+                  Eliminar el trabajo manual entre aplicaciones
+                </a>
+              </li>
+              <li>
+                <a href="#/problema/facturas-documentacion" className="font-bold text-sm md:text-base hover:text-brand-blue transition-colors underline decoration-1 underline-offset-4 decoration-brand-blue">
+                  Automatizar la gestión de facturas y documentación
+                </a>
+              </li>
+              <li>
+                <a href="#/segmento/inmobiliaria" className="font-bold text-sm md:text-base hover:text-brand-blue transition-colors underline decoration-1 underline-offset-4 decoration-brand-blue">
+                  Eliminar el desorden de la agenda comercial
+                </a>
+              </li>
+              <li>
+                <span className="text-gray-400 font-bold text-sm md:text-base italic">Sincronización de datos entre aplicaciones (Próximamente)</span>
+              </li>
+              <li>
+                <span className="text-gray-400 font-bold text-sm md:text-base italic">Gestión de facturas automática (Próximamente)</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </div>
 
       {/* Bottom Legal Bar */}

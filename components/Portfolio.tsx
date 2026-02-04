@@ -12,7 +12,8 @@ const PortfolioItem: React.FC<PortfolioItemProps & {
   result?: string;
   ctaText?: string;
   delay?: number;
-}> = ({ id, title, description, image, colorClass, onProjectClick, rotation = 'rotate-0', stickerColor = 'bg-brand-yellow', badge, forTarget, result, ctaText = 'Ver proyecto completo', delay = 0 }) => {
+  subtitle?: string;
+}> = ({ id, title, description, image, colorClass, onProjectClick, rotation = 'rotate-0', stickerColor = 'bg-brand-yellow', badge, forTarget, result, ctaText = 'Ver proyecto completo', delay = 0, subtitle }) => {
   const revealRef = useRevealOnScroll<HTMLDivElement>(0.1, delay);
 
   return (
@@ -36,11 +37,16 @@ const PortfolioItem: React.FC<PortfolioItemProps & {
 
           {/* Sticker Label and New Metadata */}
           <div className="absolute bottom-4 -right-2 flex flex-col items-end gap-1 w-[90%] pointer-events-none">
-            <div className={`${stickerColor} text-black px-4 py-1 border border-black font-display uppercase text-sm transform -rotate-2 shadow-sm w-fit`}>
+            <h3 className={`${stickerColor} text-black px-4 py-2 border-2 border-black font-display uppercase text-base md:text-sm transform -rotate-2 shadow-sm w-fit relative z-10`}>
               {title}
-            </div>
+            </h3>
+            {subtitle && (
+              <p className="bg-black text-white px-2 py-0.5 text-[10px] font-sans font-bold uppercase transform rotate-1 shadow-sm w-fit mt-1">
+                {subtitle}
+              </p>
+            )}
             {(forTarget || result) && (
-              <div className="bg-white/90 border border-black p-2 font-sans text-[10px] sm:text-xs leading-tight shadow-sm transform rotate-1 w-full max-w-[200px]">
+              <div className="bg-white/90 border border-black p-2 font-sans text-[10px] sm:text-xs leading-tight shadow-sm transform rotate-1 w-full max-w-[200px] mt-1">
                 {forTarget && <div className="text-gray-600"><strong>Para:</strong> {forTarget}</div>}
                 {result && <div className="text-brand-blue"><strong>Resultado:</strong> {result}</div>}
               </div>
@@ -92,8 +98,8 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
       <div className="max-w-[1440px] mx-auto px-4 md:px-8">
         <div ref={headerRef} className="mb-16 md:mb-24 text-center relative group">
           <h2 className="text-4xl md:text-8xl font-display uppercase leading-[1.2] md:leading-[1.15] relative z-10 text-brand-dark drop-shadow-sketch-sm">
-            CREAMOS SISTEMAS. <br />
-            <span className="bg-brand-yellow px-6 py-1 border-2 border-black transform -rotate-1 inline-block text-black mt-4 leading-tight">SISTEMAS INTELIGENTES.</span>
+            SOLUCIONES PARA AUTOMATIZAR <br />
+            <span className="bg-brand-yellow px-6 py-1 border-2 border-black transform -rotate-1 inline-block text-black mt-4 leading-tight">LEADS Y OPERATIVA INTERNA</span>
           </h2>
           <p className="mt-12 font-sans text-lg md:text-xl font-medium text-gray-600 relative z-10">
             Automatización real, resultados reales. Confía en los datos.
@@ -113,7 +119,7 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
         </div>
 
         {/* Gallery Wall Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto px-4 md:px-8 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 md:gap-12 max-w-7xl mx-auto px-4 md:px-8 relative">
 
           {/* Connecting Lines (Decorative SVG behind) - Hidden on smaller screens */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block -z-10 text-black opacity-20" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5">
@@ -123,11 +129,12 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
 
           <PortfolioItem
             id="qubicus"
-            title="Flujos y operativa"
-            description="Menos tareas manuales, más flujo y control."
-            forTarget="equipos con tareas repetitivas"
-            result="menos trabajo manual y menos errores"
-            ctaText="Quiero automatizar mi operativa"
+            title="Automatización de Operativa"
+            subtitle="Eliminamos la carga administrativa y el volcado manual entre hojas de cálculo."
+            description="Tus empleados pierden horas moviendo datos a mano entre hojas de cálculo y carpetas, lo que genera errores constantes."
+            forTarget="equipos saturados de administración"
+            result="Elimina el 100% de la carga administrativa manual y recupera el control total de tus archivos."
+            ctaText="Solicitar diagnóstico de procesos"
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1e576a54ab84d9991fc4e_%D0%B2%D1%96%D0%BA%D0%BD%D0%BE.png"
             stickerColor="bg-brand-blue"
             rotation="-rotate-2"
@@ -138,11 +145,12 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
           />
           <PortfolioItem
             id="notdog"
-            title="Gestión inteligente de leads"
-            description="Captura, califica y asigna sin perder oportunidades."
-            forTarget="equipos comerciales saturados"
-            result="priorización y seguimiento constante"
-            ctaText="Quiero ordenar mis leads"
+            title="Filtro Automático de Leads"
+            subtitle="Eliminamos las llamadas a leads que no encajan para que solo hables con clientes reales."
+            description="El equipo comercial pierde tiempo llamando a contactos que no encajan o no tienen presupuesto para contratar hoy."
+            forTarget="departamentos de venta saturados"
+            result="Tus comerciales solo hablarán con clientes listos para comprar, aumentando la tasa de cierre sin contratar más personal."
+            ctaText="Solicitar filtro de contactos"
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f0540b33d5d141c396_notdog.avif"
             stickerColor="bg-brand-orange"
             rotation="-rotate-1"
@@ -152,11 +160,12 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
           />
           <PortfolioItem
             id="snork-meme"
-            title="Agentes IA para WhatsApp"
-            description="Responde, filtra y agenda 24/7 con criterio."
-            forTarget="negocios que atienden leads por chat"
-            result="respuestas rápidas, filtro y agenda automática"
-            ctaText="Quiero un agente en WhatsApp"
+            title="Respuesta en WhatsApp 24/7"
+            subtitle="Eliminamos la pérdida de contactos fuera de horario con respuestas y citas automáticas."
+            description="Pierdes clientes porque no contestas a tiempo fuera del horario comercial o te olvidas de agendar las reuniones."
+            forTarget="negocios que reciben consultas por chat"
+            result="Captura contactos y agenda reuniones de forma automática incluso de noche, sin que tu equipo tenga que intervenir."
+            ctaText="Solicitar sistema de agenda"
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1b90511ce48cd4d3b_snork.avif"
             stickerColor="bg-brand-yellow"
             rotation="rotate-2"
@@ -166,11 +175,12 @@ export const Portfolio: React.FC<{ onProjectClick: (id: string) => void }> = ({ 
           />
           <PortfolioItem
             id="keycat"
-            title="Dashboards y reporting"
-            description="Dashboards y métricas para decidir rápido."
-            forTarget="directivos que necesitan datos"
-            result="decisiones rápidas y sin dudas"
-            ctaText="Quiero mejores métricas"
+            title="Control de Métricas en Tiempo Real"
+            subtitle="Eliminamos el reporte manual y la dispersión de datos con un panel de control vivo."
+            description="No sabes cuánto dinero pierdes cada mes porque los datos están dispersos y los reportes se hacen a mano una vez por semana."
+            forTarget="directivos que necesitan control total"
+            result="Visualiza la rentabilidad de cada proceso al momento y toma decisiones basadas en números reales, no en sensaciones."
+            ctaText="Solicitar panel de control"
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1540b33d5d141c464_keycat.avif"
             stickerColor="bg-red-300"
             rotation="rotate-3"

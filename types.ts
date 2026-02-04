@@ -16,6 +16,7 @@ export interface PricingCardProps {
 
 export interface PortfolioItemProps {
   title: string;
+  subtitle?: string;
   description: string;
   image: string;
   colorClass: string;

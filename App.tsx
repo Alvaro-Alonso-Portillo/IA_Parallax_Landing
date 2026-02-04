@@ -19,6 +19,11 @@ import { LegalPages } from './components/LegalPages';
 import { ResultsSection } from './components/ResultsSection';
 import { BookingModal } from './components/BookingModal';
 import { FAQ } from './components/FAQ';
+import { SEOInmobiliaria } from './components/SEOInmobiliaria';
+import { SEOInmobiliariaResponse } from './components/SEOInmobiliariaResponse';
+import { SEOAppSync } from './components/SEOAppSync';
+import { SEOFacturasDocumentacion } from './components/SEOFacturasDocumentacion';
+import { FormContext } from './components/ContactForm';
 import NotFound from './app/not-found';
 import { projectsData } from './projectsData';
 
@@ -31,6 +36,20 @@ function App() {
   const [activeLegal, setActiveLegal] = useState<'aviso' | 'privacidad' | 'cookies' | null>(null);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [showing404, setShowing404] = useState(false);
+  const [showingSEOInmobiliaria, setShowingSEOInmobiliaria] = useState(false);
+  const [showingSEOInmobiliariaResponse, setShowingSEOInmobiliariaResponse] = useState(false);
+  const [showingSEOAppSync, setShowingSEOAppSync] = useState(false);
+  const [showingSEOFacturasDocumentacion, setShowingSEOFacturasDocumentacion] = useState(false);
+  const [formContext, setFormContext] = useState<FormContext>(() => {
+    const saved = localStorage.getItem('formOriginContext');
+    return (saved as FormContext) || 'generic';
+  });
+
+  // Helper to update and persist context
+  const updateContext = (ctx: FormContext) => {
+    setFormContext(ctx);
+    localStorage.setItem('formOriginContext', ctx);
+  };
 
   const noDemosRef = useRevealOnScroll<HTMLParagraphElement>();
 
@@ -43,6 +62,10 @@ function App() {
     setShowingSchedule(false);
     setActiveLegal(null);
     setShowing404(false);
+    setShowingSEOInmobiliaria(false);
+    setShowingSEOInmobiliariaResponse(false);
+    setShowingSEOAppSync(false);
+    setShowingSEOFacturasDocumentacion(false);
     window.location.hash = '';
   };
 
@@ -104,8 +127,58 @@ function App() {
           setShowingDevelopment(false);
           setActiveLegal(null);
         }
+      } else if (hash === '#/segmento/inmobiliaria') {
+        setShowingSEOInmobiliaria(true);
+        updateContext('inmobiliaria');
+        setShowingSEOInmobiliariaResponse(false);
+        setShowing404(false);
+        setActiveProjectId(null);
+        setShowingTemplates(false);
+        setShowingCapabilities(false);
+        setShowingDevelopment(false);
+        setActiveLegal(null);
+      } else if (hash === '#/segmento/inmobiliaria-respuesta') {
+        setShowingSEOInmobiliariaResponse(true);
+        updateContext('respuesta');
+        setShowingSEOInmobiliaria(false);
+        setShowingSEOAppSync(false);
+        setShowingSEOFacturasDocumentacion(false);
+        setShowing404(false);
+        setActiveProjectId(null);
+        setShowingTemplates(false);
+        setShowingCapabilities(false);
+        setShowingDevelopment(false);
+        setActiveLegal(null);
+      } else if (hash === '#/problema/trabajo-manual') {
+        setShowingSEOAppSync(true);
+        updateContext('manual');
+        setShowingSEOInmobiliaria(false);
+        setShowingSEOInmobiliariaResponse(false);
+        setShowingSEOFacturasDocumentacion(false);
+        setShowing404(false);
+        setActiveProjectId(null);
+        setShowingTemplates(false);
+        setShowingCapabilities(false);
+        setShowingDevelopment(false);
+        setActiveLegal(null);
+      } else if (hash === '#/problema/facturas-documentacion') {
+        setShowingSEOFacturasDocumentacion(true);
+        updateContext('facturas');
+        setShowingSEOAppSync(false);
+        setShowingSEOInmobiliaria(false);
+        setShowingSEOInmobiliariaResponse(false);
+        setShowing404(false);
+        setActiveProjectId(null);
+        setShowingTemplates(false);
+        setShowingCapabilities(false);
+        setShowingDevelopment(false);
+        setActiveLegal(null);
       } else if (hash === '#/404' || window.location.pathname === '/404') {
         setShowing404(true);
+        setShowingSEOInmobiliaria(false);
+        setShowingSEOInmobiliariaResponse(false);
+        setShowingSEOAppSync(false);
+        setShowingSEOFacturasDocumentacion(false);
         setActiveProjectId(null);
         setShowingTemplates(false);
         setShowingCapabilities(false);
@@ -113,6 +186,10 @@ function App() {
         setActiveLegal(null);
       } else {
         setShowing404(false);
+        setShowingSEOInmobiliaria(false);
+        setShowingSEOInmobiliariaResponse(false);
+        setShowingSEOAppSync(false);
+        setShowingSEOFacturasDocumentacion(false);
         setActiveProjectId(null);
         setShowingTemplates(false);
         setShowingCapabilities(false);
@@ -149,14 +226,22 @@ function App() {
         <LegalPages type={activeLegal} onBack={handleBack} />
       ) : activeProject ? (
         <ProjectDetail project={activeProject} onBack={handleBack} />
+      ) : showingSEOInmobiliaria ? (
+        <SEOInmobiliaria onBack={handleBack} />
+      ) : showingSEOInmobiliariaResponse ? (
+        <SEOInmobiliariaResponse onBack={handleBack} />
+      ) : showingSEOAppSync ? (
+        <SEOAppSync onBack={handleBack} />
+      ) : showingSEOFacturasDocumentacion ? (
+        <SEOFacturasDocumentacion onBack={handleBack} />
       ) : (
         <main className="relative">
-          <Hero onBookingClick={() => setIsBookingOpen(true)} />
+          <Hero />
           <TechStack />
           <About />
           <Portfolio onProjectClick={(id) => window.location.hash = `#/project/${id}`} />
           <ResultsSection />
-          <Pricing onBookingClick={() => setIsBookingOpen(true)} />
+          <Pricing />
           <RayBusters />
           <FAQ />
         </main>
@@ -169,7 +254,7 @@ function App() {
         </p>
       </section>
 
-      <Footer />
+      <Footer formContext={formContext} />
       <LeadMagnetChat />
       <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </div>

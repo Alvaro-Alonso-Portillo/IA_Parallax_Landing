@@ -79,7 +79,7 @@ export const RayBusters: React.FC = () => {
             <div className="w-full mx-auto text-center px-4">
                 <div className="mb-8 relative">
                     <h2 ref={titleRef} className="text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm mb-4">
-                        GARANTÍA DE SISTEMA
+                        GARANTÍA DE RENDIMIENTO
                     </h2>
                     <p ref={subtitleRef} className="text-3xl md:text-6xl font-display uppercase text-brand-orange mb-8 drop-shadow-sketch-sm">
                         “Si no vemos claro el retorno, no seguimos.”
@@ -188,7 +188,7 @@ export const RayBusters: React.FC = () => {
                 </div>
 
                 {/* Mobile Fallback */}
-                <div className="grid grid-cols-1 md:hidden gap-6 mt-12 pb-12">
+                <div className="grid grid-cols-1 md:hidden gap-12 mt-12 pb-12">
                     {[
                         { step: 1, title: "Diagnóstico", desc: "Encontramos los cuellos de botella.", color: "bg-blue-100" },
                         { step: 2, title: "Estrategia", desc: "Diseñamos el sistema ideal.", color: "bg-yellow-100" },

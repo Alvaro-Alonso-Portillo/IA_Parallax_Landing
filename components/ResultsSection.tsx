@@ -87,48 +87,51 @@ export const ResultsSection: React.FC = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 overflow-hidden">
-                <div ref={headerRef} className="mb-10 md:mb-20 text-center">
+                <div ref={headerRef} className="mb-10 md:mb-16 text-center">
                     <div className="inline-block relative">
                         <h2 className="text-4xl sm:text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm leading-[1.1] md:leading-normal">
-                            Resultados <br className="md:hidden" />
-                            <span className="text-brand-yellow px-2 bg-black inline-block transform -rotate-1 text-white mt-2 md:mt-0">Reales</span>
+                            Métricas <br className="md:hidden" />
+                            <span className="text-brand-yellow px-2 bg-black inline-block transform -rotate-1 text-white mt-2 md:mt-0">Auditadas</span>
                         </h2>
                         <svg className="absolute -bottom-4 md:-bottom-6 left-0 w-full" height="15" viewBox="0 0 400 15" fill="none">
                             <path d="M5 10C50 2 150 12 200 8C250 4 350 14 395 6" stroke="#ffd900" strokeWidth="8" strokeLinecap="round" />
                         </svg>
                     </div>
+                    <p className="mt-8 max-w-2xl mx-auto font-sans text-lg text-gray-600 font-medium">
+                        Estos datos son promedios extraídos de auditorías internas realizadas en clientes tras los primeros 90 días de implementación.
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-24 sm:gap-20 md:gap-16 py-8">
                     <ResultCard
-                        label="Operaciones"
-                        value="15h"
-                        caseContext="Caso: empresa de servicios (tareas internas y reporting)"
-                        explanation="Tiempo que el equipo recupera cada semana."
-                        context="Administración y tareas repetitivas"
-                        impact="Ahorro semanal real en procesos de gestión"
+                        label="Gestión operativa"
+                        value="14h"
+                        caseContext="Caso: Empresa de 12 empleados con carga alta de reportes manuales."
+                        explanation="Tiempo total que el equipo administrativo recupera cada semana tras eliminar el volcado de datos manual entre CRM y ERP."
+                        context="Sincronización de datos interna"
+                        impact="Ahorro semanal medido en horas/equipo"
                         rotation="-rotate-2 md:-rotate-3"
                         tapeColor="bg-brand-yellow"
                         delay={0}
                     />
                     <ResultCard
-                        label="Atención"
-                        value="24/7"
-                        caseContext="Caso: atención y filtro de leads por WhatsApp"
-                        explanation="Ningún lead vuelve a quedarse sin respuesta."
-                        context="Cualificación de leads y dudas"
-                        impact="Soporte instantáneo sin aumentar equipo"
+                        label="Atención al cliente"
+                        value="< 2m"
+                        caseContext="Caso: Empresa de servicios con leads que llegaban de noche o en fin de semana."
+                        explanation="Tiempo medio de primera respuesta y filtrado inicial. Antes, los contactos esperaban hasta 12 horas para ser atendidos."
+                        context="Respuesta a consultas 24/7"
+                        impact="Filtro instantáneo de necesidades"
                         rotation="rotate-1 md:rotate-2"
                         tapeColor="bg-black"
                         delay={60}
                     />
                     <ResultCard
-                        label="Ventas"
-                        value="+40%"
-                        caseContext="Caso: mejora de conversión en leads calificados"
-                        explanation="Más ventas sin contratar a nadie más."
-                        context="Embudo comercial y conversión"
-                        impact="Más reuniones agendadas automáticamente"
+                        label="Eficacia comercial"
+                        value="+25%"
+                        caseContext="Caso: Equipo de ventas que perdía el 60% del tiempo en llamadas con perfiles no aptos."
+                        explanation="Incremento en la tasa de cierre de reuniones. El sistema filtra las reuniones descartando a quienes no tienen presupuesto o perfil."
+                        context="Cualificación de leads previa"
+                        impact="Reuniones de venta con perfil auditado"
                         rotation="-rotate-1"
                         tapeColor="bg-brand-orange"
                         delay={120}
@@ -136,22 +139,22 @@ export const ResultsSection: React.FC = () => {
                 </div>
 
                 <p className="mt-8 text-center text-xs md:text-sm font-medium text-gray-400 italic">
-                    *Resultados orientativos; se validan en diagnóstico.
+                    *Datos extraídos de registros de logs y CRM de clientes reales vinculados a flujos operativos.
                 </p>
 
                 <div className="mt-16 md:mt-24 text-center">
                     <p className="font-display text-xl md:text-2xl mb-8 uppercase text-brand-dark">¿Quieres saber dónde estás perdiendo tiempo hoy?</p>
-                    <div className="inline-block relative group px-4 w-full md:w-auto">
+                    <div className="inline-block relative group px-6 w-full max-w-[400px] mx-auto">
                         <div className="absolute inset-0 bg-brand-blue transform rotate-2 translate-x-1 translate-y-1 group-hover:rotate-0 transition-transform hidden md:block"></div>
                         <button
                             onClick={() => document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="w-full md:w-auto relative bg-black text-white font-display text-xl md:text-3xl px-10 md:px-16 py-5 md:py-6 border-2 border-black group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform uppercase shadow-sketch-lg md:shadow-none"
+                            className="w-full relative bg-black text-white font-display text-lg md:text-3xl px-6 py-6 md:px-16 md:py-6 border-2 border-black group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform uppercase shadow-sketch-lg md:shadow-none"
                         >
-                            Pasar diagnóstico
+                            Solicitar revisión de mi caso
                         </button>
                     </div>
                     <p className="mt-4 text-xs md:text-sm font-medium text-gray-500">
-                        15 minutos. Te decimos por dónde empezar.
+                        Analizamos tu operativa y te decimos si tiene sentido automatizarla. Sin compromiso.
                     </p>
                 </div>
             </div>

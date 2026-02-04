@@ -5,8 +5,10 @@ const CapabilityCard: React.FC<{ title: string; description: string; icon: strin
         <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
             {icon}
         </div>
-        <h3 className="text-3xl font-display uppercase mb-4 leading-none">{title}</h3>
-        <p className="font-sans font-bold text-lg leading-tight text-gray-800">
+        <h3 className="text-2xl md:text-3xl font-display uppercase mb-4 leading-none text-brand-dark border-b-2 border-black/10 pb-2 w-full">
+            {title}
+        </h3>
+        <p className="font-sans font-bold text-base md:text-lg leading-snug text-gray-700">
             {description}
         </p>
     </div>
@@ -89,7 +91,7 @@ export const Capabilities: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </header>
 
             <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-12">
                     {capabilities.map((cap, idx) => (
                         <CapabilityCard key={idx} {...cap} />
                     ))}
@@ -125,9 +127,17 @@ export const Capabilities: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
             <section className="py-24 md:py-32 text-center bg-white px-6">
                 <h2 className="text-4xl md:text-7xl font-display uppercase mb-12">¿Preparado para el siguiente nivel?</h2>
-                <a href="#contact" className="inline-block bg-brand-orange text-white px-8 md:px-12 py-4 md:py-6 text-xl md:text-3xl font-display uppercase border-4 border-black shadow-sketch hover:shadow-sketch-lg hover:-translate-y-2 transition-all rounded-full">
+                <button
+                    onClick={() => {
+                        onBack();
+                        setTimeout(() => {
+                            document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    }}
+                    className="inline-flex w-full sm:w-auto justify-center bg-brand-orange text-white px-8 py-6 md:px-12 md:py-6 text-xl md:text-3xl font-display uppercase border-4 border-black shadow-sketch hover:shadow-sketch-lg hover:-translate-y-2 transition-all rounded-full"
+                >
                     Empezar Ahora 🚀
-                </a>
+                </button>
             </section>
         </div>
     );

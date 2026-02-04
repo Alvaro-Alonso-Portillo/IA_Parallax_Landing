@@ -114,7 +114,7 @@ export const Development: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </header>
 
             <section className="py-20 md:py-32 max-w-7xl mx-auto px-6 md:px-8 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-24 md:mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16 mb-24 md:mb-32">
                     {tools.map((t, idx) => (
                         <DevTool key={idx} {...t} />
                     ))}
@@ -132,7 +132,7 @@ export const Development: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                         <div className="absolute bottom-0 left-0 w-full h-4 bg-brand-yellow -z-10 transform -rotate-1"></div>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 md:gap-16">
                         <div className="group">
                             <div className="text-5xl md:text-6xl mb-6 group-hover:animate-wiggle inline-block">🛡️</div>
                             <h3 className="text-2xl md:text-3xl font-display uppercase mb-4 text-brand-blue">Seguridad Primero</h3>
@@ -159,12 +159,20 @@ export const Development: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                     <h2 className="text-5xl md:text-8xl font-display uppercase mb-10 leading-none tracking-tighter">¿Tienes un reto técnico complejo?</h2>
                     <p className="font-sans text-xl md:text-3xl font-black mb-16 opacity-90 italic bg-brand-orange/20 py-2 inline-block">"Si se puede imaginar y tiene una API, nosotros lo podemos automatizar."</p>
                     <div className="flex justify-center">
-                        <a href="#contact" className="group relative">
+                        <button
+                            onClick={() => {
+                                onBack();
+                                setTimeout(() => {
+                                    document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' });
+                                }, 100);
+                            }}
+                            className="group relative w-full sm:w-auto"
+                        >
                             <div className="absolute inset-0 bg-brand-yellow rounded-full transform translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
-                            <button className="relative bg-white text-black px-12 md:px-20 py-6 md:py-8 text-2xl md:text-3xl font-display uppercase border-4 border-black transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-full">
+                            <div className="relative w-full flex justify-center bg-white text-black px-8 py-6 md:px-20 md:py-8 text-xl md:text-3xl font-display uppercase border-4 border-black transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-full">
                                 Inicia tu Desarrollo
-                            </button>
-                        </a>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </section>

@@ -101,9 +101,17 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack })
             {/* Final CTA */}
             <section className="py-20 md:py-24 bg-brand-light border-t-4 border-black text-center px-6">
                 <h2 className="text-4xl md:text-5xl font-display uppercase mb-8">¿Quieres resultados similares?</h2>
-                <a href="#contact" className="inline-block bg-black text-white px-8 md:px-12 py-4 md:py-6 text-xl md:text-2xl font-display uppercase border-4 border-black shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 transition-all rounded-full">
-                    Hablemos ahora
-                </a>
+                <button
+                    onClick={() => {
+                        onBack();
+                        setTimeout(() => {
+                            document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    }}
+                    className="inline-block bg-black text-white px-8 md:px-12 py-4 md:py-6 text-xl md:text-2xl font-display uppercase border-4 border-black shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 transition-all rounded-full"
+                >
+                    Analizar mi caso
+                </button>
             </section>
         </div>
     );

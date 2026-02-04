@@ -34,13 +34,13 @@ const ShowcaseCard: React.FC<{ title: string; subtitle: string; image: string; c
             <h4 className="font-display text-xl mb-3 border-b-2 border-black/20 pb-2 uppercase italic">Blueprint Detallado</h4>
             <ul className="space-y-2">
               <li className="flex items-start gap-2 font-sans font-bold text-sm md:text-base leading-tight text-gray-900">
-                <span className="text-brand-orange mt-1">▶</span> {title.includes('WhatsApp') ? 'Filtro inteligente de audio y texto' : 'Orquestación n8n en tiempo real'}
+                <span className="text-brand-orange mt-1">▶</span> Validación automática de datos
               </li>
               <li className="flex items-start gap-2 font-sans font-bold text-sm md:text-base leading-tight text-gray-900">
-                <span className="text-brand-orange mt-1">▶</span> Conexión directa con tu CRM actual
+                <span className="text-brand-orange mt-1">▶</span> Conexión directa entre tus aplicaciones
               </li>
               <li className="flex items-start gap-2 font-sans font-bold text-sm md:text-base leading-tight text-gray-900">
-                <span className="text-brand-orange mt-1">▶</span> Lógica interna GPT-4o personalizada
+                <span className="text-brand-orange mt-1">▶</span> Clasificación y envío de documentos
               </li>
             </ul>
           </div>
@@ -53,7 +53,7 @@ const ShowcaseCard: React.FC<{ title: string; subtitle: string; image: string; c
 
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`mt-4 w-full py-4 border-2 border-black rounded-full font-display text-lg md:text-xl uppercase transition-all relative overflow-hidden group/btn hover:-translate-y-1 shadow-sketch hover:shadow-sketch-lg
+            className={`mt-4 w-full py-6 border-2 border-black rounded-full font-display text-lg md:text-xl uppercase transition-all relative overflow-hidden group/btn hover:-translate-y-1 shadow-sketch hover:shadow-sketch-lg
             ${isExpanded ? 'bg-black text-white' : color + ' active:translate-y-1 active:shadow-none'}`}
           >
             <span className="relative z-10">{isExpanded ? 'CERRAR' : 'VER MÁS'}</span>
@@ -67,7 +67,7 @@ const ShowcaseCard: React.FC<{ title: string; subtitle: string; image: string; c
   );
 };
 
-export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) => {
+export const Pricing: React.FC = () => {
   const headerRef = useRevealOnScroll<HTMLHeadingElement>();
   const descBoxRef = useRevealOnScroll<HTMLDivElement>(0.1, 40);
 
@@ -80,9 +80,9 @@ export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingCl
           {/* Intro Section - Now part of the grid */}
           <div className="relative">
             <h2 ref={headerRef} className="text-4xl md:text-6xl font-display uppercase leading-[1.1] text-brand-dark drop-shadow-sketch-sm mb-8 relative">
-              Hacemos que el <br />
-              trabajo <span className="text-brand-blue">aburrido</span> <br />
-              <span className="text-brand-orange underline decoration-wavy decoration-black underline-offset-8">desaparezca</span>
+              Automatización para <br />
+              eliminar el <span className="text-brand-blue">trabajo administrativo</span> <br />
+              <span className="text-brand-orange underline decoration-wavy decoration-black underline-offset-8">aburrido</span>
               <span className="absolute -top-12 -left-8 text-6xl text-brand-yellow animate-spin-slow opacity-50">✦</span>
             </h2>
 
@@ -111,8 +111,8 @@ export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingCl
 
           {/* Grid Item 2 - First Card */}
           <ShowcaseCard
-            title="Flujos y Operativa"
-            subtitle="Convertimos tareas manuales en flujos automáticos que trabajan sin descanso y sin errores."
+            title="Automatización de Operativa"
+            subtitle="Eliminamos la carga administrativa y el volcado manual entre Excels. Resultado: Procesos 100% automáticos y sin errores humanos."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f1b90511ce48cd4d3b_snork.avif"
             color="bg-brand-blue/20"
             rotate="rotate-2"
@@ -121,8 +121,8 @@ export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingCl
 
           {/* Grid Item 3 - Second Card */}
           <ShowcaseCard
-            title="Agentes IA para WhatsApp"
-            subtitle="Agentes que responden, filtran y ordenan conversaciones sin que tengas que estar pendiente."
+            title="Agenda en WhatsApp 24/7"
+            subtitle="Eliminamos la pérdida de contactos fuera de horario con citas automáticas. Resultado: Consultas atendidas y reuniones agendadas al instante."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d1d4f0540b33d5d141c396_notdog.avif"
             color="bg-brand-yellow/20"
             rotate="-rotate-2"
@@ -131,8 +131,8 @@ export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingCl
 
           {/* Grid Item 4 - Third Card */}
           <ShowcaseCard
-            title="Gestión inteligente de leads"
-            subtitle="Clasificación automática de contactos para que solo atiendas a los que importan."
+            title="Filtro Automático de Leads"
+            subtitle="Eliminamos las llamadas a leads que no encajan con tu servicio. Resultado: Tu equipo solo atiende a clientes listos para comprar."
             image="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png"
             color="bg-green-200"
             rotate="rotate-2"
@@ -146,14 +146,14 @@ export const Pricing: React.FC<{ onBookingClick?: () => void }> = ({ onBookingCl
           <div className="inline-block relative group">
             <div className="absolute inset-0 bg-brand-yellow rounded-full transform translate-x-3 translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
             <a
-              href="#/agendar"
-              className="relative inline-flex bg-white text-black px-12 py-5 text-2xl font-display uppercase border-2 border-black hover:-translate-y-1 transition-all rounded-full shadow-sketch-lg items-center gap-4"
+              href="#diagnostico"
+              className="relative w-full sm:w-auto inline-flex justify-center bg-white text-black px-8 py-6 md:px-12 md:py-5 text-lg md:text-2xl font-display uppercase border-2 border-black hover:-translate-y-1 transition-all rounded-full shadow-sketch-lg items-center gap-4"
             >
               <span>📅</span>
-              AGENDAR AUDITORÍA IA GRATUITA
+              ANALIZAR MI OPERATIVA
             </a>
           </div>
-          <p className="mt-6 font-comic text-xl text-gray-500 italic">Solo 4 huecos disponibles esta semana.</p>
+          <p className="mt-6 font-comic text-xl text-gray-500 italic">Hablamos 15 min y validamos la viabilidad técnica de tu proyecto.</p>
         </div>
 
       </div>

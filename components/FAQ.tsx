@@ -34,13 +34,13 @@ export const FAQ: React.FC = () => {
         <section id="faq" className="py-24 bg-[#f9f9f9] border-y-2 border-black relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 relative z-10">
                 <h2 ref={headerRef} className="text-4xl md:text-6xl font-display uppercase text-brand-dark mb-12 text-center drop-shadow-sketch-sm">
-                    Preguntas <span className="text-brand-yellow px-2 bg-black inline-block transform -rotate-1 text-white mx-2">Frecuentes</span>
+                    Dudas sobre <span className="text-brand-yellow px-2 bg-black inline-block transform -rotate-1 text-white mx-2">Automatización</span>
                 </h2>
 
                 <div ref={cardRef} className="bg-white border-4 border-black p-6 md:p-10 shadow-sketch-lg rounded-sketch">
                     <FAQItem
                         question="¿Esto sirve para cualquier negocio?"
-                        answer="No. Funciona mejor en empresas que ya tienen procesos y quieren ordenarlos."
+                        answer="No. Funciona mejor en empresas de servicios con procesos definidos, como en la automatización de leads y agenda para inmobiliarias, o simplemente para eliminar el trabajo manual entre aplicaciones conectando tus herramientas diarias."
                     />
                     <FAQItem
                         question="¿Cuánto tiempo tarda en verse el resultado?"
