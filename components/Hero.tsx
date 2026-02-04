@@ -104,7 +104,7 @@ export const Hero: React.FC = () => {
 
         {/* Mascot moved below CTAs on mobile */}
         <div className="md:hidden mt-8 flex justify-center">
-          <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png" width="80" height="80" className="w-12 animate-float opacity-40 grayscale" alt="" />
+          <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png" width="80" height="80" className="w-20 md:w-12 animate-float drop-shadow-sketch" alt="" />
         </div>
 
 
