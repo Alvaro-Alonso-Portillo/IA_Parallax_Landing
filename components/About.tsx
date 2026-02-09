@@ -28,7 +28,7 @@ export const About: React.FC = () => {
               Optimizamos la operativa interna de empresas de servicios con 5 a 50 empleados.
             </p>
             <p className="text-sm text-gray-700 font-sans leading-snug opacity-90">
-              Evitamos que el crecimiento de tu negocio se detenga por saturación administrativa y errores en los datos.
+              Evitamos que el <span className="text-[#2563EB] font-bold bg-transparent">crecimiento</span> de tu negocio se detenga por saturación administrativa y errores en los datos.
             </p>
           </div>
         </div>

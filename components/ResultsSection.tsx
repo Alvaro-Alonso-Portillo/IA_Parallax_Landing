@@ -88,14 +88,18 @@ export const ResultsSection: React.FC = () => {
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 overflow-hidden">
                 <div ref={headerRef} className="mb-10 md:mb-16 text-center">
-                    <div className="inline-block relative">
-                        <h2 className="text-4xl sm:text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm leading-[1.1] md:leading-normal">
-                            Métricas <br className="md:hidden" />
-                            <span className="text-brand-yellow px-3 py-1 md:bg-black bg-black inline-block transform -rotate-2 md:-rotate-1 text-white mt-1 md:mt-0 shadow-sketch md:shadow-none text-[0.9em] md:text-inherit border-2 border-black md:border-0">Auditadas</span>
+                    <div className="inline-block relative w-full">
+                        <h2 className="text-4xl sm:text-5xl md:text-8xl font-display uppercase text-brand-dark drop-shadow-sketch-sm leading-tight flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                            <span>Métricas</span>
+                            <span className="bg-black !text-white px-5 md:px-10 py-1 md:py-3 inline-block transform -rotate-1 md:-rotate-2 shadow-sketch-lg border-2 border-black">
+                                Auditadas
+                            </span>
                         </h2>
-                        <svg className="absolute -bottom-4 md:-bottom-6 left-0 w-full" height="15" viewBox="0 0 400 15" fill="none">
-                            <path d="M5 10C50 2 150 12 200 8C250 4 350 14 395 6" stroke="#ffd900" strokeWidth="8" strokeLinecap="round" />
-                        </svg>
+                        <div className="absolute -bottom-8 md:-bottom-12 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 pointer-events-none">
+                            <svg width="100%" height="20" viewBox="0 0 400 20" fill="none" preserveAspectRatio="none">
+                                <path d="M5 15C50 5 150 15 200 10C250 5 350 15 395 7" stroke="#ffd900" strokeWidth="6" strokeLinecap="round" />
+                            </svg>
+                        </div>
                     </div>
                     <p className="mt-8 max-w-2xl mx-auto font-sans text-lg text-gray-600 font-medium">
                         Estos datos son promedios extraídos de auditorías internas realizadas en clientes tras los primeros 90 días de implementación.

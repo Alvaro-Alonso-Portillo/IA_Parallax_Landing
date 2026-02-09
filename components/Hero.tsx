@@ -32,23 +32,18 @@ export const Hero: React.FC = () => {
           className="absolute top-10 right-[15%] w-8 md:w-16 animate-spin-slow hidden md:block"
           alt=""
         />
-        <div className="flex flex-col items-center gap-0 md:gap-2 relative px-2">
-          {/* Mobile-only kicker to replace the large line */}
-          <p className="md:hidden font-display text-brand-dark text-[10px] uppercase tracking-[0.2em] mb-2 opacity-60">
-            Automatización para PYMES.
-          </p>
-
+        <div className="flex flex-col items-center relative px-2">
           <div className="w-full relative z-10">
             <h1 className="relative z-10 w-full uppercase tracking-tighter drop-shadow-sketch-sm flex flex-col items-center">
               {/* Desktop H1 */}
               <div className="hidden md:block">
-                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1.2] text-brand-dark font-display">
+                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1.2] text-brand-dark font-display text-center">
                   AGENCIA DE AUTOMATIZACIÓN
                 </span>
-                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1] md:leading-[1.2] text-brand-blue font-display">
+                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1] md:leading-[1.2] text-brand-blue font-display text-center">
                   DE PROCESOS CON IA
                 </span>
-                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1.1] md:leading-[1.2] text-brand-dark relative inline-block font-display">
+                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1.1] md:leading-[1.2] text-brand-dark relative inline-block font-display text-center">
                   PARA PEQUEÑAS Y MEDIANAS EMPRESAS.
                   {/* Wavy Line Underline */}
                   <div className="absolute -bottom-4 left-0 w-full h-8 overflow-hidden">
@@ -60,34 +55,25 @@ export const Hero: React.FC = () => {
                 </span>
               </div>
 
-              {/* Mobile H1 */}
-              <div className="flex md:hidden flex-col items-center justify-center gap-0 w-full text-center">
-                <span className="text-[clamp(1.2rem,7vw,1.8rem)] font-sans font-black text-brand-dark leading-none uppercase">
+              {/* Mobile H1 - Adjusted to fit screen width */}
+              <div className="flex md:hidden flex-col items-center justify-center gap-0 w-full text-center mt-[4vh] pb-[40px] px-4">
+                <span className="block text-[8vw] leading-[1.1] text-brand-dark font-display text-center uppercase">
                   AGENCIA DE
                 </span>
-                <div className="text-[11vw] font-accent text-brand-blue leading-[0.9] text-center my-4 transform -rotate-1 w-full break-words px-2 flex flex-col items-center">
-                  <span>AUTOMATIZACIÓN</span>
-                  <span>CON IA</span>
-                  <span className="text-[clamp(0.8rem,5vw,1.2rem)] font-sans font-black tracking-normal block mt-2">
-                    PARA EMPRESAS Y PYMES.
-                  </span>
-                </div>
+                <span className="block text-[clamp(1.5rem,9.2vw,3rem)] leading-[1.1] text-[#2563EB] font-display text-center uppercase break-normal">
+                  AUTOMATIZACIÓN
+                </span>
+                <span className="block text-[9vw] leading-[1.1] text-brand-dark font-display text-center uppercase">
+                  CON IA
+                </span>
               </div>
             </h1>
-            <p className="mt-6 md:mt-2 text-[15px] md:text-2xl font-sans font-bold text-brand-dark/80 tracking-tight max-w-[280px] md:max-w-4xl mx-auto leading-snug">
+
+            <p className="mt-4 md:mt-2 text-[15px] md:text-2xl font-sans font-bold text-brand-dark/80 tracking-tight max-w-[280px] md:max-w-4xl mx-auto leading-snug">
               Eliminamos el trabajo manual en la captación de leads y la operativa diaria de las empresas.
             </p>
-
-            {/* Mobile-only Sketch Illustration */}
-            <div className="md:hidden my-12 flex justify-center w-full px-4">
-              <img
-                src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d8589fe8dc80cbd5e9e377_Group%201413376294%20(1).svg"
-                alt="Diagrama de flujo de automatización IA"
-                className="w-[80%] max-w-[300px] h-auto animate-float opacity-90 drop-shadow-sketch-sm"
-              />
-            </div>
           </div>
-          {/* Pepe hidden on mobile in this position to avoid distraction */}
+          {/* Pepe hidden... */}
           <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png" width="160" height="160" className="absolute -left-10 sm:-left-16 md:-left-44 top-1/2 -translate-y-1/2 w-40 animate-float drop-shadow-sketch -scale-x-100 -z-30 pointer-events-none hidden md:block" alt="Meme Pepe gestionando sistemas de IA para agencias" />
         </div>
 
@@ -104,7 +90,7 @@ export const Hero: React.FC = () => {
         </div>
 
         <div className="mt-8 md:mt-14 flex flex-col sm:flex-row justify-center gap-6 md:gap-6 relative z-30 items-stretch sm:items-center px-4 md:px-0 max-w-3xl mx-auto w-full">
-          <a href="#diagnostico" className="bg-black text-white px-6 py-6 md:px-12 md:py-5 text-[15px] md:text-xl font-display uppercase tracking-wider hover:bg-brand-blue transition-all flex items-center justify-center gap-3 md:gap-4 group border-2 border-black rounded-full shadow-[4px_4px_0px_#4d65ff] md:shadow-sketch-lg hover:shadow-sketch-xl hover:-translate-y-1 w-full sm:w-auto">
+          <a href="#diagnostico" className="bg-black text-white px-6 py-6 md:px-12 md:py-5 text-[15px] md:text-xl font-display uppercase tracking-wider hover:bg-[#2563EB] transition-all flex items-center justify-center gap-3 md:gap-4 group border-2 border-black rounded-full shadow-[4px_4px_0px_#2563EB] md:shadow-sketch-lg hover:shadow-sketch-xl hover:-translate-y-1 w-full sm:w-auto">
             Analizar mi caso ahora
           </a>
           <a href="#sistemas" className="flex bg-transparent text-black px-6 py-5 md:px-12 md:py-5 text-[15px] md:text-xl font-display uppercase tracking-wider transition-all border-2 border-black rounded-full shadow-[4px_4px_0px_#000000] md:shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 text-center hover:bg-black/5 items-center justify-center w-full sm:w-auto">
@@ -121,13 +107,8 @@ export const Hero: React.FC = () => {
           "Si no tiene sentido automatizar ahora, te lo diremos."
         </p>
 
-        {/* Mascot moved below CTAs on mobile */}
-        <div className="md:hidden mt-8 flex justify-center">
-          <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png" width="80" height="80" className="w-20 md:w-12 animate-float drop-shadow-sketch" alt="" />
-        </div>
-
-
       </div>
+
 
       {/* Unified Before/After Module */}
       <div className="mt-12 md:mt-16">
