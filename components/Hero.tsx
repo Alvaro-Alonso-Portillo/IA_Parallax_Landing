@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
   const line2Ref = useParallaxDecorative<HTMLDivElement>(0.018, -1);
 
   return (
-    <section className="relative pt-20 pb-20 md:pt-32 md:pb-20 px-4 overflow-hidden bg-brand-light">
+    <section className="relative pt-20 pb-40 md:pt-32 md:pb-20 px-4 overflow-hidden bg-brand-light">
       <div className="max-w-[1440px] mx-auto text-center relative z-30">
         {/* ... (icons code remains same) ... */}
         {/* Note: I'm keeping the internal icons logic but focusing on the requested changes in this block */}
@@ -61,16 +61,17 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Mobile H1 */}
-              <div className="flex md:hidden flex-col items-center justify-center gap-0 w-full">
-                <span className="text-[clamp(1.5rem,8vw,2.5rem)] font-sans font-black text-brand-dark leading-none">
+              <div className="flex md:hidden flex-col items-center justify-center gap-0 w-full text-center">
+                <span className="text-[clamp(1.2rem,7vw,1.8rem)] font-sans font-black text-brand-dark leading-none uppercase">
                   AGENCIA DE
                 </span>
-                <span className="text-[clamp(2.8rem,14vw,5.5rem)] font-accent text-brand-blue leading-[0.85] text-center my-2 transform -rotate-1">
-                  AUTOMATIZACIÓN <br /> CON IA
-                </span>
-                <span className="text-[clamp(1rem,5vw,1.8rem)] font-sans font-black text-brand-dark tracking-normal">
-                  PARA EMPRESAS Y PYMES.
-                </span>
+                <div className="text-[11vw] font-accent text-brand-blue leading-[0.9] text-center my-4 transform -rotate-1 w-full break-words px-2 flex flex-col items-center">
+                  <span>AUTOMATIZACIÓN</span>
+                  <span>CON IA</span>
+                  <span className="text-[clamp(0.8rem,5vw,1.2rem)] font-sans font-black tracking-normal block mt-2">
+                    PARA EMPRESAS Y PYMES.
+                  </span>
+                </div>
               </div>
             </h1>
             <p className="mt-6 md:mt-2 text-[15px] md:text-2xl font-sans font-bold text-brand-dark/80 tracking-tight max-w-[280px] md:max-w-4xl mx-auto leading-snug">
@@ -90,7 +91,7 @@ export const Hero: React.FC = () => {
           <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png" width="160" height="160" className="absolute -left-10 sm:-left-16 md:-left-44 top-1/2 -translate-y-1/2 w-40 animate-float drop-shadow-sketch -scale-x-100 -z-30 pointer-events-none hidden md:block" alt="Meme Pepe gestionando sistemas de IA para agencias" />
         </div>
 
-        <div className="mt-4 md:mt-8 max-w-sm md:max-w-3xl mx-auto text-center relative z-20 md:border-2 md:border-black p-0 md:p-6 md:rounded-sketch bg-transparent md:bg-white md:shadow-sketch md:transform md:-rotate-1 mx-auto px-4">
+        <div className="mt-4 md:mt-8 max-w-[320px] md:max-w-3xl mx-auto text-center relative z-20 md:border-2 md:border-black p-0 md:p-6 md:rounded-sketch bg-transparent md:bg-white md:shadow-sketch md:transform md:-rotate-1 px-4 border-0 shadow-none">
           <p className="md:hidden text-lg font-bold text-black font-sans leading-tight">
             Eliminamos tus tareas manuales.
           </p>

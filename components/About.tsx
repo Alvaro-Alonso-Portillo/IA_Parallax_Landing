@@ -90,19 +90,19 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="w-full md:w-1/2 flex justify-center">
+            <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
               <div className="w-32 h-48 md:w-48 md:h-64 border-2 border-black bg-white p-2 shadow-sketch-lg transform rotate-[1.4deg]">
                 <div className="w-full h-full border border-black bg-gray-100 flex items-center justify-center overflow-hidden">
                   <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cea55cd116d2752357d464_%D0%9E%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80.avif" width="192" height="256" loading="lazy" className="w-full h-full object-cover" alt="El Jefe" />
                 </div>
-                <div className="text-center mt-2 font-display text-xs">SISTEMAS QUE FUNCIONAN</div>
+                <div className="text-center mt-3 font-display text-xs tracking-wider">SISTEMAS QUE FUNCIONAN</div>
               </div>
             </div>
           </div>
 
           {/* Item 4: Brief About Us (Moved to end) */}
           <div className="mt-8 pt-8 border-t-2 border-black/5 text-center">
-            <p className="font-sans text-sm md:text-base font-bold text-gray-400 uppercase tracking-widest">
+            <p className="font-sans text-sm md:text-base font-bold text-gray-600 uppercase tracking-widest max-w-2xl mx-auto px-4">
               Somos IA_Parallax. Auditamos, ordenamos y ejecutamos la operativa que tu empresa necesita para ser eficiente.
             </p>
           </div>
