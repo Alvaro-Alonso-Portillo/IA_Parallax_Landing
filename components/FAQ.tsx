@@ -32,9 +32,9 @@ export const FAQ: React.FC = () => {
 
     return (
         <section id="faq" className="py-24 bg-[#f9f9f9] border-y-2 border-black relative overflow-hidden">
-            <div className="max-w-4xl mx-auto px-6 relative z-10">
-                <h2 ref={headerRef} className="text-4xl md:text-6xl font-display uppercase text-brand-dark mb-12 text-center drop-shadow-sketch-sm">
-                    Dudas sobre <span className="text-brand-yellow px-2 bg-black inline-block transform -rotate-1 text-white mx-2">Automatización</span>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+                <h2 ref={headerRef} className="text-[clamp(1.5rem,7vw,2.5rem)] sm:text-5xl md:text-6xl font-display uppercase text-brand-dark mb-12 text-center drop-shadow-sketch-sm break-words">
+                    Dudas sobre <span className="text-brand-yellow px-2 bg-black inline-block transform rotate-0 sm:-rotate-1 text-white mx-1 sm:mx-2 max-w-full">Automatización</span>
                 </h2>
 
                 <div ref={cardRef} className="bg-white border-4 border-black p-6 md:p-10 shadow-sketch-lg rounded-sketch">

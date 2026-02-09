@@ -14,10 +14,10 @@ export const Hero: React.FC = () => {
   const line2Ref = useParallaxDecorative<HTMLDivElement>(0.018, -1);
 
   return (
-    <section className="relative pt-10 pb-12 md:pt-32 md:pb-20 px-4 overflow-hidden bg-brand-light">
+    <section className="relative pt-20 pb-20 md:pt-32 md:pb-20 px-4 overflow-hidden bg-brand-light">
       <div className="max-w-[1440px] mx-auto text-center relative z-30">
-
-        {/* Floating Icons Top */}
+        {/* ... (icons code remains same) ... */}
+        {/* Note: I'm keeping the internal icons logic but focusing on the requested changes in this block */}
         <img
           ref={icon1Ref}
           src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67cad69f3992b0e11978a58c_Group%201413376293.svg"
@@ -38,30 +38,53 @@ export const Hero: React.FC = () => {
             Automatización para PYMES.
           </p>
 
-          <div className="w-full bg-white md:bg-transparent border-2 border-black md:border-0 rounded-sketch-sm md:rounded-none p-4 md:p-0 relative z-10 shadow-none">
-            <h1 className="relative z-10 w-full font-display uppercase tracking-tighter drop-shadow-sketch-sm">
-              <span className="hidden md:block text-[6rem] lg:text-[7.5rem] leading-[1.2] text-brand-dark">
-                AGENCIA DE AUTOMATIZACIÓN
-              </span>
-              <span className="block text-[8vw] md:text-[6rem] lg:text-[7.5rem] leading-[1] md:leading-[1.2] text-brand-blue">
-                DE PROCESOS CON IA
-              </span>
-              <span className="block text-[6vw] md:text-[6rem] lg:text-[7.5rem] leading-[1.1] md:leading-[1.2] text-brand-dark relative inline-block">
-                <span className="md:hidden">PARA EMPRESAS Y PYMES.</span>
-                <span className="hidden md:inline">PARA PEQUEÑAS Y MEDIANAS EMPRESAS.</span>
-                {/* Wavy Line Underline */}
-                <div className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-4 md:h-8 overflow-hidden hidden md:block">
-                  <svg viewBox="0 0 500 20" preserveAspectRatio="none" className="w-full h-full stroke-brand-blue md:stroke-brand-orange stroke-[4] fill-none">
-                    <path d="M0,10 Q25,0 50,10 T100,10 T150,10 T200,10 T250,10 T300,10 T350,10 T400,10 T450,10 T500,10" />
-                  </svg>
-                </div>
-                {/* Sparkle/Star decoration - Hidden on mobile for less noise */}
-                <span className="absolute -top-6 -right-6 md:-top-8 md:-right-8 text-brand-blue md:text-brand-yellow animate-wiggle text-2xl md:text-6xl -z-10 hidden md:block">✦</span>
-              </span>
+          <div className="w-full relative z-10">
+            <h1 className="relative z-10 w-full uppercase tracking-tighter drop-shadow-sketch-sm flex flex-col items-center">
+              {/* Desktop H1 */}
+              <div className="hidden md:block">
+                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1.2] text-brand-dark font-display">
+                  AGENCIA DE AUTOMATIZACIÓN
+                </span>
+                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1] md:leading-[1.2] text-brand-blue font-display">
+                  DE PROCESOS CON IA
+                </span>
+                <span className="block text-[6rem] lg:text-[7.5rem] leading-[1.1] md:leading-[1.2] text-brand-dark relative inline-block font-display">
+                  PARA PEQUEÑAS Y MEDIANAS EMPRESAS.
+                  {/* Wavy Line Underline */}
+                  <div className="absolute -bottom-4 left-0 w-full h-8 overflow-hidden">
+                    <svg viewBox="0 0 500 20" preserveAspectRatio="none" className="w-full h-full stroke-brand-orange stroke-[4] fill-none">
+                      <path d="M0,10 Q25,0 50,10 T100,10 T150,10 T200,10 T250,10 T300,10 T350,10 T400,10 T450,10 T500,10" />
+                    </svg>
+                  </div>
+                  <span className="absolute -top-8 -right-8 text-brand-yellow animate-wiggle text-6xl -z-10">✦</span>
+                </span>
+              </div>
+
+              {/* Mobile H1 */}
+              <div className="flex md:hidden flex-col items-center justify-center gap-0 w-full">
+                <span className="text-[clamp(1.5rem,8vw,2.5rem)] font-sans font-black text-brand-dark leading-none">
+                  AGENCIA DE
+                </span>
+                <span className="text-[clamp(2.8rem,14vw,5.5rem)] font-accent text-brand-blue leading-[0.85] text-center my-2 transform -rotate-1">
+                  AUTOMATIZACIÓN <br /> CON IA
+                </span>
+                <span className="text-[clamp(1rem,5vw,1.8rem)] font-sans font-black text-brand-dark tracking-normal">
+                  PARA EMPRESAS Y PYMES.
+                </span>
+              </div>
             </h1>
-            <p className="mt-3 md:mt-2 text-[15px] md:text-2xl font-sans font-bold text-brand-dark/80 tracking-tight max-w-sm mx-auto leading-snug lg:max-w-4xl">
+            <p className="mt-6 md:mt-2 text-[15px] md:text-2xl font-sans font-bold text-brand-dark/80 tracking-tight max-w-[280px] md:max-w-4xl mx-auto leading-snug">
               Eliminamos el trabajo manual en la captación de leads y la operativa diaria de las empresas.
             </p>
+
+            {/* Mobile-only Sketch Illustration */}
+            <div className="md:hidden my-12 flex justify-center w-full px-4">
+              <img
+                src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d8589fe8dc80cbd5e9e377_Group%201413376294%20(1).svg"
+                alt="Diagrama de flujo de automatización IA"
+                className="w-[80%] max-w-[300px] h-auto animate-float opacity-90 drop-shadow-sketch-sm"
+              />
+            </div>
           </div>
           {/* Pepe hidden on mobile in this position to avoid distraction */}
           <img src="https://cdn.prod.website-files.com/67cac54830ea1e856c034bd3/67d85869983afc658b8861ea_pepe%20(1).png" width="160" height="160" className="absolute -left-10 sm:-left-16 md:-left-44 top-1/2 -translate-y-1/2 w-40 animate-float drop-shadow-sketch -scale-x-100 -z-30 pointer-events-none hidden md:block" alt="Meme Pepe gestionando sistemas de IA para agencias" />
@@ -79,20 +102,15 @@ export const Hero: React.FC = () => {
           </p>
         </div>
 
-        <div className="mt-5 md:mt-14 flex flex-col sm:flex-row justify-center gap-6 md:gap-6 relative z-30 items-stretch sm:items-center px-4 md:px-0 max-w-3xl mx-auto w-full">
-          <a href="#diagnostico" className="bg-black text-white px-6 py-6 md:px-12 md:py-5 text-[15px] md:text-xl font-display uppercase tracking-wider hover:bg-brand-blue transition-all flex items-center justify-center gap-3 md:gap-4 group border-2 border-black rounded-full shadow-sketch-lg hover:shadow-sketch-xl hover:-translate-y-1 w-full sm:w-auto">
+        <div className="mt-8 md:mt-14 flex flex-col sm:flex-row justify-center gap-6 md:gap-6 relative z-30 items-stretch sm:items-center px-4 md:px-0 max-w-3xl mx-auto w-full">
+          <a href="#diagnostico" className="bg-black text-white px-6 py-6 md:px-12 md:py-5 text-[15px] md:text-xl font-display uppercase tracking-wider hover:bg-brand-blue transition-all flex items-center justify-center gap-3 md:gap-4 group border-2 border-black rounded-full shadow-[4px_4px_0px_#4d65ff] md:shadow-sketch-lg hover:shadow-sketch-xl hover:-translate-y-1 w-full sm:w-auto">
             Analizar mi caso ahora
           </a>
-          <a href="#sistemas" className="hidden md:flex bg-transparent text-black px-8 md:px-12 py-4 md:py-5 text-sm md:text-xl font-display uppercase tracking-wider transition-all border-2 border-black rounded-full shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 text-center hover:bg-black/5 items-center justify-center">
+          <a href="#sistemas" className="flex bg-transparent text-black px-6 py-5 md:px-12 md:py-5 text-[15px] md:text-xl font-display uppercase tracking-wider transition-all border-2 border-black rounded-full shadow-[4px_4px_0px_#000000] md:shadow-sketch hover:shadow-sketch-lg hover:-translate-y-1 text-center hover:bg-black/5 items-center justify-center w-full sm:w-auto">
             Ver cómo funciona
           </a>
         </div>
-        <div className="md:hidden mt-6 relative z-30">
-          <a href="#sistemas" className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-black transition-colors underline decoration-2 underline-offset-4">
-            Ver cómo funciona
-          </a>
-        </div>
-        <p className="mt-4 text-sm md:text-base font-medium text-gray-600 relative z-30">
+        <p className="mt-8 text-sm md:text-base font-medium text-gray-600 relative z-30">
           Revisamos tus procesos y te decimos si tiene sentido automatizarlos.
         </p>
         <p className="mt-4 text-[10px] md:text-xs text-gray-400 uppercase tracking-widest max-w-lg mx-auto relative z-30">

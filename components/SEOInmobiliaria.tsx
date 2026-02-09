@@ -100,22 +100,28 @@ export const SEOInmobiliaria: React.FC<{ onBack: () => void }> = ({ onBack }) =>
                         Proceso de automatización de agenda
                     </h2>
                     <div className="relative">
-                        <div className="absolute left-8 top-0 bottom-0 w-1 border-l-4 border-dashed border-black/10 hidden md:block"></div>
+                        <div className="absolute left-4 top-0 bottom-0 w-1 border-l-4 border-dashed border-black/10 hidden md:block"></div>
                         <div className="space-y-12">
-                            <div className="relative pl-0 md:pl-20">
-                                <div className="absolute left-4 md:left-4 top-0 w-8 h-8 bg-brand-blue border-2 border-black rounded-full z-10 flex items-center justify-center font-display text-white italic shadow-sketch-sm">1</div>
-                                <h3 className="font-display text-2xl uppercase mb-2">Entrada de Lead</h3>
-                                <p className="text-gray-600 font-medium">El sistema monitoriza tus canales de entrada las 24 horas del día.</p>
+                            <div className="flex items-start gap-6 relative">
+                                <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-blue border-2 border-black rounded-full z-10 flex items-center justify-center font-display text-white italic shadow-sketch-sm shrink-0 mt-1">1</div>
+                                <div className="text-left">
+                                    <h3 className="font-display text-2xl uppercase mb-2">Entrada de Lead</h3>
+                                    <p className="text-gray-600 font-medium">El sistema monitoriza tus canales de entrada las 24 horas del día.</p>
+                                </div>
                             </div>
-                            <div className="relative pl-0 md:pl-20">
-                                <div className="absolute left-4 md:left-4 top-0 w-8 h-8 bg-brand-blue border-2 border-black rounded-full z-10 flex items-center justify-center font-display text-white italic shadow-sketch-sm">2</div>
-                                <h3 className="font-display text-2xl uppercase mb-2">Filtro Técnico</h3>
-                                <p className="text-gray-600 font-medium">Se valida automáticamente si el lead es real y si sus necesidades encajan con tu cartera.</p>
+                            <div className="flex items-start gap-6 relative">
+                                <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-blue border-2 border-black rounded-full z-10 flex items-center justify-center font-display text-white italic shadow-sketch-sm shrink-0 mt-1">2</div>
+                                <div className="text-left">
+                                    <h3 className="font-display text-2xl uppercase mb-2">Filtro Técnico</h3>
+                                    <p className="text-gray-600 font-medium">Se valida automáticamente si el lead es real y si sus necesidades encajan con tu cartera.</p>
+                                </div>
                             </div>
-                            <div className="relative pl-0 md:pl-20">
-                                <div className="absolute left-4 md:left-4 top-0 w-8 h-8 bg-brand-blue border-2 border-black rounded-full z-10 flex items-center justify-center font-display text-white italic shadow-sketch-sm">3</div>
-                                <h3 className="font-display text-2xl uppercase mb-2">Conexión con el Comercial</h3>
-                                <p className="text-gray-600 font-medium">Solo los leads "calientes" llegan al equipo, con toda la información ya volcada en el CRM.</p>
+                            <div className="flex items-start gap-6 relative">
+                                <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-blue border-2 border-black rounded-full z-10 flex items-center justify-center font-display text-white italic shadow-sketch-sm shrink-0 mt-1">3</div>
+                                <div className="text-left">
+                                    <h3 className="font-display text-2xl uppercase mb-2">Conexión con el Comercial</h3>
+                                    <p className="text-gray-600 font-medium">Solo los leads "calientes" llegan al equipo, con toda la información ya volcada en el CRM.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

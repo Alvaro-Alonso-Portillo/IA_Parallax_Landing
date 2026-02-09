@@ -107,25 +107,25 @@ export const SEOAppSync: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                         Cómo funciona la conexión automática
                     </h2>
                     <div className="space-y-12">
-                        <div className="flex flex-col md:flex-row gap-6 md:items-center">
-                            <div className="w-16 h-16 bg-brand-blue text-black border-2 border-white flex items-center justify-center font-display text-3xl shrink-0 rounded-full shadow-sketch">1</div>
-                            <div>
+                        <div className="flex items-start gap-6">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-blue text-black border-2 border-white flex items-center justify-center font-display text-2xl md:text-3xl shrink-0 rounded-full shadow-sketch mt-1">1</div>
+                            <div className="text-left">
                                 <h3 className="text-xl font-display uppercase mb-2">Evento disparador</h3>
-                                <p className="text-gray-300 font-medium">Ocurre algo: llega un email, se cierra un pago o se rellena un formulario web.</p>
+                                <p className="text-gray-300 font-medium text-sm md:text-base">Ocurre algo: llega un email, se cierra un pago o se rellena un formulario web.</p>
                             </div>
                         </div>
-                        <div className="flex flex-col md:flex-row gap-6 md:items-center">
-                            <div className="w-16 h-16 bg-brand-blue text-black border-2 border-white flex items-center justify-center font-display text-3xl shrink-0 rounded-full shadow-sketch">2</div>
-                            <div>
+                        <div className="flex items-start gap-6">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-blue text-black border-2 border-white flex items-center justify-center font-display text-2xl md:text-3xl shrink-0 rounded-full shadow-sketch mt-1">2</div>
+                            <div className="text-left">
                                 <h3 className="text-xl font-display uppercase mb-2">Tratamiento de datos</h3>
-                                <p className="text-gray-300 font-medium">El sistema extrae la información relevante y la limpia (elimina espacios, pone mayúsculas, etc.).</p>
+                                <p className="text-gray-300 font-medium text-sm md:text-base">El sistema extrae la información relevante y la limpia (elimina espacios, pone mayúsculas, etc.).</p>
                             </div>
                         </div>
-                        <div className="flex flex-col md:flex-row gap-6 md:items-center">
-                            <div className="w-16 h-16 bg-brand-blue text-black border-2 border-white flex items-center justify-center font-display text-3xl shrink-0 rounded-full shadow-sketch">3</div>
-                            <div>
+                        <div className="flex items-start gap-6">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-blue text-black border-2 border-white flex items-center justify-center font-display text-2xl md:text-3xl shrink-0 rounded-full shadow-sketch mt-1">3</div>
+                            <div className="text-left">
                                 <h3 className="text-xl font-display uppercase mb-2">Acción en destino</h3>
-                                <p className="text-gray-300 font-medium">La información aparece por arte de magia en todas tus otras herramientas conectadas, sin que nadie pulse una tecla.</p>
+                                <p className="text-gray-300 font-medium text-sm md:text-base">La información aparece por arte de magia en todas tus otras herramientas conectadas, sin que nadie pulse una tecla.</p>
                             </div>
                         </div>
                     </div>

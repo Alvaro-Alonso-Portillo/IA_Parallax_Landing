@@ -107,25 +107,25 @@ export const SEOFacturasDocumentacion: React.FC<{ onBack: () => void }> = ({ onB
                         Cómo funciona la gestión automática
                     </h2>
                     <div className="space-y-12">
-                        <div className="flex flex-col md:flex-row gap-6 md:items-center">
-                            <div className="w-16 h-16 bg-brand-orange text-black border-2 border-white flex items-center justify-center font-display text-3xl shrink-0 rounded-full shadow-sketch">1</div>
-                            <div>
+                        <div className="flex items-start gap-6">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-orange text-black border-2 border-white flex items-center justify-center font-display text-2xl md:text-3xl shrink-0 rounded-full shadow-sketch mt-1">1</div>
+                            <div className="text-left">
                                 <h3 className="text-xl font-display uppercase mb-2">Lectura inteligente</h3>
-                                <p className="text-gray-300 font-medium">El sistema detecta automáticamente cuando llega un documento o factura a una cuenta de correo específica o carpeta.</p>
+                                <p className="text-gray-300 font-medium text-sm md:text-base">El sistema detecta automáticamente cuando llega un documento o factura a una cuenta de correo específica o carpeta.</p>
                             </div>
                         </div>
-                        <div className="flex flex-col md:flex-row gap-6 md:items-center">
-                            <div className="w-16 h-16 bg-brand-orange text-black border-2 border-white flex items-center justify-center font-display text-3xl shrink-0 rounded-full shadow-sketch">2</div>
-                            <div>
+                        <div className="flex items-start gap-6">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-orange text-black border-2 border-white flex items-center justify-center font-display text-2xl md:text-3xl shrink-0 rounded-full shadow-sketch mt-1">2</div>
+                            <div className="text-left">
                                 <h3 className="text-xl font-display uppercase mb-2">Extracción sin errores</h3>
-                                <p className="text-gray-300 font-medium">Se extraen los datos clave (emisor, base, impuestos, total) sin que nadie tenga que escribirlos.</p>
+                                <p className="text-gray-300 font-medium text-sm md:text-base">Se extraen los datos clave (emisor, base, impuestos, total) sin que nadie tenga que escribirlos.</p>
                             </div>
                         </div>
-                        <div className="flex flex-col md:flex-row gap-6 md:items-center">
-                            <div className="w-16 h-16 bg-brand-orange text-black border-2 border-white flex items-center justify-center font-display text-3xl shrink-0 rounded-full shadow-sketch">3</div>
-                            <div>
+                        <div className="flex items-start gap-6">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-orange text-black border-2 border-white flex items-center justify-center font-display text-2xl md:text-3xl shrink-0 rounded-full shadow-sketch mt-1">3</div>
+                            <div className="text-left">
                                 <h3 className="text-xl font-display uppercase mb-2">Archivo y volcado Final</h3>
-                                <p className="text-gray-300 font-medium">El PDF se guarda perfectamente nombrado en su carpeta y los datos se vuelcan directamente en tu sistema de gestión.</p>
+                                <p className="text-gray-300 font-medium text-sm md:text-base">El PDF se guarda perfectamente nombrado en su carpeta y los datos se vuelcan directamente en tu sistema de gestión.</p>
                             </div>
                         </div>
                     </div>
